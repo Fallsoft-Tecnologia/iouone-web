@@ -1,0 +1,31 @@
+.nav-content {
+    background-color: var(--Rosa-claro);
+    border-bottom: 1px solid var(--Cinza-claro);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-itens {
+    padding: 0 32px;
+    font-size: 20px;
+}
+
+.logo-image {
+    height: 75px;
+    cursor: pointer;
+}
+
+.login-button {
+    font-weight: bold;
+    color: var(--Preto);
+}
+
+.login-button:hover {
+    text-decoration: underline;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

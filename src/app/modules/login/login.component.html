@@ -1,0 +1,29 @@
+<main class="login-container">
+    <mat-card class="card-login-container">
+        <div class="card-content">
+            <img src="assets/logo.png" alt="Logo da Iou One" class="logo-image">
+            <mat-card-header>
+                <mat-card-title class="card-title">Fazer Login</mat-card-title>
+                <mat-card-subtitle class="card-subtitle">Entre na plataforma</mat-card-subtitle>
+            </mat-card-header>
+        </div>
+        <mat-card-content>
+            <mat-form-field appearance="outline" class="full-width-input">
+                <mat-label>E-mail ou telefone</mat-label>
+                <input matInput type="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width-input">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password">
+            </mat-form-field>
+            <mat-card-actions class="actions-content">
+                <mat-checkbox class="lembrar-checkbox">Lembrar-me</mat-checkbox>
+                <a mat-button class="forgot-password-button">Esqueceu a senha?</a>
+            </mat-card-actions>
+            <app-enter-button [textButton]="textButton"></app-enter-button>
+        </mat-card-content>
+        <mat-card-actions class="register-button">
+            <span>Ainda não é membro? </span><a class="register-button-button" href="/cadastro" mat-button>Cadastre-se</a>
+        </mat-card-actions>
+    </mat-card>
+</main>

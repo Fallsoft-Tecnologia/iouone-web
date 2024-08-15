@@ -1,0 +1,81 @@
+::ng-deep body {
+    background-color: var(--Rosa-claro);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card-login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--Branco);
+    border: 1px solid var(--Cinza-claro);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    max-width: 200px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.full-width-input {
+    width: 100%;
+}
+
+.actions-content {
+    margin-bottom: 10px;
+}
+
+.lembrar-checkbox {
+    margin-right: auto;
+}
+
+.mat-accent {
+    --mat-option-selected-state-label-text-color: #057CFF;
+}
+
+::ng-deep .lembrar-checkbox .mat-checkbox-checked .mat-checkbox-background {
+    background-color: #3f51b5; /* Cor quando está marcado (true) */
+}
+
+.forgot-password-button {
+    margin-left: auto;
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: var(--Rosa-pink);
+}
+
+.register-button {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-button-button {
+    color: var(--Rosa-pink);
+}
