@@ -8,6 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatGridListModule,
     MatCheckboxModule,
-    MatButtonModule,
+    EnterButtonModule,
     MatFormFieldModule
   ]
 })

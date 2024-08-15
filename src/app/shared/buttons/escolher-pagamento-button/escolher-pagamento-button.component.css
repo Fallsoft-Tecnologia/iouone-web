@@ -1,0 +1,103 @@
+.custom-button {
+  align-items: center;
+  display: flex;
+  height: auto;
+  min-height: 60px;
+  text-decoration: none;
+  line-height: 60px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  transition: position .5s ease-in;
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+.custom-button:active {
+  background-color: var(--Cinza-claro);
+}
+
+.custom-button .nameAndLogos {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: flex-start;
+  padding: 15px 0;
+}
+
+.payment-text {
+  font-size: 16px;
+  float: none;
+  margin-bottom: 5px;
+  margin-right: 0;
+  margin-top: 5px;
+  max-width: none;
+  line-height: 20px;
+  min-height: 20px;
+  margin: 0 15px;
+  vertical-align: middle;
+}
+
+.button-text {
+  display: block;
+}
+
+.logosContainer {
+  line-height: 20px;
+  min-height: 20px;
+  margin: 0 15px;
+  overflow: hidden;
+}
+
+.logos {
+  position: relative;
+}
+
+.logosContainer .logos-inline {
+  float: none;
+  white-space: nowrap;
+  line-height: normal;
+  max-height: 60px;
+}
+
+.logos.logos-inline {
+  display: inline-block;
+  overflow: auto;
+  vertical-align: middle;
+}
+
+.logosContainer .logoIcon {
+  background-image: none;
+  margin-right: 6px;
+  margin-top: 4px;
+  width: auto;
+}
+
+.logos .logoIcon {
+  float: left;
+  height: 18px;
+  margin: 1px 6px 1px 0;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.arrow {
+  position: absolute;
+  right: 24px;
+  padding-right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #000;
+  font-weight: 300;
+}

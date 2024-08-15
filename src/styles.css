@@ -15,7 +15,11 @@
     --Cinza-ativado: #121212;
 }
 
-body { 
-    margin: 0; 
+body {
+    margin: 0;
     font-family: 'Lato', "Playfair Display", sans-serif;
+}
+
+a {
+    text-decoration: none;
 }

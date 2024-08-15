@@ -1,0 +1,56 @@
+.nav-list {
+  margin-top: 2rem;
+}
+
+.item-list {
+  margin: 0rem 2rem 0rem 2rem;
+  width: 22rem;
+  border: 7px solid #fff;
+}
+
+.item-list:hover {
+  transition: 0.2s;
+  background-color: rgba(250, 214, 231, 1);
+}
+
+.img-list {
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.text-list {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(89, 89, 89, 1);
+}
+
+.line {
+  padding: 2rem 2rem;
+}
+
+.active-link {
+  transition: 0.2s;
+  background-color: rgba(242, 102, 193, 1);
+  .text-list {
+    color: black;
+  }
+}
+
+.last-item {
+  margin: 0rem 2rem 0rem 2rem;
+  cursor: not-allowed;
+}
+
+.mdc-list-item--with-one-line.mdc-list-item--with-leading-avatar,
+.mdc-list-item--with-one-line.mdc-list-item--with-leading-icon,
+.mdc-list-item--with-one-line.mdc-list-item--with-leading-thumbnail,
+.mdc-list-item--with-one-line.mdc-list-item--with-leading-checkbox,
+.mdc-list-item--with-one-line.mdc-list-item--with-leading-radio,
+.mdc-list-item--with-one-line.mdc-list-item--with-leading-switch {
+  border-radius: 15px;
+}
+
+.mdc-list-item--with-leading-icon .mdc-list-item__start {
+  margin-left: 16px;
+  margin-right: 14px;
+}

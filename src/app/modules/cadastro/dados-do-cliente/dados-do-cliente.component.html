@@ -1,0 +1,34 @@
+<app-navbar-cadastro></app-navbar-cadastro>
+
+<main class="container">
+    <a href="/cadastro">
+        <p><i class="fa-regular fa-arrow-left"></i></p>
+    </a>
+    <p class="step-text">PASSO 2 DE 4</p>
+    <h1 class="welcome-text">Comece a configurar sua conta</h1>
+    <p class="instruction-text">Vamos personalizar sua experiência!</p>
+    <p class="instruction-text-text">Preencha seus dados para nos ajudar a criar um programa perfeito para você.</p>
+
+    <form class="signup-form">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Nome completo</mat-label>
+            <input matInput placeholder="Nome completo">
+        </mat-form-field>
+        <div class="separador">
+            <mat-form-field class="form-field-half" appearance="outline">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput placeholder="Digite sua senha" type="date">
+            </mat-form-field>
+            <mat-form-field class="form-field-half" appearance="outline">
+                <mat-label>Celular</mat-label>
+                <input matInput placeholder="Digite sua senha" type="text">
+            </mat-form-field>
+        </div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="CPF" type="text">
+        </mat-form-field>
+
+        <app-enter-button [textButton]="textButton" [redireciona]="redireciona"></app-enter-button>
+    </form>
+</main>

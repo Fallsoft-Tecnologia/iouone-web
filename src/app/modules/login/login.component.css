@@ -69,17 +69,13 @@
     color: var(--Rosa-pink);
 }
 
-.login-button {
-    width: 100%;
-    border-radius: 5px;
-    height: 40px;
-    font-weight: bold;
-}
-
-.mat-mdc-raised-button.mat-unthemed {
-    --mdc-protected-button-container-color: var(--Rosa-pink);
-    --mdc-protected-button-label-text-color: var(--Branco);
-}
-
 .register-button {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-button-button {
+    color: var(--Rosa-pink);
 }
