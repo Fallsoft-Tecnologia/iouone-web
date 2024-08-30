@@ -1,0 +1,18 @@
+.router {
+  padding: 2rem 4rem 2rem 4rem;
+  height: calc(100vh - 90px);
+  top: 90px;
+  right: 0px;
+  bottom: 0px;
+  left: 416px;
+  background-color: rgba(255, 246, 250, 1);
+  position: fixed;
+  overflow-y: scroll;
+}
+
+@media (max-width: 1024px) {
+  .router {
+    padding-left: 4rem;
+    left: 0px;
+  }
+}
