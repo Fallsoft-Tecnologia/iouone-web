@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
+import { LoginRoutingModule } from './login-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-but
     MatGridListModule,
     MatCheckboxModule,
     EnterButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    LoginRoutingModule
   ]
 })
 export class LoginModule { }

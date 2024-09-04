@@ -1,0 +1,181 @@
+<main class="container">
+  <div class="header">
+    <h1 class="title">Calculadora simplificada de dieta flexível (TDEE)</h1>
+    <p>
+      Esta calculadora foi feita para simplificar a sua vida na hora de
+      determinar os seus macros para a montagem de dieta! Espero que goste e que
+      seja útil!
+    </p>
+  </div>
+
+  <section class="form-section">
+    <form class="signup-form">
+      <div class="individual-form">
+        <p>
+          Altura:
+          <span class="red-text">*</span>
+        </p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Altura em centímetros</mat-label>
+          <input matInput />
+          <div class="suffix-container">
+            <span class="divider"></span>
+            <span matSuffix>cm</span>
+          </div>
+        </mat-form-field>
+        <div class="bottom-input"></div>
+      </div>
+
+      <div class="individual-form">
+        <p>
+          Idade:
+          <span class="red-text">*</span>
+        </p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Idade</mat-label>
+          <input matInput type="number" />
+        </mat-form-field>
+        <div class="bottom-input"></div>
+      </div>
+
+      <div class="individual-form">
+        <p>
+          Nível de atividade física:
+          <span class="red-text">*</span>
+        </p>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Informe seu nível de atividade física</mat-label>
+          <mat-select>
+            <mat-option value="Baixo">Baixo</mat-option>
+            <mat-option value="Nenhum">Nenhum</mat-option>
+            <mat-option value="Moderado">Moderado</mat-option>
+            <mat-option value="Frequente">Frequente</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="bottom-input"></div>
+      </div>
+
+      <div class="individual-form">
+        <p>
+          Seu objetivo
+          <span class="red-text">*</span>
+        </p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Informe seu objetivo</mat-label>
+          <mat-select>
+            <mat-option value="Emagrecer">Emagrecer</mat-option>
+            <mat-option value="Emagrecer agressivo"
+              >Emagrecer agressivo</mat-option
+            >
+            <mat-option value="Manter">Manter</mat-option>
+            <mat-option value="Ganhos secos">Ganhos "secos"</mat-option>
+            <mat-option value="Ganhar agressivo">Ganhar agressivo</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="bottom-input">
+          <p class="bottom-text-input">
+            Lembrando que as opções mais saudáveis e sustentáveis são as
+            "emagrecer", "manter" e "ganhos secos". Pois o processo é mais
+            lento, porém muito mais tranquilo e correto.
+          </p>
+        </div>
+      </div>
+    </form>
+
+    <form class="signup-form">
+      <div class="individual-form">
+        <p>
+          Peso:
+          <span class="red-text">*</span>
+        </p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Peso em quilogramas</mat-label>
+          <input matInput />
+          <div class="suffix-container">
+            <span class="divider"></span>
+            <span matSuffix>kg</span>
+          </div>
+        </mat-form-field>
+        <div class="bottom-input"></div>
+      </div>
+
+      <div class="individual-form">
+        <p>
+          Taxa metabólica basal:
+          <span class="red-text">*</span>
+        </p>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Taxa basal em caloria</mat-label>
+          <input matInput />
+          <div class="suffix-container">
+            <span class="divider"></span>
+            <span matSuffix>kcal</span>
+          </div>
+        </mat-form-field>
+        <div class="bottom-input">
+          <p class="bottom-text-input">
+            Estas são as calorias que seu corpo gasta simplesmente para
+            sobreviver, ou seja, se você ficar 24 hrs dormindo.
+          </p>
+        </div>
+      </div>
+
+      <div class="individual-form">
+        <p>
+          TDEE:
+          <span class="red-text">*</span>
+        </p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>TDEE em caloria</mat-label>
+          <input matInput type="text" />
+          <div class="suffix-container-cm">
+            <span class="divider"></span>
+            <span matSuffix>kcal</span>
+          </div>
+        </mat-form-field>
+        <div class="bottom-input">
+          <p class="bottom-text-input">
+            Estas são as calorias que seu corpo gasta em média para sobreviver e
+            realizar as suas atividades do cotidiano, considerando o seu nível
+            médio de atividade.
+          </p>
+        </div>
+      </div>
+
+      <div class="individual-form">
+        <p>
+          Estado atual:
+          <span class="red-text">*</span>
+        </p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Informe seu estado atual</mat-label>
+          <mat-select>
+            <mat-option value="Magrela">Magrela</mat-option>
+            <mat-option value="Massa magra considerável"
+              >Massa magra considerável e BF não muito alto</mat-option
+            >
+            <mat-option value="Falsa Magra">Falsa Magra</mat-option>
+            <mat-option value="Muito acima do peso"
+              >Muito acima do peso</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <div class="bottom-input"></div>
+      </div>
+    </form>
+  </section>
+
+  <label id="radio-label" class="radio-label">Biotipo:</label>
+  <mat-radio-group aria-labelledby="radio-label" class="radio-group">
+    <mat-radio-button value="Ectomorfo">Ectomorfo</mat-radio-button>
+    <mat-radio-button value="Mesomorfo">Mesomorfo</mat-radio-button>
+    <mat-radio-button value="Endomorfo">Endomorfo</mat-radio-button>
+  </mat-radio-group>
+
+  <app-enter-button
+    class="enter-button"
+    [textButton]="textButton"
+  ></app-enter-button>
+</main>
