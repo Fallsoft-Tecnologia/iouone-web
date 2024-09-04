@@ -6,6 +6,7 @@ import { EscolherPagamentoButtonModule } from 'src/app/shared/buttons/escolher-p
 import { BotaoCartaoComponent } from './meio-pagamento/botao-cartao/botao-cartao.component';
 import { BotaoPixComponent } from './meio-pagamento/botao-pix/botao-pix.component';
 import { CartaoModule } from './cartao/cartao.module';
+import { PagamentoRoutingModule } from './pagamento-routing.module';
 
 
 
@@ -19,7 +20,8 @@ import { CartaoModule } from './cartao/cartao.module';
     CommonModule,
     NavbarCadastroModule,
     EscolherPagamentoButtonModule,
-    CartaoModule
+    CartaoModule,
+    PagamentoRoutingModule
   ]
 })
 export class PagamentoModule { }
