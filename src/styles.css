@@ -30,8 +30,12 @@ html {
     --mdc-outlined-text-field-focus-label-text-color: var(--Botao-azul);
 }
 
-body {
+* {
+    padding: 0;
     margin: 0;
+}
+
+body {
     font-family: 'Lato', "Playfair Display", sans-serif;
 }
 
