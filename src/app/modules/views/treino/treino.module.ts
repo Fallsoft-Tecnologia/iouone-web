@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TreinoRoutingModule } from './treino-routing.module';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -11,4 +9,4 @@ import { TreinoRoutingModule } from './treino-routing.module';
     TreinoRoutingModule
   ]
 })
-export class TreinoModule { }
+export class TreinoModule {}

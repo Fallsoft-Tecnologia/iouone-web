@@ -53,7 +53,6 @@ import { EnterButtonModule } from './shared/buttons/enter-button/enter-button.mo
     MarmitaComponent,
     DetoxComponent,
     CardComponent,
-    ChasComponent,
     ProjetoComponent,
     AdminComponent,
     AuthComponent
