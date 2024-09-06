@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DetoxRoutingModule } from './detox-routing.module';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    DetoxRoutingModule
   ]
 })
 export class DetoxModule { }

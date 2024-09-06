@@ -1,7 +1,6 @@
+import { DietasRoutingModule } from './dietas-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from 'src/app/shared/card/card.component';
-import { AppComponent } from 'src/app/app.component';
 
 
 
@@ -9,8 +8,7 @@ import { AppComponent } from 'src/app/app.component';
   declarations: [],
   imports: [
     CommonModule,
-    AppComponent,
-    CardComponent
+    DietasRoutingModule
   ]
 })
 export class DietasModule { }

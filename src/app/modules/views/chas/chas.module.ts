@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChasRoutingModule } from './chas-routing.module';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    ChasRoutingModule
   ]
 })
-export class DesincharModule { }
+export class ChasModule { }

@@ -63,9 +63,11 @@ mat-sidenav {
   }
 }
 
-.last-item {
-  margin: 0rem 2rem 0rem 2rem;
-  cursor: not-allowed;
+#projeto {
+  background-color: var(--Preto);
+  .text-list {
+    color: rgba(242, 102, 193, 1);
+  }
 }
 
 .mdc-list-item--with-one-line.mdc-list-item--with-leading-avatar,

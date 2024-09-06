@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesincharComponent } from './desinchar.component';
+import { ProjetoComponent } from './projeto.component';
 
-describe('DesincharComponent', () => {
-  let component: DesincharComponent;
-  let fixture: ComponentFixture<DesincharComponent>;
+describe('ProjetoComponent', () => {
+  let component: ProjetoComponent;
+  let fixture: ComponentFixture<ProjetoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DesincharComponent]
+      declarations: [ProjetoComponent]
     });
-    fixture = TestBed.createComponent(DesincharComponent);
+    fixture = TestBed.createComponent(ProjetoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

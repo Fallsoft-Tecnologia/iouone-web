@@ -18,15 +18,24 @@ import { DietasComponent } from './modules/views/dietas/dietas.component';
 import { TreinoComponent } from './modules/views/treino/treino.component';
 import { ExerciciosComponent } from './modules/views/exercicios/exercicios.component';
 import { FitComponent } from './modules/views/fit/fit.component';
-import { DesincharComponent } from './modules/views/desinchar/desinchar.component';
 import { CardapioComponent } from './modules/views/cardapio/cardapio.component';
 import { CalculadoraComponent } from './modules/views/calculadora/calculadora.component';
-import { GorduraComponent } from './modules/views/gordura/gordura.component';
 import { MarmitaComponent } from './modules/views/marmita/marmita.component';
 import { DetoxComponent } from './modules/views/detox/detox.component';
 import { CardComponent } from './shared/card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { ChasComponent } from './modules/views/chas/chas.component';
+import { ProjetoComponent } from './modules/views/projeto/projeto.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { AuthComponent } from './layouts/auth/auth.component';
+import { CadastroRouterModule } from './modules/cadastro/cadastro-router/cadastro-router.module';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { EnterButtonModule } from './shared/buttons/enter-button/enter-button.module';
 
 @NgModule({
   declarations: [
@@ -38,26 +47,35 @@ import { MatIconModule } from '@angular/material/icon';
     TreinoComponent,
     ExerciciosComponent,
     FitComponent,
-    DesincharComponent,
+    ChasComponent,
     CardapioComponent,
     CalculadoraComponent,
-    GorduraComponent,
     MarmitaComponent,
     DetoxComponent,
     CardComponent,
+    ProjetoComponent,
+    AdminComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
     CadastroModule,
+    CadastroRouterModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     PagamentoModule,
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatRadioModule,
+    EnterButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -20,7 +20,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/nutricionista"
+        routerLink="/admin/home"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -35,7 +35,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/dietas"
+        routerLink="/admin/dietas"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -50,7 +50,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/treino"
+        routerLink="/admin/treino"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -65,7 +65,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/exercicios"
+        routerLink="/admin/exercicios"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -80,7 +80,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/fitdance"
+        routerLink="/admin/fitdance"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -95,22 +95,22 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/desinchar"
+        routerLink="/admin/chas"
         mat-list-item
         routerLinkActive="active-link"
       >
         <img
           matListItemIcon
           class="img-list"
-          src="../../../assets/sidebar/chas-desinchar.png"
-          alt="Chás para desinchar"
+          src="../../../assets/sidebar/chas.png"
+          alt="Chás"
         />
-        <span class="text-list">Chás para desinchar</span>
+        <span class="text-list">Chás</span>
       </a>
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/cardapio"
+        routerLink="/admin/cardapio"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -125,7 +125,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/calculadora"
+        routerLink="/admin/calculadora"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -140,22 +140,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/perder-gordura"
-        mat-list-item
-        routerLinkActive="active-link"
-      >
-        <img
-          matListItemIcon
-          class="img-list"
-          src="../../../assets/sidebar/chas-perder-gordura.png"
-          alt="Chás para perder gordura"
-        />
-        <span class="text-list">Chás para perder gordura</span>
-      </a>
-      <a
-        (click)="closeSidebar()"
-        class="item-list"
-        routerLink="/marmita"
+        routerLink="/admin/marmita"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -170,7 +155,7 @@
       <a
         (click)="closeSidebar()"
         class="item-list"
-        routerLink="/detox"
+        routerLink="/admin/detox"
         mat-list-item
         routerLinkActive="active-link"
       >
@@ -186,11 +171,22 @@
       <img class="line" src="../../../assets/sidebar/line.png" alt="" />
 
       <mat-nav-list>
-        <a class="last-item">
+        <a
+          (click)="closeSidebar()"
+          class="item-list"
+          routerLink="/admin/projeto"
+          mat-list-item
+          routerLinkActive="active-link"
+          id="projeto"
+        >
           <img
+            matListItemIcon
+            class="img-list"
+            src="../../../assets/sidebar/detox.png"
             src="../../../assets/sidebar/projeto-30-dias.png"
             alt="Projeto 30 dias"
           />
+          <span class="text-list">Projeto 30 dias</span>
         </a>
       </mat-nav-list>
     </mat-nav-list>
