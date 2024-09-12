@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-cardapio',
-  templateUrl: './cardapio.component.html',
-  styleUrls: ['./cardapio.component.css']
+  selector: 'app-chas',
+  templateUrl: './chas.component.html',
+  styleUrls: ['./chas.component.css']
 })
-export class CardapioComponent {
+export class ChasComponent {
   textTittle: string = 'What is lorem';
   textDescription: string =
     ' Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique';
