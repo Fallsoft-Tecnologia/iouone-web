@@ -8,6 +8,5 @@ import { Component, Input } from '@angular/core';
 export class EnterButtonComponent {
 
   @Input() textButton: string = '';
-  @Input() redireciona: string = '';
 
 }

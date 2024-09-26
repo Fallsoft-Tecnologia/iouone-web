@@ -8,6 +8,7 @@ import { LoginModule } from './modules/login/login.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CadastroModule } from './modules/cadastro/cadastro.module';
 import { PagamentoModule } from './modules/pagamento/pagamento.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PagamentoModule } from './modules/pagamento/pagamento.module';
     CadastroModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    PagamentoModule
+    PagamentoModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

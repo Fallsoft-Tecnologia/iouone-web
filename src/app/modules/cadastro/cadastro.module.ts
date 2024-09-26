@@ -8,6 +8,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { DadosDoClienteComponent } from './dados-do-cliente/dados-do-cliente.component';
 import { DadosCorporalComponent } from './dados-corporal/dados-corporal.component';
 import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-but
     MatFormFieldModule,
     MatInputModule,
     EnterButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class CadastroModule { }
