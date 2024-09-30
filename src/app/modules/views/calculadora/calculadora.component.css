@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+
+.red-text {
+  color: red;
+}
+
+.title {
+  font-size: 30px;
+  padding-bottom: 1rem;
+}
+
+.signup-form {
+  margin-top: 1rem;
+  width: 50%;
+  gap: 2rem;
+}
+
+.individual-form {
+  margin-top: 2rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-field {
+  position: relative;
+  margin-top: 0.7rem;
+  width: 100%;
+}
+
+.form-field input {
+  padding-right: 40px;
+  /* Ajuste conforme necessário para espaço do sufixo */
+}
+
+.suffix-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 8px;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  font-family: inherit; /* Mantém a mesma fonte do input */
+  font-size: inherit; /* Mantém o mesmo tamanho de fonte do input */
+  color: rgba(0, 0, 0, 0.5); /* Mantém a mesma cor do input */
+}
+.suffix-container-cm {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 8px;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  font-family: inherit; /* Mantém a mesma fonte do input */
+  font-size: inherit; /* Mantém o mesmo tamanho de fonte do input */
+  color: rgba(0, 0, 0, 0.5);
+  /* Mantém a mesma cor do input */
+}
+
+.suffix-container span {
+  margin-left: 4px; /* Ajusta o espaço entre a linha e o texto 'kg' */
+}
+.suffix-container-cm span {
+  margin-left: 2px; /* Ajusta o espaço entre a linha e o texto 'kg' */
+}
+
+.bottom-text-input {
+  margin-top: -1.5em;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.bottom-input {
+  max-height: 1rem; /* Mantém os inputs alinhados horizontalmente */
+}
+
+.radio-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.radio-group {
+  display: flex;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.enter-button {
+  max-width: 150px;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color: var(--Botao-azul);
+  --mdc-radio-selected-hover-icon-color: var(--Botao-azul);
+  --mdc-radio-selected-icon-color: var(--Botao-azul);
+  --mdc-radio-selected-pressed-icon-color: var(--Botao-azul);
+  --mat-radio-checked-ripple-color: var(--Botao-azul);
+}
+
+@media (max-width: 1400px) {
+  .form-section {
+    gap: 3rem;
+  }
+
+  .form-field {
+    font-size: 13px;
+  }
+
+  .individual-form {
+    margin-top: 3rem;
+  }
+
+  .radio-label {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .form-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup-form {
+    width: 100%;
+  }
+
+  .individual-form {
+    margin-top: 2rem;
+  }
+
+  .bottom-input {
+    max-height: 4rem; /* Mantém os inputs alinhados horizontalmente */
+  }
+
+  .radio-group {
+    flex-direction: column;
+  }
+
+  .radio-label {
+    margin-top: 1rem;
+  }
+}
