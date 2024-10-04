@@ -7,6 +7,8 @@ import { BotaoCartaoComponent } from './meio-pagamento/botao-cartao/botao-cartao
 import { BotaoPixComponent } from './meio-pagamento/botao-pix/botao-pix.component';
 import { CartaoModule } from './cartao/cartao.module';
 import { PagamentoRoutingModule } from './pagamento-routing.module';
+import { MatButtonModule } from '@angular/material/button';
+import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
 
 
 
@@ -21,7 +23,9 @@ import { PagamentoRoutingModule } from './pagamento-routing.module';
     NavbarCadastroModule,
     EscolherPagamentoButtonModule,
     CartaoModule,
-    PagamentoRoutingModule
+    PagamentoRoutingModule,
+    EnterButtonModule,
+    MatButtonModule,
   ]
 })
 export class PagamentoModule { }

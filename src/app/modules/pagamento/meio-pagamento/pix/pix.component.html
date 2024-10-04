@@ -1,1 +1,35 @@
-<app-escolher-pagamento-button  [textButton]="textButton" [cardLogos]="cardLogos" [redireciona]="redireciona"></app-escolher-pagamento-button>
+<main class="container">
+  <div class="mainContent">
+    <a href="/auth/cadastro/pagamento">
+      <p><i class="fa-regular fa-arrow-left"></i></p>
+    </a>
+    <p class="step-text">PASSO 4 DE 4</p>
+    <h1 class="welcome-text">
+      Siga as instruções abaixo para concluir o processo de assinatura
+    </h1>
+    <span class="logos logos-block">
+      Utilize o QR Code abaixo para escanear e efetuar o pagamento. Ou, se
+      preferir, copie a chave Pix e realize a transferência manualmente.
+    </span>
+    <div class="qrcode-img">
+      <img
+        class="watch-img"
+        src="../../../../../assets/Watch.png"
+        alt="Cronômetro"
+      />
+      <div class="qrcode-div">
+        <span class="qrcode-text"> Este QR code expira em 30 minutos. </span>
+        <span class="logos logos-block">
+          Ao realizar o pagamento você será informado por e-mail.
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Arrumar módulos para funcionar as tags abaixo  -->
+
+  <!-- <app-infos-pagamento-cartao [textSpan]="textSpan"></app-infos-pagamento-cartao> -->
+  <!-- <button mat-raised-button class="enter-button">{{ textButton }}</button> -->
+
+</main>

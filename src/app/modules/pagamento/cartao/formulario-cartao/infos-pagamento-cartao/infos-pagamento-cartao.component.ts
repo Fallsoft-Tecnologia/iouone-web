@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-infos-pagamento-cartao',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./infos-pagamento-cartao.component.css']
 })
 export class InfosPagamentoCartaoComponent {
+
+  @Input() textSpan: string = '';
 
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MeioPagamentoComponent } from './meio-pagamento/meio-pagamento.component';
 import { CartaoComponent } from './cartao/cartao.component';
+import { PixComponent } from './meio-pagamento/pix/pix.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'cartao',
     component: CartaoComponent
+  },
+  {
+    path: 'pix',
+    component: PixComponent
   }
 ];
 
