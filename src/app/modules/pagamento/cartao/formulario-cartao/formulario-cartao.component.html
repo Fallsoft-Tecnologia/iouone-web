@@ -1,0 +1,39 @@
+<form class="card-form">
+    <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Número do cartão</mat-label>
+        <input matInput placeholder="Número do cartão">
+        <span matSuffix>
+            <i class="fa-solid fa-credit-card form-icon"></i>
+        </span>
+    </mat-form-field>
+    <div class="separador">
+        <mat-form-field class="form-field-half" appearance="outline">
+            <mat-label>Data de validade</mat-label>
+            <input matInput placeholder="Data de validade" type="date">
+        </mat-form-field>
+        <mat-form-field class="form-field-half" appearance="outline">
+            <mat-label>CVV</mat-label>
+            <input matInput placeholder="CVV" type="text">
+            <span matSuffix>
+                <i class="fa-solid fa-circle-question form-icon"></i>
+            </span>
+        </mat-form-field>
+    </div>
+    <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Nome no cartão</mat-label>
+        <input matInput placeholder="Nome no cartão" type="text">
+    </mat-form-field>
+
+    <section class="forma-pagamento">
+        <label id="radio-pagamento-label" class="radio-pagamento-label">Escolha sua forma de pagamento
+            preferida:</label>
+        <mat-radio-group aria-labelledby="radio-pagamento-label" class="radio-pagamento-group">
+            <mat-radio-button class="radio-pagamento-button" value="credito">Crédito</mat-radio-button>
+            <mat-radio-button class="radio-pagamento-button" value="debito">Débito</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+    <app-infos-pagamento-cartao></app-infos-pagamento-cartao>
+
+    <button mat-raised-button class="enter-button">{{textButton}}</button>
+</form>

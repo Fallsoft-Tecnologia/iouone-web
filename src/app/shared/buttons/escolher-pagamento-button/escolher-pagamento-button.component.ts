@@ -15,7 +15,7 @@ export class EscolherPagamentoButtonComponent {
   constructor(private router: Router) {}
 
   redirectToCards(): void {
-    this.router.navigate(['/cartoes']);
+    this.router.navigate([this.redireciona]);
   }
 
 }

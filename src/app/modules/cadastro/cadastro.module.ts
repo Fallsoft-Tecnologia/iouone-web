@@ -8,12 +8,13 @@ import {MatSelectModule} from '@angular/material/select';
 import { DadosDoClienteComponent } from './dados-do-cliente/dados-do-cliente.component';
 import { DadosCorporalComponent } from './dados-corporal/dados-corporal.component';
 import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { CadastroRoutingModule } from './cadastro-routing.module';
+import { CadastroRouterComponent } from './cadastro-router/cadastro-router.component';
 
 
 
 @NgModule({
-  declarations: [CadastroComponent, DadosDoClienteComponent, DadosCorporalComponent],
+  declarations: [CadastroComponent, DadosDoClienteComponent, DadosCorporalComponent, CadastroRouterComponent],
   imports: [
     CommonModule,
     NavbarCadastroModule,
@@ -21,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     EnterButtonModule,
     MatSelectModule,
-    ReactiveFormsModule
+    CadastroRoutingModule
   ]
 })
 export class CadastroModule { }

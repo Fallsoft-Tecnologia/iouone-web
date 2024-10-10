@@ -1,15 +1,12 @@
-<app-navbar-cadastro></app-navbar-cadastro>
 
 <main class="container">
-  <a href="/cadastro">
-    <p><i class="fa-regular fa-arrow-left"></i></p>
-  </a>
-  <p class="step-text">PASSO 2 DE 4</p>
-  <h1 class="welcome-text">Comece a configurar sua conta</h1>
-  <p class="instruction-text">Vamos personalizar sua experiência!</p>
-  <p class="instruction-text-text">
-    Preencha seus dados para nos ajudar a criar um programa perfeito para você.
-  </p>
+    <a href="/auth/cadastro">
+        <p><i class="fa-regular fa-arrow-left"></i></p>
+    </a>
+    <p class="step-text">PASSO 2 DE 4</p>
+    <h1 class="welcome-text">Comece a configurar sua conta</h1>
+    <p class="instruction-text">Vamos personalizar sua experiência!</p>
+    <p class="instruction-text-text">Preencha seus dados para nos ajudar a criar um programa perfeito para você.</p>
 
   <form class="signup-form" (submit)="salvaInfoCliente()">
     <mat-form-field class="form-field" appearance="outline">
