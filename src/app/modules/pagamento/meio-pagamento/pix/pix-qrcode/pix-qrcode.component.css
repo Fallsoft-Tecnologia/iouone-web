@@ -1,0 +1,81 @@
+.pix-content {
+  margin: 12px 0;}
+
+.qrcode-content {
+  width: 100%;
+  height: 250px;
+  background-color: var(--Rosa-claro);
+  padding: 14px 0;
+  position: relative;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.logos-block {
+  display: inline-block;
+}
+
+.logos {
+  position: relative;
+}
+
+.watch-img {
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.qrcode-info {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.qrcode-div {
+  margin-left: 1rem;
+}
+
+.qrcode-text {
+  font-weight: bold;
+}
+
+img.logoIcon {
+  background-image: none;
+  width: auto;
+}
+
+.logos .logoIcon {
+  float: left;
+  height: 18px;
+  margin: 1px 6px 1px 0;
+  width: auto;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.image-qrcode {
+  background-color: var(--Branco);
+  height: 150px;
+  width: 150px;
+}
+
+.image-qrcode img {
+  height: 100%;
+}
+
+.enter-button {
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    box-shadow: none;
+    margin-top: 12px;
+  }
+
+  .mat-mdc-raised-button.mat-unthemed {
+    --mdc-protected-button-container-color: var(--Rosa-pink);
+    --mdc-protected-button-label-text-color: #fff;
+}

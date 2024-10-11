@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class FormularioCartaoComponent {
 
   textButton: string = "Iniciar Assinatura";
-
+  textSpan: string = "Cartões que suportam transações de débito e de crédito poderão ser processados de ambas as formas."
 }

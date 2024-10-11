@@ -1,1 +1,34 @@
-<app-escolher-pagamento-button  [textButton]="textButton" [cardLogos]="cardLogos" [redireciona]="redireciona"></app-escolher-pagamento-button>
+<main class="container">
+  <div class="mainContent">
+    <a href="/auth/cadastro/pagamento">
+      <p><i class="fa-regular fa-arrow-left"></i></p>
+    </a>
+    <p class="step-text">PASSO 4 DE 4</p>
+    <h1 class="welcome-text">
+      Siga as instruções abaixo para concluir o processo de assinatura
+    </h1>
+    <span class="logos logos-block">
+      Utilize o QR Code abaixo para escanear e efetuar o pagamento. Ou, se
+      preferir, copie a chave Pix e realize a transferência manualmente.
+    </span>
+    
+    <app-pix-qrcode></app-pix-qrcode>
+    
+
+    <section class="valor-assinatura-content">
+      <span class="valor-assinatura-text">R$ 00,00/mês</span>
+    </section>
+  
+    <section class="info-pagamento">
+        <article class="info-pagamento-assinatura">
+            <span class="info-pagamento-text">{{ textSpan }}</span>
+        </article>
+        <article class="info-pagamento-assinatura">
+            <span class="info-pagamento-text">Ao clicar no botão “Iniciar assinatura” abaixo, você concorda com nossos <a href="https://help.netflix.com/legal/termsofuse">Termos de Uso</a> e com nossa <a href="https://help.netflix.com/legal/privacy">Declaração de Privacidade</a>, confirma ter mais de 18 anos e aceita que a IouOne renove automaticamente sua assinatura e cobre o preço da assinatura (atualmente R$ 00,00/mês) da sua forma de pagamento até você cancelar. Você pode cancelar quando quiser para evitar cobranças futuras. Para cancelar, acesse a página “Conta” e clique em “Cancelar assinatura”.</span>
+        </article>
+        <article class="info-pagamento-assinatura">
+            <span class="info-pagamento-text">Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a href="https://help.netflix.com/legal/termsofuse">Saiba mais</a></span>
+        </article>
+    </section>
+  </div>
+</main>

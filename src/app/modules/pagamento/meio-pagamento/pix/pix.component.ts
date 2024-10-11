@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pix.component.css']
 })
 export class PixComponent {
-
-  textButton: string = 'Pix';
-  cardLogos: string[] = ['/assets/images/pix.png'];
+  textSpan: string = "Após efetuar o pagamento via Pix, sua assinatura será ativada automaticamente. Certifique-se de concluir a transação antes do prazo de vencimento."
   redireciona: string = '';
 
 }
