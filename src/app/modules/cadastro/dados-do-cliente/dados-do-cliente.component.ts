@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class DadosDoClienteComponent {
 
   textButton: string = "Próximo";
-  redireciona: string = "/auth/cadastro/dados-corporal";
+  redireciona: string = "/auth/cadastro/endereco";
 
 }
