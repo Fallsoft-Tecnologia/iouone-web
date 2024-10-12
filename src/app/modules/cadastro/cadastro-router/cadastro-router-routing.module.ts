@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../dados-do-cliente/dados-do-cliente.module').then(m => m.DadosDoClienteModule)
       },
       {
+        path: 'endereco',
+        loadChildren: () => import('../dados-endereco/dados-endereco.module').then(m => m.DadosEnderecoModule)
+      },
+      {
         path: 'dados-corporal',
         loadChildren: () => import('../dados-corporal/dados-corporal.module').then(m => m.DadosCorporalModule)
       },

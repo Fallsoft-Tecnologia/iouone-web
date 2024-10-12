@@ -1,0 +1,44 @@
+
+<main class="container">
+    <a href="/auth/cadastro/dados">
+        <p><i class="fa-regular fa-arrow-left"></i></p>
+    </a>
+    <p class="step-text">PASSO 3 DE 5</p>
+    <h1 class="welcome-text">Agora, informe seu endereço</h1>
+    <p class="instruction-text">Precisamos do seu endereço para personalizar ainda mais sua experiência!</p>
+    <p class="instruction-text-text">Preencha as informações abaixo para que possamos concluir esta etapa.</p>
+
+    <form class="signup-form">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>CEP</mat-label>
+            <input matInput placeholder="12345-678" type="text" required pattern="^\d{5}-\d{3}$">
+            <mat-error>Formato: XXXXX-XXX</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Endereço (Rua, Número, Complemento)</mat-label>
+            <input matInput placeholder="Rua, número, complemento" type="text" required>
+        </mat-form-field>
+    
+        <div class="separador">
+            <mat-form-field class="form-field-half" appearance="outline">
+                <mat-label>Cidade</mat-label>
+                <input matInput placeholder="Digite sua cidade" type="text" required>
+            </mat-form-field>
+    
+            <mat-form-field class="form-field-half" appearance="outline">
+                <mat-label>Estado</mat-label>
+                <input matInput placeholder="SP" type="text" required pattern="^[A-Z]{2}$">
+                <mat-error>Formato: Ex. SP</mat-error>
+            </mat-form-field>
+        </div>
+    
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>País</mat-label>
+            <input matInput placeholder="BR" type="text" required pattern="^BR$">
+            <mat-error>Formato: BR</mat-error>
+        </mat-form-field>
+    
+        <app-enter-button [textButton]="textButton" [redireciona]="redireciona"></app-enter-button>
+    </form>
+</main>
