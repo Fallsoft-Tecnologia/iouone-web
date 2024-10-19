@@ -1,25 +1,34 @@
 .nav-content {
     background-color: var(--Rosa-claro);
     border-bottom: 1px solid var(--Cinza-claro);
-    height: 90px;
+    height: 64px;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.nav-items {
     display: flex;
     align-items: center;
+    width: 100%;
     justify-content: center;
 }
 
-.nav-itens {
-    padding: 0 2rem 0 6.25rem;
-    font-size: 20px;
-}
-
 .logo-image {
-    height: 75px;
-    cursor: pointer;
+    height: 40px;
+    margin-right: 16px;
 }
 
 .profile-button {
-    font-weight: bold;
-    color: var(--Preto);
+    font-size: 24px;
+    color: var(--Cinza);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.profile-button:hover {
+    color: var(--Cinza-ativado); /* Efeito ao passar o mouse */
 }
 
 .example-spacer {
