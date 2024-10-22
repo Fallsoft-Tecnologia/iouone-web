@@ -1,24 +1,27 @@
-    
-
 <main class="container">
     <a href="/auth/login">
-        <p><i class="fa-regular fa-arrow-left"></i></p>
+      <p><i class="fa-regular fa-arrow-left"></i></p>
     </a>
+  
     <p class="step-text">PASSO 1 DE 5</p>
     <h1 class="welcome-text">Bem vinda!</h1>
     <h2 class="easy-signup">É fácil assinar a IouOne.</h2>
     <p class="instruction-text">Informe seu E-mail e senha para começar na plataforma.</p>
-
-    <form class="signup-form">
-        <mat-form-field class="form-field" appearance="outline">
-            <mat-label>E-mail</mat-label>
-            <input matInput placeholder="Digite seu e-mail">
-        </mat-form-field>
-        <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Senha</mat-label>
-            <input matInput placeholder="Digite sua senha" type="password">
-        </mat-form-field>
-
-        <app-enter-button [textButton]="textButton" [redireciona]="redireciona"></app-enter-button>
+  
+    <form [formGroup]="signupForm" class="signup-form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" placeholder="Digite seu e-mail">
+        <mat-error *ngIf="signupForm.get('email')?.invalid">{{ getEmailErrorMessage() }}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="password" placeholder="Digite sua senha" type="password">
+        <mat-error *ngIf="signupForm.get('password')?.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+      </mat-form-field>
+  
+      <app-enter-button [textButton]="'Enviar'" [buttonType]="'submit'" [isDisabled]="signupForm.invalid || isSubmitting"></app-enter-button>
     </form>
 </main>
+  

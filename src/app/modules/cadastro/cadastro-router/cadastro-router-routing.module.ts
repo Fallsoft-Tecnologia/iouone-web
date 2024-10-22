@@ -8,7 +8,7 @@ const routes: Routes = [
     component: CadastroRouterComponent,
     children: [
       {
-        path: '',
+        path: 'cadastro',
         loadChildren: () => import('../cadastro.module').then(m => m.CadastroModule)
       },
       {
