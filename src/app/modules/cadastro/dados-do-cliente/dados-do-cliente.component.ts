@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DadosDoCliente } from 'src/app/shared/models/DadosDoCliente';
+import { DadosDoCliente } from 'src/app/shared/models/DadosCliente';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
 
 @Component({

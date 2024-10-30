@@ -28,7 +28,7 @@
 
 .instruction-text {
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .signup-form {
@@ -36,7 +36,7 @@
 }
 
 mat-error {
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .form-field {

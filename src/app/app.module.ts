@@ -36,6 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { EnterButtonModule } from './shared/components/buttons/enter-button/enter-button.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { EnterButtonModule } from './shared/components/buttons/enter-button/ente
     MatSelectModule,
     MatOptionModule,
     MatRadioModule,
-    EnterButtonModule
+    EnterButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

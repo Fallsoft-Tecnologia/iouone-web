@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CadastroLogin } from '../models/CadastroLogin';
-import { DadosDoCliente } from '../models/DadosDoCliente';
+import { DadosDoCliente } from '../models/DadosCliente';
 
 @Injectable({
   providedIn: 'root'

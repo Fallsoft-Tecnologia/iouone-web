@@ -7,7 +7,7 @@
     text-align: left;
 }
 
-.fa-arrow-left{
+.fa-arrow-left {
     margin-bottom: 6px;
 }
 
@@ -18,26 +18,25 @@
 
 .welcome-text {
     font-size: 24px;
-    margin-bottom: 0px;
-}
-
-.easy-signup {
-    font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .instruction-text {
     font-size: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .instruction-text-text {
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .signup-form {
     width: 100%;
+}
+
+.form-field, .form-field-half {
+    padding: 6px 0;
 }
 
 .form-field {
@@ -50,18 +49,21 @@
     margin-right: 10px;
 }
 
+mat-error {
+    font-size: 11px;
+}
+
 mat-form-field {
     width: 100%;
 }
+
 .separador {
     display: flex;
     justify-content: space-between;
-    /* Distribui o espaço entre os elementos */
 }
 
 .form-field-half:last-child {
     margin-right: 0;
-    /* Remove o espaço à direita do último campo */
 }
 
 @media (max-width: 500px) {
@@ -71,8 +73,16 @@ mat-form-field {
 
     .step-text,
     .welcome-text,
-    .easy-signup,
     .instruction-text {
         text-align: center;
+    }
+
+    .separador {
+        flex-direction: column;
+    }
+
+    .form-field-half {
+        width: 100%;
+        padding: 6px 0;
     }
 }

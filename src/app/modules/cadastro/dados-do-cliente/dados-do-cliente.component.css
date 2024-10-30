@@ -21,9 +21,9 @@
     margin-bottom: 0px;
 }
 
-.instruction-text, .instruction-text-text {
+.instruction-text-text {
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 mat-error {
