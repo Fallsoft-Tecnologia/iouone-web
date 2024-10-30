@@ -13,13 +13,13 @@ import { DadosDoClienteModule } from './dados-do-cliente/dados-do-cliente.module
 import { DadosEnderecoModule } from './dados-endereco/dados-endereco.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DadosCorporalModule } from './dados-corporal/dados-corporal.module';
 
 
 
 @NgModule({
   declarations: [
     CadastroComponent, 
-    DadosCorporalComponent, 
     CadastroRouterComponent
   ],
   imports: [
@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroRoutingModule,
     DadosDoClienteModule,
     DadosEnderecoModule,
+    DadosCorporalModule,
     HttpClientModule,
     ReactiveFormsModule,
   ]

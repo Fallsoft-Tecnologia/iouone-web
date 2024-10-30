@@ -4,6 +4,7 @@ import { DadosEndereco } from 'src/app/shared/models/DadosEndereco';
 import { CepService } from 'src/app/shared/services/CepService';
 import { catchError, of } from 'rxjs';
 import { Endereco } from 'src/app/shared/models/Endereco';
+import { CadastroService } from 'src/app/shared/services/CadastroService';
 
 @Component({
   selector: 'app-dados-endereco',
@@ -47,7 +48,7 @@ export class DadosEnderecoComponent {
     { nome: 'Tocantins', sigla: 'TO' }
   ];
 
-  constructor(private fb: FormBuilder, private cepService: CepService) {
+  constructor(private fb: FormBuilder, private cepService: CepService, private cadastroService: CadastroService) {
     this.dadosForm = this.fb.group({
       cep: ['', [Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)]],
       endereco: ['', Validators.required],
@@ -159,6 +160,8 @@ export class DadosEnderecoComponent {
   }
 
   onSubmit() {
+    this.isSubmitting = true;
+
     if (this.dadosForm.valid) {
       const dadosEndereco: DadosEndereco = {
         cep: this.dadosForm.get('cep')?.value.replace(/-/g, ''),
@@ -168,7 +171,19 @@ export class DadosEnderecoComponent {
         pais: this.dadosForm.get('pais')?.value,
       };
 
-      console.log('Dados enviados:', dadosEndereco);
+      this.cadastroService.cadastrarDadosEndereco(dadosEndereco).subscribe({
+        next: (response) => {
+          console.log('Dados de endereço enviados com sucesso:', response);
+          this.isSubmitting = false;
+        },
+        error: (error) => {
+          console.error('Erro ao enviar dados de endereço:', error);
+          this.isSubmitting = false;
+        }
+      });
+    } else {
+      console.warn('Formulário de endereço inválido.');
+      this.isSubmitting = false;
     }
   }
 }
