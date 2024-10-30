@@ -12,7 +12,6 @@ import { CadastroRouterComponent } from './cadastro-router/cadastro-router.compo
 import { DadosDoClienteModule } from './dados-do-cliente/dados-do-cliente.module';
 import { DadosEnderecoModule } from './dados-endereco/dados-endereco.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -34,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     DadosDoClienteModule,
     DadosEnderecoModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class CadastroModule { }

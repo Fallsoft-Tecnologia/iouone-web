@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-button/enter-button.module';
 import { NavbarCadastroModule } from 'src/app/shared/components/navbar-cadastro/navbar-cadastro.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,10 @@ import { NavbarCadastroModule } from 'src/app/shared/components/navbar-cadastro/
     MatFormFieldModule,
     MatInputModule,
     EnterButtonModule,
+    ReactiveFormsModule 
+  ],
+  exports: [
+    DadosDoClienteComponent
   ]
 })
 export class DadosDoClienteModule { }

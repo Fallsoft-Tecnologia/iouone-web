@@ -7,6 +7,10 @@
     text-align: left;
 }
 
+.fa-arrow-left{
+    margin-bottom: 6px;
+}
+
 .step-text {
     font-size: 12px;
     margin-bottom: 10px;
@@ -29,6 +33,10 @@
 
 .signup-form {
     width: 100%;
+}
+
+mat-error {
+    font-size: 10px;
 }
 
 .form-field {

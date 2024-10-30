@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CadastroLogin } from 'src/app/shared/models/CadastroLogin';
-import { AuthService } from 'src/app/shared/services/AuthService';
+import { CadastroService } from 'src/app/shared/services/CadastroService';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,21 +15,22 @@ export class CadastroComponent {
   redireciona: string = "/auth/cadastro/dados";
   isSubmitting: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private fb: FormBuilder, private authService: CadastroService, private router: Router) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
+      cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  // Método para envio do formulário
   onSubmit() {
     if (this.signupForm.valid) {
       this.isSubmitting = true;
 
       const credentials: CadastroLogin = {
         email: this.signupForm.get('email')?.value,
-        password: this.signupForm.get('password')?.value
+        password: this.signupForm.get('password')?.value,
+        cpf: this.signupForm.get('cpf')?.value
       };
 
       this.authService.cadastroLogin(credentials).subscribe({
@@ -48,6 +48,22 @@ export class CadastroComponent {
     }
   }
 
+  formatCpf(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let value = input.value.replace(/\D/g, '');
+
+    if (value.length > 3 && value.length <= 6) {
+      value = `${value.slice(0, 3)}.${value.slice(3)}`;
+    } else if (value.length > 6 && value.length <= 9) {
+      value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6)}`;
+    } else if (value.length > 9) {
+      value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6, 9)}-${value.slice(9, 11)}`;
+    }
+
+    input.value = value;
+    this.signupForm.get('cpf')?.setValue(value);
+  }
+
   getEmailErrorMessage() {
     if (this.signupForm.get('email')?.hasError('required')) {
       return 'Você deve inserir um e-mail';
@@ -60,5 +76,12 @@ export class CadastroComponent {
       return 'Você deve inserir uma senha';
     }
     return this.signupForm.get('password')?.hasError('minlength') ? 'A senha deve ter no mínimo 6 caracteres' : '';
+  }
+
+  getCpfErrorMessage() {
+    if (this.signupForm.get('cpf')?.hasError('required')) {
+      return 'Você deve inserir um CPF';
+    }
+    return this.signupForm.get('cpf')?.hasError('pattern') ? 'CPF inválido' : '';
   }
 }
