@@ -7,6 +7,7 @@ import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-butto
 import { NavbarCadastroModule } from 'src/app/shared/components/navbar-cadastro/navbar-cadastro.module';
 import { DadosEnderecoRoutingModule } from './dados-endereco-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarCadastroModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     EnterButtonModule,
     ReactiveFormsModule
   ],

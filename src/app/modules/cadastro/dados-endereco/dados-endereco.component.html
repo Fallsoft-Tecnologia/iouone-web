@@ -29,9 +29,13 @@
             </mat-form-field>
     
             <mat-form-field class="form-field-half" appearance="outline">
-                <mat-label>Estado</mat-label>
-                <input matInput formControlName="estado" />
-                <mat-error *ngIf="dadosForm.get('estado')?.invalid">{{ estadoErrorMessage }}</mat-error>
+              <mat-label>Estado</mat-label>
+              <mat-select formControlName="estado">
+                <mat-option *ngFor="let estado of estadosBrasileiros" [value]="estado.sigla">
+                  {{ estado.nome }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="dadosForm.get('estado')?.invalid">{{ estadoErrorMessage }}</mat-error>
             </mat-form-field>
         </div>
       
