@@ -1,26 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { LoginComponent } from './modules/login/login.component';
-// import { CadastroComponent } from './modules/cadastro/cadastro.component';
-// import { DadosDoClienteComponent } from './modules/cadastro/dados-do-cliente/dados-do-cliente.component';
-// import { DadosCorporalComponent } from './modules/cadastro/dados-corporal/dados-corporal.component';
-// import { MeioPagamentoComponent } from './modules/pagamento/meio-pagamento/meio-pagamento.component';
-// import { NavbarComponent } from './shared/navbar/navbar.component';
-// import { NutricionistaComponent } from './modules/views/nutricionista/nutricionista.component';
-// import { AppComponent } from './app.component';
-// import { DietasComponent } from './modules/views/dietas/dietas.component';
-// import { TreinoComponent } from './modules/views/treino/treino.component';
-// import { ExerciciosComponent } from './modules/views/exercicios/exercicios.component';
-// import { FitComponent } from './modules/views/fit/fit.component';
-// import { ChasComponent } from './modules/views/chas/chas.component';
-// import { CardapioComponent } from './modules/views/cardapio/cardapio.component';
-// import { CalculadoraComponent } from './modules/views/calculadora/calculadora.component';
-// import { MarmitaComponent } from './modules/views/marmita/marmita.component';
-// import { DetoxComponent } from './modules/views/detox/detox.component';
-// import { ProjetoComponent } from './modules/views/projeto/projeto.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { AdminComponent } from './layouts/admin/admin.component';
-import { CadastroRouterComponent } from './modules/cadastro/cadastro-router/cadastro-router.component';
 
 const routes: Routes = [
   {
@@ -29,7 +10,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'auth',
+    path: '',
     component: AuthComponent,
     children: [
       {
@@ -47,7 +28,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     children: [
       {

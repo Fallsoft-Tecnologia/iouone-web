@@ -7,6 +7,10 @@
     text-align: left;
 }
 
+.fa-arrow-left{
+    margin-bottom: 14px;
+}
+
 .step-text {
     font-size: 12px;
     margin-bottom: 10px;
@@ -24,15 +28,20 @@
 
 .instruction-text {
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .signup-form {
     width: 100%;
 }
 
+mat-error {
+    font-size: 11px;
+}
+
 .form-field {
     width: 100%;
+    padding: 6px 0;
 }
 
 mat-form-field {

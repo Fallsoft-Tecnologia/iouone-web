@@ -8,12 +8,12 @@ import { LoginModule } from './modules/login/login.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CadastroModule } from './modules/cadastro/cadastro.module';
 import { PagamentoModule } from './modules/pagamento/pagamento.module';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NutricionistaComponent } from './modules/views/nutricionista/nutricionista.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { DietasComponent } from './modules/views/dietas/dietas.component';
 import { TreinoComponent } from './modules/views/treino/treino.component';
 import { ExerciciosComponent } from './modules/views/exercicios/exercicios.component';
@@ -22,7 +22,7 @@ import { CardapioComponent } from './modules/views/cardapio/cardapio.component';
 import { CalculadoraComponent } from './modules/views/calculadora/calculadora.component';
 import { MarmitaComponent } from './modules/views/marmita/marmita.component';
 import { DetoxComponent } from './modules/views/detox/detox.component';
-import { CardComponent } from './shared/card/card.component';
+import { CardComponent } from './shared/components/card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ChasComponent } from './modules/views/chas/chas.component';
@@ -35,7 +35,8 @@ import { CadastroRouterModule } from './modules/cadastro/cadastro-router/cadastr
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
-import { EnterButtonModule } from './shared/buttons/enter-button/enter-button.module';
+import { EnterButtonModule } from './shared/components/buttons/enter-button/enter-button.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { EnterButtonModule } from './shared/buttons/enter-button/enter-button.mo
     MatSelectModule,
     MatOptionModule,
     MatRadioModule,
-    EnterButtonModule
+    EnterButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

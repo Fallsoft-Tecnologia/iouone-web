@@ -8,7 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
+import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-button/enter-button.module';
 import { LoginRoutingModule } from './login-routing.module';
 
 
