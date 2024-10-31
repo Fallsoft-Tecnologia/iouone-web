@@ -8,12 +8,12 @@ import { LoginModule } from './modules/login/login.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CadastroModule } from './modules/cadastro/cadastro.module';
 import { PagamentoModule } from './modules/pagamento/pagamento.module';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NutricionistaComponent } from './modules/views/nutricionista/nutricionista.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { DietasComponent } from './modules/views/dietas/dietas.component';
 import { TreinoComponent } from './modules/views/treino/treino.component';
 import { ExerciciosComponent } from './modules/views/exercicios/exercicios.component';

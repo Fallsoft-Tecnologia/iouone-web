@@ -18,19 +18,20 @@
   
       <div class="separador">
         <mat-form-field class="form-field-half" appearance="outline">
-            <mat-label>Data de nascimento</mat-label>
-            <input
-              matInput
-              formControlName="dataNascimento"
-              placeholder="Data de nascimento"
-              (focus)="isDateFocused = true"
-              (blur)="isDateFocused = false"
-              [attr.type]="isDateFocused || dadosForm.get('dataNascimento')?.value ? 'date' : 'text'"
-              [value]="dadosForm.get('dataNascimento')?.value"
-            />
-            <mat-error *ngIf="dadosForm.get('dataNascimento')?.invalid && (dadosForm.get('dataNascimento')?.touched || dadosForm.get('dataNascimento')?.dirty)">
-              <span *ngIf="dadosForm.get('dataNascimento')?.errors?.['required']">Data de nascimento é obrigatória.</span>
-            </mat-error>
+          <mat-label>Data de nascimento</mat-label>
+          <input 
+            matInput 
+            formControlName="dataNascimento" 
+            placeholder="DD/MM/AAAA" 
+            maxlength="10" 
+            type="text" 
+            (input)="formatBirthDate($event)">
+          <mat-error 
+            *ngIf="dadosForm.get('dataNascimento')?.invalid && (dadosForm.get('dataNascimento')?.touched || dadosForm.get('dataNascimento')?.dirty)">
+            <span *ngIf="dadosForm.get('dataNascimento')?.errors?.['required']">
+              Data de nascimento é obrigatória.
+            </span>
+          </mat-error>
         </mat-form-field>
   
         <mat-form-field class="form-field-half" appearance="outline">

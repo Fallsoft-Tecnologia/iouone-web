@@ -12,7 +12,7 @@ import { CadastroService } from 'src/app/shared/services/CadastroService';
   styleUrls: ['./dados-endereco.component.css']
 })
 export class DadosEnderecoComponent {
-  
+
   dadosForm: FormGroup;
   textButton: string = "Próximo";
   redireciona: string = "/auth/cadastro/dados-corporal";
@@ -48,31 +48,30 @@ export class DadosEnderecoComponent {
     { nome: 'Tocantins', sigla: 'TO' }
   ];
 
-  constructor(private fb: FormBuilder, private cepService: CepService, private cadastroService: CadastroService) {
+  constructor(
+    private fb: FormBuilder,
+    private cepService: CepService,
+    private cadastroService: CadastroService
+  ) {
     this.dadosForm = this.fb.group({
       cep: ['', [Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)]],
       endereco: ['', Validators.required],
       cidade: ['', Validators.required],
-      estado: ['', [Validators.required]],
-      pais: ['', [Validators.required]]
+      estado: ['', Validators.required],
+      pais: ['Brasil', Validators.required]
     });
   }
 
   onCepInput() {
     const cep = this.dadosForm.get('cep')?.value.replace(/\D/g, '');
-    
+
     this.formatCep({ target: { value: cep } });
-  
+
     if (cep.length === 8) {
       this.cepService.getAddressByCep(cep).subscribe({
         next: (address) => {
           if (address && !address.erro) {
-            this.dadosForm.patchValue({
-              endereco: address.logradouro,
-              cidade: address.localidade,
-              estado: address.uf,
-              pais: 'Brasil'
-            });
+            this.setAddressFields(address);
           } else {
             console.error('Endereço não encontrado para o CEP fornecido.');
             this.resetAddressFields();
@@ -88,6 +87,15 @@ export class DadosEnderecoComponent {
     }
   }
 
+  setAddressFields(address: Endereco) {
+    this.dadosForm.patchValue({
+      endereco: address.logradouro,
+      cidade: address.localidade,
+      estado: address.uf,
+      pais: 'Brasil'
+    });
+  }
+
   resetAddressFields() {
     this.dadosForm.patchValue({
       endereco: '',
@@ -100,37 +108,12 @@ export class DadosEnderecoComponent {
   formatCep(event: any) {
     const input = event.target.value.replace(/\D/g, '');
     let formattedCep = input;
-  
+
     if (input.length > 5) {
       formattedCep = input.replace(/(\d{5})(\d)/, '$1-$2');
     }
-  
+
     this.dadosForm.get('cep')?.setValue(formattedCep);
-  }
-  
-  fetchAddress(cep: string) {
-    this.cepService.getAddressByCep(cep).pipe(
-      catchError(err => {
-        console.error('Erro ao buscar endereço:', err);
-        return of(null);
-      })
-    ).subscribe((address: Endereco | null) => {
-      if (address && !address.erro) {
-        this.dadosForm.patchValue({
-          endereco: address.logradouro,
-          cidade: address.localidade,
-          estado: address.uf,
-          pais: 'Brasil'
-        });
-      } else {
-        this.dadosForm.patchValue({
-          endereco: '',
-          cidade: '',
-          estado: '',
-          pais: 'Brasil'
-        });
-      }
-    });
   }
 
   get cepErrorMessage(): string {
@@ -149,10 +132,7 @@ export class DadosEnderecoComponent {
   }
 
   get estadoErrorMessage(): string {
-    if (this.dadosForm.get('estado')?.hasError('required')) {
-      return 'O estado é obrigatório.';
-    }
-    return this.dadosForm.get('estado')?.hasError('pattern') ? 'Formato: Ex. SP' : '';
+    return this.dadosForm.get('estado')?.hasError('required') ? 'O estado é obrigatório.' : '';
   }
 
   get paisErrorMessage(): string {
@@ -168,7 +148,7 @@ export class DadosEnderecoComponent {
         endereco: this.dadosForm.get('endereco')?.value,
         cidade: this.dadosForm.get('cidade')?.value,
         estado: this.dadosForm.get('estado')?.value,
-        pais: this.dadosForm.get('pais')?.value,
+        pais: 'BR'
       };
 
       this.cadastroService.cadastrarDadosEndereco(dadosEndereco).subscribe({

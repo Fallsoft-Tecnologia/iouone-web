@@ -9,6 +9,6 @@ export class BotaoPixComponent {
 
   textButton: string = 'Pix';
   cardLogos: string[] = ['/assets/images/pix.png'];
-  redireciona: string = '/auth/cadastro/pagamento/pix';
+  redireciona: string = '/pagamento/pix';
 
 }

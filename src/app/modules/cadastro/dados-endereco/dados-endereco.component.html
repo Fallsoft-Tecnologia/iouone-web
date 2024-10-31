@@ -10,7 +10,7 @@
     <form [formGroup]="dadosForm" class="dados-endereco-form" (ngSubmit)="onSubmit()">
         <mat-form-field class="form-field" appearance="outline">
             <mat-label>CEP</mat-label>
-            <input matInput formControlName="cep" (input)="onCepInput()" maxlength="10" placeholder="XXXXX-XXX" />
+            <input matInput formControlName="cep" (input)="onCepInput()" maxlength="9" placeholder="XXXXX-XXX" />
             <mat-error *ngIf="dadosForm.get('cep')?.invalid">{{ cepErrorMessage }}</mat-error>
           </mat-form-field>
         

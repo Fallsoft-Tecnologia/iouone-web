@@ -38,6 +38,21 @@ export class DadosDoClienteComponent {
     this.dadosForm.get('celular')?.setValue(value);
   }
 
+  formatBirthDate(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    let value = input.value.replace(/\D/g, '');
+  
+    if (value.length > 2 && value.length <= 4) {
+      value = value.replace(/^(\d{2})(\d{0,2})/, '$1/$2');
+    } else if (value.length > 4) {
+      value = value.replace(/^(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
+    }
+  
+    input.value = value;
+    this.dadosForm.get('dataNascimento')?.setValue(value, { emitEvent: false });
+  }
+  
+
   onSubmit() {
     if (this.dadosForm.valid) {
       const dadosCliente: DadosDoCliente = {
