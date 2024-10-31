@@ -1,33 +1,53 @@
-
 <main class="container">
-    <a href="/auth/cadastro">
-        <p><i class="fa-regular fa-arrow-left"></i></p>
+    <a href="/cadastro">
+      <p><i class="fa-regular fa-arrow-left"></i></p>
     </a>
     <p class="step-text">PASSO 2 DE 5</p>
     <h1 class="welcome-text">Comece a configurar sua conta</h1>
     <p class="instruction-text">Vamos personalizar sua experiência!</p>
     <p class="instruction-text-text">Preencha seus dados para nos ajudar a criar um programa perfeito para você.</p>
-
-    <form class="signup-form">
-        <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Nome completo</mat-label>
-            <input matInput placeholder="Nome completo">
+  
+    <form [formGroup]="dadosForm" (ngSubmit)="onSubmit()" class="signup-form">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Nome completo</mat-label>
+        <input matInput formControlName="nomeCompleto" placeholder="Nome completo">
+        <mat-error *ngIf="dadosForm.get('nomeCompleto')?.invalid && (dadosForm.get('nomeCompleto')?.touched || dadosForm.get('nomeCompleto')?.dirty)">
+            <span *ngIf="dadosForm.get('nomeCompleto')?.errors?.['required']">Nome completo é obrigatório.</span>
+        </mat-error>
+      </mat-form-field>
+  
+      <div class="separador">
+        <mat-form-field class="form-field-half" appearance="outline">
+          <mat-label>Data de nascimento</mat-label>
+          <input 
+            matInput 
+            formControlName="dataNascimento" 
+            placeholder="DD/MM/AAAA" 
+            maxlength="10" 
+            type="text" 
+            (input)="formatBirthDate($event)">
+          <mat-error 
+            *ngIf="dadosForm.get('dataNascimento')?.invalid && (dadosForm.get('dataNascimento')?.touched || dadosForm.get('dataNascimento')?.dirty)">
+            <span *ngIf="dadosForm.get('dataNascimento')?.errors?.['required']">
+              Data de nascimento é obrigatória.
+            </span>
+          </mat-error>
         </mat-form-field>
-        <div class="separador">
-            <mat-form-field class="form-field-half" appearance="outline">
-                <mat-label>Data de nascimento</mat-label>
-                <input matInput placeholder="Digite sua senha" type="date">
-            </mat-form-field>
-            <mat-form-field class="form-field-half" appearance="outline">
-                <mat-label>Celular</mat-label>
-                <input matInput placeholder="Digite sua senha" type="text">
-            </mat-form-field>
-        </div>
-        <mat-form-field class="form-field" appearance="outline">
-            <mat-label>CPF</mat-label>
-            <input matInput placeholder="CPF" type="text">
+  
+        <mat-form-field class="form-field-half" appearance="outline">
+          <mat-label>Celular</mat-label>
+          <input matInput formControlName="celular" placeholder="Celular" type="text" maxlength="15" (input)="formatCelular($event)">
+          <mat-error *ngIf="dadosForm.get('celular')?.invalid && (dadosForm.get('celular')?.touched || dadosForm.get('celular')?.dirty)">
+            <span *ngIf="dadosForm.get('celular')?.errors?.['required']">Celular é obrigatório.</span>
+            <span *ngIf="dadosForm.get('celular')?.errors?.['pattern']">Formato de celular inválido.</span>
+          </mat-error>
         </mat-form-field>
-
-        <app-enter-button [textButton]="textButton" [redireciona]="redireciona"></app-enter-button>
+      </div>
+  
+      <app-enter-button
+        [textButton]="'Próximo'"
+        [buttonType]="'submit'"
+        [isDisabled]="dadosForm.invalid || isSubmitting">
+      </app-enter-button>
     </form>
 </main>

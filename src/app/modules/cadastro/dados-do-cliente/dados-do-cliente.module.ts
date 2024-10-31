@@ -5,8 +5,9 @@ import { DadosDoClienteRoutingModule } from './dados-do-cliente-routing.module';
 import { DadosDoClienteComponent } from './dados-do-cliente.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
-import { NavbarCadastroModule } from 'src/app/shared/navbar-cadastro/navbar-cadastro.module';
+import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-button/enter-button.module';
+import { NavbarCadastroModule } from 'src/app/core/navbar-cadastro/navbar-cadastro.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,10 @@ import { NavbarCadastroModule } from 'src/app/shared/navbar-cadastro/navbar-cada
     MatFormFieldModule,
     MatInputModule,
     EnterButtonModule,
+    ReactiveFormsModule 
+  ],
+  exports: [
+    DadosDoClienteComponent
   ]
 })
 export class DadosDoClienteModule { }

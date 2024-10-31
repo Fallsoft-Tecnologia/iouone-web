@@ -1,0 +1,7 @@
+<ng-container *ngIf="isButtonType; else linkTemplate">
+    <button mat-raised-button class="login-button" [type]="buttonType" [disabled]="isDisabled">{{textButton}}</button>
+  </ng-container>
+  
+  <ng-template #linkTemplate>
+    <a mat-raised-button [href]="redireciona" class="login-button">{{textButton}}</a>
+  </ng-template>

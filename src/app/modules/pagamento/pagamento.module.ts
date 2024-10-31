@@ -1,33 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarCadastroModule } from 'src/app/shared/navbar-cadastro/navbar-cadastro.module';
-import { MeioPagamentoComponent } from './meio-pagamento/meio-pagamento.component';
-import { EscolherPagamentoButtonModule } from 'src/app/shared/buttons/escolher-pagamento-button/escolher-pagamento-button.module';
-import { BotaoCartaoComponent } from './meio-pagamento/botao-cartao/botao-cartao.component';
-import { BotaoPixComponent } from './meio-pagamento/botao-pix/botao-pix.component';
 import { CartaoModule } from './cartao/cartao.module';
 import { PagamentoRoutingModule } from './pagamento-routing.module';
-import { MatButtonModule } from '@angular/material/button';
-import { EnterButtonModule } from 'src/app/shared/buttons/enter-button/enter-button.module';
-import { PixModule } from './meio-pagamento/pix/pix.module';
+import { PixModule } from './pix/pix.module';
+import { MeioPagamentoModule } from './meio-pagamento/meio-pagamento.module';
+import { NavbarCadastroModule } from 'src/app/core/navbar-cadastro/navbar-cadastro.module';
 
 
 
 @NgModule({
   declarations: [
-    MeioPagamentoComponent, 
-    BotaoCartaoComponent, 
-    BotaoPixComponent
   ],
   imports: [
     CommonModule,
-    NavbarCadastroModule,
-    EscolherPagamentoButtonModule,
     CartaoModule,
     PixModule,
-    PagamentoRoutingModule,
-    EnterButtonModule,
-    MatButtonModule,
+    MeioPagamentoModule,
+    PagamentoRoutingModule
   ]
 })
 export class PagamentoModule { }

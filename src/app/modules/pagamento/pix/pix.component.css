@@ -1,6 +1,3 @@
-.fa-regular{
-  margin-bottom: 14px;
-}
 .container {
   display: flex;
   flex-direction: column;
@@ -8,6 +5,10 @@
   margin: 0 auto;
   max-width: 440px;
   text-align: left;
+}
+
+.fa-arrow-left{
+  margin-bottom: 14px;
 }
 
 .mainContent {

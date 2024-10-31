@@ -1,51 +1,63 @@
-
-
 <main class="container">
-    <a href="/auth/cadastro/endereco">
+    <a href="/auth/cadastro/endereco" aria-label="Voltar para o cadastro de endereço">
         <p><i class="fa-regular fa-arrow-left"></i></p>
     </a>
     <p class="step-text">PASSO 4 DE 5</p>
     <h1 class="welcome-text">Agora, um pouco mais sobre você</h1>
-    <p class="instruction-text-text">Queremos conhecer seus objetivos e necessidades para oferecer a melhor jornada de
-        emagrecimento possível.</p>
+    <p class="instruction-text-text">
+        Queremos conhecer seus objetivos e necessidades para oferecer a melhor jornada de emagrecimento possível.
+    </p>
 
-    <form class="signup-form">  
+    <form [formGroup]="corporalForm" (ngSubmit)="onSubmit()" class="dados-corporal-form">
         <mat-form-field class="form-field" appearance="outline">
             <mat-label>Informe seu peso ideal em quilogramas</mat-label>
-            <input matInput placeholder="Informe seu peso ideal em quilogramas">
+            <input matInput placeholder="Informe seu peso ideal em quilogramas" formControlName="pesoIdeal">
             <div class="suffix-container">
-              <span class="divider"></span>
-              <span matSuffix>kg</span>
+                <span class="divider"></span>
+                <span matSuffix>kg</span>
             </div>
-
+            <mat-error *ngIf="corporalForm.get('pesoIdeal')?.hasError('required')">
+                Peso ideal é obrigatório.
+            </mat-error>
         </mat-form-field>
+
         <mat-form-field class="form-field" appearance="outline">
             <mat-label>Informe seu nível de atividade física</mat-label>
-            <mat-select>
+            <mat-select formControlName="nivelAtividade">
                 <mat-option value="Nenhum">Nenhum</mat-option>
                 <mat-option value="Baixo">Baixo</mat-option>
                 <mat-option value="Moderado">Moderado</mat-option>
                 <mat-option value="Frequente">Frequente</mat-option>
             </mat-select>
+            <mat-error *ngIf="corporalForm.get('nivelAtividade')?.hasError('required')">
+                Nível de atividade física é obrigatório.
+            </mat-error>
         </mat-form-field>
+
         <mat-form-field class="form-field" appearance="outline">
             <mat-label>Informe sua altura em centímetros</mat-label>
-            <input matInput placeholder="Informe sua altura em centímetros" type="text">
+            <input matInput placeholder="Informe sua altura em centímetros" formControlName="altura">
             <div class="suffix-container-cm">
                 <span class="divider"></span>
                 <span matSuffix>cm</span>
-              </div>
+            </div>
+            <mat-error *ngIf="corporalForm.get('altura')?.hasError('required')">
+                Altura é obrigatória.
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-field" appearance="outline">
             <mat-label>Informe seu peso em quilogramas</mat-label>
-            <input matInput placeholder="Informe seu peso em quilogramas" type="text">
+            <input matInput placeholder="Informe seu peso em quilogramas" formControlName="pesoAtual">
             <div class="suffix-container">
                 <span class="divider"></span>
                 <span matSuffix>kg</span>
-              </div>
+            </div>
+            <mat-error *ngIf="corporalForm.get('pesoAtual')?.hasError('required')">
+                Peso atual é obrigatório.
+            </mat-error>
         </mat-form-field>
 
-        <app-enter-button [textButton]="textButton" [redireciona]="redireciona"></app-enter-button>
+        <app-enter-button [textButton]="textButton" [buttonType]="'submit'" [isDisabled]="corporalForm.invalid"></app-enter-button>
     </form>
 </main>
