@@ -1,9 +1,7 @@
-.sidenav-container {
-}
-
 mat-sidenav {
-  width: 250px;
-  background: #f4f4f4;
+  width: 300px;
+  background: var(--Branco);
+  padding-top: 16px;
 }
 
 mat-sidenav-content {
@@ -11,16 +9,36 @@ mat-sidenav-content {
 }
 
 mat-nav-list button {
+  display: flex;
+  align-items: center;
+  padding: 0px 16px;
   width: 100%;
+  justify-content: flex-start;
   text-align: left;
-  color: #333;
+  color: var(--Cinza);
   font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 mat-list-item {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+}
+
+mat-list-item.active button {
+  background-color: var(--Rosa-pink);
+  color: var(--Branco);
 }
 
 mat-list-item button:hover {
-  background-color: #e0e0e0;
+  background-color: var(--Rosa-claro);
+}
+
+mat-list-item button:active,
+mat-list-item.active button:hover {
+  background-color: var(--Rosa);
+}
+
+mat-list-item.active {
+  font-weight: bold;
 }
