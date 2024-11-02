@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './sidebar.component';
 import { RouterModule } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     MatListModule,
     MatButtonModule,
     MatIconModule,
+    MatToolbarModule,
   ],
   exports: [
     SidebarComponent,

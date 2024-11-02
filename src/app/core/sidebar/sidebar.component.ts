@@ -15,6 +15,7 @@ export class SidebarComponent {
   constructor(private router: Router) {}
 
   navItems = [
+    { title: 'Home', link: '/home', icon: 'fa-solid fa-house' },
     { title: 'Área Nutricionista', link: '/nutricionista', icon: 'fa-solid fa-user-md' },
     { title: 'Dietas atualizadas todo mês', link: '/dietas', icon: 'fa-solid fa-apple-alt' },
     { title: 'Treino atualizado todo mês', link: '/treino', icon: 'fa-solid fa-dumbbell' },
@@ -27,7 +28,6 @@ export class SidebarComponent {
     { title: 'Receita detox', link: '/detox', icon: 'fa-solid fa-leaf' },
     { title: 'Projeto 30 dias', link: '/projeto', icon: 'fa-solid fa-calendar-day' },
   ];
-  
 
   navigate(link: string): void {
     this.router.navigate([link]);

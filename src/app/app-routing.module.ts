@@ -34,8 +34,8 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () =>
-          import('./modules/views/nutricionista/nutricionista.module').then(
-            (m) => m.NutricionistaModule
+          import('./modules/views/home/home.module').then(
+            (m) => m.HomeModule
           ),
       },
       {

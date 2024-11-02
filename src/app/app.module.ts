@@ -28,6 +28,7 @@ import { ViewsModule } from './modules/views/views.module';
 import { AdminModule } from './layouts/admin/admin.module';
 import { CardModule } from './shared/components/card/card.module';
 import { SidebarModule } from './core/sidebar/sidebar.module';
+import { HomeModule } from './modules/views/home/home.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SidebarModule } from './core/sidebar/sidebar.module';
     HttpClientModule,
     SidebarModule,
     ViewsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

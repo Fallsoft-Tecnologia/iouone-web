@@ -1,0 +1,38 @@
+<div class="feed-container">
+    <!-- Área para criar uma nova postagem -->
+    <div class="create-post">
+      <mat-form-field appearance="outline" class="post-input">
+        <textarea matInput placeholder="Escreva algo..." [(ngModel)]="newPostContent"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addPost()">
+        <i class="fas fa-paper-plane"></i> Postar
+      </button>
+    </div>
+  
+    <!-- Lista de postagens -->
+    <div class="post" *ngFor="let post of posts">
+      <div class="post-header">
+        <h3>{{ post.user }}</h3>
+      </div>
+      <p>{{ post.content }}</p>
+  
+      <!-- Seção de comentários -->
+      <div class="comments">
+        <div *ngFor="let comment of post.comments" class="comment">
+          <strong>{{ comment.user }}: </strong>
+          <span>{{ comment.content }}</span>
+        </div>
+      </div>
+  
+      <!-- Adicionar um comentário -->
+      <div class="add-comment">
+        <mat-form-field appearance="outline" class="comment-input">
+          <input matInput placeholder="Comente algo..." [(ngModel)]="post.newCommentContent" /> <!-- Vinculando ao novo campo -->
+        </mat-form-field>
+        <button mat-icon-button color="primary" (click)="addComment(post.id)">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  

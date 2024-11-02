@@ -1,0 +1,81 @@
+.feed-container {
+    max-width: 600px;
+    margin: 12px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--Branco);
+    color: var(--Preto);
+    border-radius: 8px;
+  }
+  
+  .create-post {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+  
+  .post {
+    border: 1px solid var(--Cinza-claro-claro);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--Branco);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-header h3 {
+    color: var(--Rosa-pink);
+    font-weight: 600;
+  }
+  
+  .comments {
+    margin-top: 10px;
+    padding-left: 10px;
+    border-left: 2px solid var(--Cinza-claro);
+  }
+  
+  .comment {
+    margin-top: 5px;
+  }
+
+  .comment strong{
+    color: var(--Rosa);
+  }
+
+  .comment span{
+    color: var(--Cinza);
+  }
+  
+  .add-comment {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .post-input, .comment-input {
+    width: 100%;
+    color: var(--Preto);
+  }
+  
+  .mat-form-field-outline {
+    border-color: var(--Cinza-claro);
+  }
+  
+  button[mat-raised-button] {
+    background-color: var(--Botao-azul);
+    color: var(--Branco);
+  }
+  
+  button[mat-raised-button]:hover {
+    background-color: var(--Azul-ativado);
+  }
+  
+  button[mat-icon-button] {
+    color: var(--Botao-azul);
+  }
+  
+  button[mat-icon-button]:hover {
+    color: var(--Azul-ativado);
+  }

@@ -42,3 +42,8 @@ mat-list-item.active button:hover {
 mat-list-item.active {
   font-weight: bold;
 }
+
+mat-sidenav-content {
+  background: var(--Background-feed);
+  min-height: 100vh;
+}
