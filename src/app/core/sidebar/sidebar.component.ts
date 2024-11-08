@@ -1,18 +1,23 @@
-import { Component, ViewChild } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
-export class SidebarComponent {
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
+export class SidebarComponent implements OnInit {
+  @ViewChild(MatSidenav) sidenav!: MatSidenav;
+  isMobile$: Observable<boolean>;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
+    // Observa quando a tela é menor que 770px
+    this.isMobile$ = this.breakpointObserver.observe([`(max-width: 770px)`])
+      .pipe(map(result => result.matches));
+  }
 
   navItems = [
     { title: 'Home', link: '/home', icon: 'fa-solid fa-house' },
@@ -29,11 +34,26 @@ export class SidebarComponent {
     { title: 'Projeto 30 dias', link: '/projeto', icon: 'fa-solid fa-calendar-day' },
   ];
 
+  ngOnInit(): void {
+    // Inscreve-se nas mudanças do tamanho da tela e ajusta o modo do sidenav
+    this.isMobile$.subscribe(isMobile => {
+      this.sidenav.mode = isMobile ? 'over' : 'side';
+      this.sidenav.opened = !isMobile; // Fecha o sidenav em telas menores
+    });
+  }
+
   navigate(link: string): void {
     this.router.navigate([link]);
+    if (this.sidenav.mode === 'over') {
+      this.sidenav.close(); // Fecha o sidenav ao navegar, caso esteja no modo modal
+    }
   }
 
   isActive(link: string): boolean {
     return this.router.url === link;
+  }
+
+  toggleSidebar(): void {
+    this.sidenav.toggle();
   }
 }

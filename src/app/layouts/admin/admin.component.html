@@ -1,8 +1,8 @@
 <header>
-  <app-navbar></app-navbar>
+  <app-navbar (toggleSidebar)="sidebar.toggleSidebar()"></app-navbar>
 </header>
 <main>
   <section>
-    <app-sidebar></app-sidebar>
+    <app-sidebar #sidebar></app-sidebar>
   </section>
 </main>

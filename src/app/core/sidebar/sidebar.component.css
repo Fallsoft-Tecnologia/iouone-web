@@ -47,3 +47,13 @@ mat-sidenav-content {
   background: var(--Background-feed);
   min-height: 100vh;
 }
+
+@media (max-width: 770px) {
+  .sidenav-container {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000; /* Para garantir que fique acima do conteúdo */
+  }
+}
