@@ -1,13 +1,8 @@
 <header>
-    <app-navbar></app-navbar>
-  </header>
-  <main>
-    <section>
-      <app-sidebar></app-sidebar>
-    </section>
-    <section class="router">
-      <router-outlet></router-outlet>
-    </section>
-  </main>
-  
-  
+  <app-navbar (toggleSidebar)="sidebar.toggleSidebar()"></app-navbar>
+</header>
+<main>
+  <section>
+    <app-sidebar #sidebar></app-sidebar>
+  </section>
+</main>

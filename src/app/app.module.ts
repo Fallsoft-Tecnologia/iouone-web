@@ -12,24 +12,11 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { NutricionistaComponent } from './modules/views/nutricionista/nutricionista.component';
-import { SidebarComponent } from './core/sidebar/sidebar.component';
-import { DietasComponent } from './modules/views/dietas/dietas.component';
-import { TreinoComponent } from './modules/views/treino/treino.component';
-import { ExerciciosComponent } from './modules/views/exercicios/exercicios.component';
-import { FitComponent } from './modules/views/fit/fit.component';
-import { CardapioComponent } from './modules/views/cardapio/cardapio.component';
-import { CalculadoraComponent } from './modules/views/calculadora/calculadora.component';
-import { MarmitaComponent } from './modules/views/marmita/marmita.component';
-import { DetoxComponent } from './modules/views/detox/detox.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { ChasComponent } from './modules/views/chas/chas.component';
-import { ProjetoComponent } from './modules/views/projeto/projeto.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AdminComponent } from './layouts/admin/admin.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { CadastroRouterModule } from './modules/cadastro/cadastro-router/cadastro-router.module';
 import { MatSelectModule } from '@angular/material/select';
@@ -37,47 +24,31 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { EnterButtonModule } from './shared/components/buttons/enter-button/enter-button.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewsModule } from './modules/views/views.module';
+import { AdminModule } from './layouts/admin/admin.module';
+import { CardModule } from './shared/components/card/card.module';
+import { SidebarModule } from './core/sidebar/sidebar.module';
+import { HomeModule } from './modules/views/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    NutricionistaComponent,
-    SidebarComponent,
-    DietasComponent,
-    TreinoComponent,
-    ExerciciosComponent,
-    FitComponent,
-    ChasComponent,
-    CardapioComponent,
-    CalculadoraComponent,
-    MarmitaComponent,
-    DetoxComponent,
-    CardComponent,
-    ProjetoComponent,
-    AdminComponent,
     AuthComponent
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     LoginModule,
     CadastroModule,
-    CadastroRouterModule,
-    MatToolbarModule,
+    CardModule,
     BrowserAnimationsModule,
     PagamentoModule,
-    MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatRadioModule,
     EnterButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    SidebarModule,
+    ViewsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

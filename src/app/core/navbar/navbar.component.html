@@ -1,10 +1,15 @@
 <mat-toolbar class="nav-content">
-    <mat-toolbar-row class="nav-itens">
-        <img src="assets/logo.png" alt="Logo da Iou One" class="logo-image">
-        <span class="example-spacer"></span>
-        <a class="profile-button">
-            <img src="../../../assets/Perfil.png" alt="Perfil">
-        </a>
+    <mat-toolbar-row class="nav-items">
+      <button mat-icon-button (click)="toggleSidebar.emit()" class="menu-toggle-button">
+        <i class="fa-sharp fa-solid fa-bars"></i>
+      </button>
+  
+      <img src="assets/logo.png" alt="Logo IOU One" class="logo-image">
+      <span class="example-spacer"></span>
+  
+      <a class="profile-button" aria-label="Perfil">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
     </mat-toolbar-row>
 </mat-toolbar>
-
+  
