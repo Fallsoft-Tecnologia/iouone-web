@@ -1,0 +1,111 @@
+.mat-mdc-raised-button:not(:disabled) {
+    color: var(--Branco);
+    background-color: var(--Rosa-pink)
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 440px;
+    text-align: left;
+}
+
+.card-form {
+    width: 100%;
+}
+
+.form-field, .form-field-half {
+    padding: 6px 0;
+}
+
+.form-field {
+    width: 100%;
+}
+
+.form-field-half {
+    width: 48%;
+    flex: 1;
+    margin-right: 10px;
+}
+
+mat-error {
+    font-size: 11px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+.separador {
+    display: flex;
+    justify-content: space-between;
+    /* Distribui o espaço entre os elementos */
+}
+
+.form-field-half:last-child {
+    margin-right: 0;
+    /* Remove o espaço à direita do último campo */
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 10px;
+    }
+
+    .step-text,
+    .welcome-text,
+    .easy-signup,
+    .instruction-text {
+        text-align: center;
+    }
+
+    .separador {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .form-field-half {
+        width: 100%;
+        padding: 6px 0;
+    }
+}
+
+.enter-button {
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    font-weight: bold;
+    box-shadow: none;
+    margin-top: 12px;
+}
+
+.card-form .form-icon {
+    font-size: 1.2rem;
+    color: var(--Cinza);
+    margin-right: 16px;
+}
+
+.forma-pagamento {
+    margin: 12px 0;
+}
+
+.radio-pagamento-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.radio-pagamento-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.mat-mdc-radio-button.mat-accent {
+    --mdc-radio-selected-focus-icon-color: var(--Botao-azul);
+    --mdc-radio-selected-hover-icon-color: var(--Botao-azul);
+    --mdc-radio-selected-icon-color: var(--Botao-azul);
+    --mdc-radio-selected-pressed-icon-color: var(--Botao-azul);
+    --mat-radio-checked-ripple-color: var(--Botao-azul);
+}

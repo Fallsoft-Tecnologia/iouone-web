@@ -6,12 +6,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Altura mínima da tela inteira */
 }
 
 .card-login-container {
+    max-height: 95vh;
+    margin: auto;
     max-width: 500px;
-    margin: 0 auto;
+    width: 100%; /* Largura completa */
     padding: 20px;
     background-color: var(--Branco);
     border: 1px solid var(--Cinza-claro);
@@ -19,12 +21,21 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajuste para telas menores que 500px */
+@media (max-width: 500px) {
+    .card-login-container {
+        width: 100%; /* Ocupa 100% da largura */
+        margin: 10px;
+        padding: 10px; /* Adiciona margem para evitar tocar as bordas da tela */
+    }
+}
+
 .card-content {
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .logo-image {
@@ -69,17 +80,14 @@
     color: var(--Rosa-pink);
 }
 
-.login-button {
-    width: 100%;
-    border-radius: 5px;
-    height: 40px;
-    font-weight: bold;
-}
-
-.mat-mdc-raised-button.mat-unthemed {
-    --mdc-protected-button-container-color: var(--Rosa-pink);
-    --mdc-protected-button-label-text-color: var(--Branco);
-}
-
 .register-button {
+    margin: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-button-button {
+    padding-left: 5px;
+    color: var(--Rosa-pink);
 }

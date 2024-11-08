@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 440px;
+    text-align: left;
+}
+
+.fa-arrow-left{
+    margin-bottom: 14px;
+}
+
+.step-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.instruction-text-text {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+mat-error {
+    font-size: 11px;
+}
+
+.signup-form, .form-field, mat-form-field {
+    width: 100%;
+}
+
+.form-field-half {
+    width: 48%;
+    margin-right: 10px;
+}
+
+.form-field, .form-field-half {
+    padding: 6px 0;
+}
+
+.separador {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-field-half:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 10px;
+    }
+    .step-text, .welcome-text, .instruction-text {
+        text-align: center;
+    }
+
+    .separador {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-field-half {
+        width: 100%;
+        padding: 6px 0;
+    }
+}

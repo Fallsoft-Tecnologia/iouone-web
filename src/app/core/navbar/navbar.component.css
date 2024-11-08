@@ -1,0 +1,86 @@
+.nav-content {
+    background-color: var(--Rosa-claro);
+    border-bottom: 1px solid var(--Cinza-claro);
+    height: 64px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Para manter os itens nas extremidades */
+  }
+  
+  .menu-toggle-button {
+    background-color: var(--Rosa-claro);
+    color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+  
+  .menu-toggle-button i {
+    font-size: 16px;
+  }
+  
+  .menu-toggle-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo-image {
+    height: 50px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .profile-button {
+    font-size: 24px;
+    color: var(--Cinza);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .profile-button:hover {
+    color: var(--Cinza-ativado);
+  }
+  
+  /* Media query for tablets and smaller screens */
+  @media (max-width: 770px) {
+    .nav-content {
+      justify-content: center; /* Garante que tudo fique centralizado na tela */
+    }
+  
+    .nav-items {
+      justify-content: space-between; /* Mantém os itens da esquerda e direita */
+    }
+
+    .logo-image{
+        height: 40px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza a logo */
+    }
+  
+  }
+  
+  @media (max-width: 480px) {
+    .profile-button {
+      font-size: 20px; /* Reduz o ícone de perfil nas telas menores */
+    }
+  }
+  

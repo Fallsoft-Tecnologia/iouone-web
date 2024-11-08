@@ -1,0 +1,56 @@
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="card-form">
+    <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Número do cartão</mat-label>
+        <input matInput placeholder="Número do cartão" formControlName="numeroCartao">
+        <span matSuffix><i class="fa-solid fa-credit-card form-icon"></i></span>
+        <mat-error *ngIf="cardForm.get('numeroCartao')?.invalid && (cardForm.get('numeroCartao')?.touched || cardForm.get('numeroCartao')?.dirty)">
+            Número do cartão é obrigatório.
+        </mat-error>
+    </mat-form-field>
+
+    <div class="separador">
+        <mat-form-field class="form-field-half" appearance="outline">
+            <mat-label>Data de validade</mat-label>
+            <input 
+              matInput 
+              formControlName="dataValidade" 
+              placeholder="MM/AA" 
+              maxlength="5" 
+              type="text"
+              (input)="formatExpirationDate($event)">
+            <mat-error 
+              *ngIf="cardForm.get('dataValidade')?.invalid && (cardForm.get('dataValidade')?.touched || cardForm.get('dataValidade')?.dirty)">
+              Data de validade é obrigatória.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-half" appearance="outline">
+            <mat-label>CVV</mat-label>
+            <input matInput formControlName="cvv" placeholder="CVV" type="text">
+            <span matSuffix><i class="fa-solid fa-circle-question form-icon"></i></span>
+            <mat-error *ngIf="cardForm.get('cvv')?.invalid && (cardForm.get('cvv')?.touched || cardForm.get('cvv')?.dirty)">
+                CVV é obrigatório.
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Nome no cartão</mat-label>
+        <input matInput formControlName="nomeCartao" placeholder="Nome no cartão" type="text">
+        <mat-error *ngIf="cardForm.get('nomeCartao')?.invalid && (cardForm.get('nomeCartao')?.touched || cardForm.get('nomeCartao')?.dirty)">
+            Nome no cartão é obrigatório.
+        </mat-error>
+    </mat-form-field>
+
+    <section class="forma-pagamento">
+        <label id="radio-pagamento-label" class="radio-pagamento-label">Escolha sua forma de pagamento preferida:</label>
+        <mat-radio-group formControlName="formaPagamento" aria-labelledby="radio-pagamento-label" class="radio-pagamento-group">
+            <mat-radio-button class="radio-pagamento-button" value="credito">Crédito</mat-radio-button>
+            <mat-radio-button class="radio-pagamento-button" value="debito">Débito</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+    <app-infos-pagamento-cartao></app-infos-pagamento-cartao>
+
+    <button mat-raised-button class="enter-button" type="submit" [disabled]="cardForm.invalid">Próximo</button>
+</form>

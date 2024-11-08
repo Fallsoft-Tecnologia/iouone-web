@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 440px;
+    text-align: left;
+}
+
+.fa-arrow-left{
+    margin-bottom: 14px;
+}
+
+.mainContent {
+    margin-bottom: 24px;
+}
+
+.step-text {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.instruction-text {
+    font-size: 16px;
+    margin: 0px;
+}
+
+.evidence {
+    margin-top: 12px;
+}
+
+.evidence .instruction-text {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.secure-server-badge-align-right {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 16px;
+    justify-content: flex-start;
+}
+
+.secure-server-badge-align-right .secure-server-badge--icon {
+    margin-left: 2px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+    overflow-clip-margin: content-box;
+}
+
+.secure-server-badge--icon {
+    height: 16px;
+    width: 16px;
+}
+
+.secure-server-badge--text {
+    font-size: 11px;
+    height: 14px;
+}

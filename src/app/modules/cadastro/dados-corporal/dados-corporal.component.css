@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 440px;
+    text-align: left;
+}
+
+.fa-arrow-left{
+    margin-bottom: 14px;
+}
+
+.step-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.easy-signup {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.instruction-text {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.instruction-text-text {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.signup-form {
+    width: 100%;
+}
+
+.form-field {
+    width: 100%;
+}
+
+.form-field-half {
+    width: 48%;
+}
+
+mat-error {
+    font-size: 11px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.form-field {
+    position: relative;
+    padding: 6px 0;
+}
+
+.form-field input {
+    padding-right: 40px;
+    /* Ajuste conforme necessário para espaço do sufixo */
+}
+
+.suffix-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 8px;
+    border-left: 1px solid #ccc;
+    height: 100%;
+    font-family: inherit; /* Mantém a mesma fonte do input */
+    font-size: inherit; /* Mantém o mesmo tamanho de fonte do input */
+    color: rgba(0, 0, 0, 0.50); /* Mantém a mesma cor do input */
+  
+}
+.suffix-container-cm {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 8px;
+    border-left: 1px solid #ccc;
+    height: 100%;
+    font-family: inherit; /* Mantém a mesma fonte do input */
+    font-size: inherit; /* Mantém o mesmo tamanho de fonte do input */
+    color: rgba(0, 0, 0, 0.50);
+    /* Mantém a mesma cor do input */
+  
+}
+
+  .suffix-container span {
+    margin-left: 4px; /* Ajusta o espaço entre a linha e o texto 'kg' */
+  }
+  .suffix-container-cm span {
+    margin-left: 2px; /* Ajusta o espaço entre a linha e o texto 'kg' */
+  }
+
+@media (max-width: 500px) {
+    .container {
+        padding: 10px;
+    }
+
+    .step-text,
+    .welcome-text,
+    .easy-signup,
+    .instruction-text {
+        text-align: center;
+    }
+}

@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 440px;
+    text-align: left;
+}
+
+.fa-arrow-left{
+    margin-bottom: 14px;
+}
+
+.mainContent {
+    margin-bottom: 24px;
+}
+
+.step-text {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.mainContent .logos-block {
+    display: inline-block;
+}
+
+.logos {
+    position: relative;
+}
+
+img.logoIcon {
+    background-image: none;
+    width: auto;
+}
+
+.logos .logoIcon {
+    float: left;
+    height: 18px;
+    margin: 1px 6px 1px 0;
+    width: auto;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
