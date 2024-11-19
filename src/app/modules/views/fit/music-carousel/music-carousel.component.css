@@ -1,0 +1,22 @@
+/* Estilo do carrossel */
+.carousel-inner {
+    display: flex;
+    justify-content: center; /* Centralizar os itens dentro do carrossel */
+  }
+  
+  .carousel-item {
+    display: flex;
+    justify-content: center; /* Centralizar os cards */
+  }
+  
+  .card {
+    width: 200px; /* Definindo o tamanho dos cards */
+    margin: 10px;  /* Espaçamento entre os cards */
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 150px; /* Cards menores em telas pequenas */
+    }
+  }
+  

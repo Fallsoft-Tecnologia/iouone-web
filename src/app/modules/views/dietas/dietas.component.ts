@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DietasComponent {
   paginaAtual: string = 'router-outlet';
-  textTittle: string = 'What is lorem';
+  textTitle: string = 'What is lorem';
   textDescription: string =
     ' Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique';
   cardImg: string = '../../../../assets/dieta/dieta01.png';
