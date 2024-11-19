@@ -20,7 +20,7 @@ const routes: Routes = [
         loadChildren: () => import('../dados-endereco/dados-endereco.module').then(m => m.DadosEnderecoModule)
       },
       {
-        path: 'dados-corporal',
+        path: 'corporal',
         loadChildren: () => import('../dados-corporal/dados-corporal.module').then(m => m.DadosCorporalModule)
       },
       {

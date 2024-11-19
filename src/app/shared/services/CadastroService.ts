@@ -5,17 +5,18 @@ import { CadastroLogin } from '../models/CadastroLogin';
 import { DadosDoCliente } from '../models/DadosCliente';
 import { DadosCorporal } from '../models/DadosCorporal';
 import { DadosEndereco } from '../models/DadosEndereco';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CadastroService {
-  private apiUrl = '/api/v2/pessoas/cadastro';
+  private apiUrl = `${environment.apiBaseUrl}/api/v2/pessoas/cadastro`;
 
   constructor(private http: HttpClient) { }
 
-  cadastroLogin(credentials: CadastroLogin): Observable<Object> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+  cadastroLogin(credentials: CadastroLogin): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${this.apiUrl}/dados/login`, credentials);
   }
 
   cadastrarDadosCliente(dadosCliente: DadosDoCliente): Observable<Object> {

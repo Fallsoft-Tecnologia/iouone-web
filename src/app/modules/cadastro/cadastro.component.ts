@@ -15,7 +15,7 @@ export class CadastroComponent {
   redireciona: string = "/auth/cadastro/dados";
   isSubmitting: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: CadastroService, private router: Router) {
+  constructor(private fb: FormBuilder, private cadastroService: CadastroService, private router: Router) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
@@ -26,20 +26,21 @@ export class CadastroComponent {
   onSubmit() {
     if (this.signupForm.valid) {
       this.isSubmitting = true;
-
+  
       const credentials: CadastroLogin = {
         email: this.signupForm.get('email')?.value,
         password: this.signupForm.get('password')?.value,
-        cpf: this.signupForm.get('cpf')?.value
+        cpf: this.signupForm.get('cpf')?.value.replace(/\D/g, '')
       };
-
-      this.authService.cadastroLogin(credentials).subscribe({
+  
+      this.cadastroService.cadastroLogin(credentials).subscribe({
         next: (response) => {
-          console.log('Sucesso:', response);
+          console.log('Sucesso:', response.message);
           this.router.navigate([this.redireciona]);
         },
         error: (error) => {
           console.error('Erro:', error);
+          alert('Erro ao realizar o cadastro. Verifique os dados e tente novamente.');
         },
         complete: () => {
           this.isSubmitting = false;
