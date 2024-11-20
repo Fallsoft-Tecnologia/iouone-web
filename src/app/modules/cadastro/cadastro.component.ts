@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CadastroLogin } from 'src/app/shared/models/CadastroLogin';
+import { CadastroResponse } from 'src/app/shared/models/CadastroResponse';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
+import { FluxoService } from 'src/app/shared/services/FluxoService';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,10 +14,15 @@ import { CadastroService } from 'src/app/shared/services/CadastroService';
 export class CadastroComponent {
   signupForm: FormGroup;
   textButton: string = "Próximo";
-  redireciona: string = "/auth/cadastro/dados";
+  redireciona: string = "/cadastro/dados";
   isSubmitting: boolean = false;
 
-  constructor(private fb: FormBuilder, private cadastroService: CadastroService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private cadastroService: CadastroService,
+    private fluxoService: FluxoService,
+    private router: Router
+  ) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
@@ -34,8 +41,11 @@ export class CadastroComponent {
       };
   
       this.cadastroService.cadastroLogin(credentials).subscribe({
-        next: (response) => {
-          console.log('Sucesso:', response.message);
+        next: (response: CadastroResponse) => {
+          // Salvar o fluxoId
+          const fluxoId = response.fluxoId;
+          this.fluxoService.setFluxoId(fluxoId);
+          
           this.router.navigate([this.redireciona]);
         },
         error: (error) => {

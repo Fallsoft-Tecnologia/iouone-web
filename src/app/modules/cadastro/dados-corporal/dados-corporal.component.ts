@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DadosCorporal } from 'src/app/shared/models/DadosCorporal';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
+import { FluxoService } from 'src/app/shared/services/FluxoService';
 
 @Component({
   selector: 'app-dados-corporal',
@@ -12,14 +14,23 @@ export class DadosCorporalComponent {
   corporalForm: FormGroup;
   textButton: string = "Enviar";
   isSubmitting: boolean = false;
+  redireciona: string = "/cadastro/pagamento";
+  fluxoId: string = '';
 
-  constructor(private fb: FormBuilder, private cadastroService: CadastroService) {
+  constructor(
+    private fb: FormBuilder, 
+    private cadastroService: CadastroService,
+    private fluxoService: FluxoService,
+    private router: Router
+  ) {
     this.corporalForm = this.fb.group({
       pesoIdeal: ['', [Validators.required, Validators.min(30)]],
       nivelAtividade: ['', Validators.required],
       altura: ['', [Validators.required, Validators.min(100)]],
       pesoAtual: ['', [Validators.required, Validators.min(30)]],
     });
+
+    this.fluxoId = this.fluxoService.getFluxoId();
   }
 
   get pesoIdealErrorMessage(): string {
@@ -49,18 +60,23 @@ export class DadosCorporalComponent {
 
   onSubmit(): void {
     this.isSubmitting = true;
-
+  
     if (this.corporalForm.valid) {
       const dadosCorporal: DadosCorporal = {
         pesoIdeal: this.corporalForm.get('pesoIdeal')?.value,
-        nivelAtividade: this.corporalForm.get('nivelAtividade')?.value,
+        atividadeFisica: this.corporalForm.get('nivelAtividade')?.value,
         altura: this.corporalForm.get('altura')?.value,
         pesoAtual: this.corporalForm.get('pesoAtual')?.value,
       };
-
-      this.cadastroService.cadastrarDadosCorporal(dadosCorporal).subscribe({
+  
+      this.cadastroService.cadastrarDadosCorporal(dadosCorporal, this.fluxoId).subscribe({
         next: (response) => {
-          console.log('Dados corporais enviados com sucesso:', response);
+          if (response.fluxoId) {
+            this.fluxoService.setFluxoId(response.fluxoId);
+          }
+          
+          console.log('Dados enviados com sucesso:', response);
+          this.router.navigate([this.redireciona]);
           this.isSubmitting = false;
         },
         error: (error) => {
