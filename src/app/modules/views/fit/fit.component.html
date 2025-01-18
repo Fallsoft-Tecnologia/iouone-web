@@ -1,8 +1,23 @@
-<app-header></app-header>  <!-- Adicionando o header -->
+<app-header [title]="title"></app-header>
 <div class="container-wrapper">
-  <div class="container">
-    <div *ngFor="let musicType of musicTypes">
-      <app-music-carousel [musicCards]="musicType.cards"></app-music-carousel>
+  <app-fitdance-carousel>
+    <div
+      class="music-card"
+      *ngFor="let video of videos"
+      (click)="openModal(video.link)"
+    >
+      <img class="thumbnail" [src]="video.imageUrl" alt="{{ video.title }}" />
+      <div class="info">
+        <h3 class="title">{{ video.title }}</h3>
+        <p class="subtitle">{{ video.artists }}</p>
+      </div>
     </div>
-  </div>
+  </app-fitdance-carousel>
 </div>
+
+<!-- Video Modal -->
+<app-video-modal
+  *ngIf="showModal"
+  [videoLink]="currentVideoLink"
+  (close)="closeModal()"
+></app-video-modal>

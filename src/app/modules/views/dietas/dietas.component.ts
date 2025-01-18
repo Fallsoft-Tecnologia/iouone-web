@@ -14,4 +14,9 @@ export class DietasComponent {
   cardImg2: string = '../../../../assets/dieta/dieta02.png';
   cardImg3: string = '../../../../assets/dieta/dieta03.png';
   cardImg4: string = '../../../../assets/dieta/dieta04.png';
+
+  dietas = [
+    { id: 1, titulo: 'Dieta Low Carb', descricao: 'Uma dieta com poucos carboidratos' },
+    { id: 2, titulo: 'Dieta Keto', descricao: 'Uma dieta cetogênica clássica' }
+  ];
 }

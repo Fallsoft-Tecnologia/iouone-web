@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DadosDoCliente } from 'src/app/shared/models/DadosCliente';
+import { Router } from '@angular/router'; // Importação do Router
+import { CadastroResponse } from 'src/app/shared/models/CadastroResponse';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
+import { FluxoService } from 'src/app/shared/services/FluxoService';
 
 @Component({
   selector: 'app-dados-do-cliente',
@@ -11,16 +13,24 @@ import { CadastroService } from 'src/app/shared/services/CadastroService';
 export class DadosDoClienteComponent {
   dadosForm: FormGroup;
   textButton: string = "Próximo";
-  redireciona: string = "/auth/cadastro/endereco";
+  redireciona: string = "/cadastro/endereco";
   isSubmitting: boolean = false;
   isDateFocused: boolean = false;
+  fluxoId: string = '';
 
-  constructor(private fb: FormBuilder, private cadastroService: CadastroService) {
+  constructor(
+    private fb: FormBuilder,
+    private cadastroService: CadastroService,
+    private fluxoService: FluxoService, // Serviço compartilhado
+    private router: Router
+  ) {
     this.dadosForm = this.fb.group({
       nomeCompleto: ['', Validators.required],
       dataNascimento: ['', Validators.required],
       celular: ['', [Validators.required, Validators.pattern(/^\(\d{2}\)\s\d{5}-\d{4}$/)]]
     });
+
+    this.fluxoId = this.fluxoService.getFluxoId();
   }
 
   formatCelular(event: Event) {
@@ -51,23 +61,25 @@ export class DadosDoClienteComponent {
     input.value = value;
     this.dadosForm.get('dataNascimento')?.setValue(value, { emitEvent: false });
   }
-  
 
   onSubmit() {
     if (this.dadosForm.valid) {
-      const dadosCliente: DadosDoCliente = {
-        nomeCompleto: this.dadosForm.get('nomeCompleto')?.value,
+      const dadosCliente = {
+        nome: this.dadosForm.get('nomeCompleto')?.value,
         dataNascimento: this.dadosForm.get('dataNascimento')?.value,
         celular: this.dadosForm.get('celular')?.value.replace(/\D/g, '')
       };
 
       this.isSubmitting = true;
 
-      this.cadastroService.cadastrarDadosCliente(dadosCliente).subscribe({
-        next: (response) => {
+      this.cadastroService.cadastrarDadosCliente(dadosCliente, this.fluxoId).subscribe({
+        next: (response: CadastroResponse) => {
+          if (response.fluxoId) {
+            this.fluxoService.setFluxoId(response.fluxoId); // Armazenando fluxoId
+          }
+          
           console.log('Dados enviados com sucesso:', response);
-          // Redirecionar ou fazer outra ação após a submissão bem-sucedida
-          // Por exemplo: this.router.navigate([this.redireciona]);
+          this.router.navigate([this.redireciona]);
         },
         error: (error) => {
           console.error('Erro ao enviar dados:', error);

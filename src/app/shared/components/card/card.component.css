@@ -18,9 +18,21 @@
   max-height: 60px;
 }
 
-.text-footer {
-  padding-right: 2rem;
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  height: 100%;
 }
+
+.text-footer {
+  color: black; /* Define a cor do texto como preta */
+  text-decoration: underline; /* Adiciona sublinhado ao texto */
+  margin-top: auto; /* Garante que fique na parte inferior */
+  margin-right: 1rem; /* Ajusta a distância do lado direito */
+}
+
 
 .mat-mdc-card {
   border-radius: 10px;
