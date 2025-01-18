@@ -1,17 +1,51 @@
 import { Component } from '@angular/core';
-import { Exercise } from 'src/app/shared/models/Exercise';
 
 @Component({
   selector: 'app-exercicios',
   templateUrl: './exercicios.component.html',
-  styleUrls: ['./exercicios.component.css']
+  styleUrls: ['./exercicios.component.css'],
 })
 export class ExerciciosComponent {
-  exercises: Exercise[] = [
-    { src: '../../../../assets/exercicios/abdomen.png', label: 'Abdômen' },
-    { src: '../../../../assets/exercicios/core.png', label: 'Core' },
-    { src: '../../../../assets/exercicios/mobilidade.png', label: 'Mobilidade' },
-    { src: '../../../../assets/exercicios/costas.png', label: 'Costas' },
-    { src: '../../../../assets/exercicios/yoga.png', label: 'Yoga' },
+  exercises = [
+    {
+      src: '../../../../assets/exercicios/abdomen.png',
+      label: 'Abdômen',
+      link: 'https://www.youtube.com/embed/example1',
+    },
+    {
+      src: '../../../../assets/exercicios/core.png',
+      label: 'Core',
+      link: 'https://www.youtube.com/embed/example2',
+    },
+    {
+      src: '../../../../assets/exercicios/mobilidade.png',
+      label: 'Mobilidade',
+      link: 'https://www.youtube.com/embed/example3',
+    },
+    {
+      src: '../../../../assets/exercicios/costas.png',
+      label: 'Costas',
+      link: 'https://www.youtube.com/embed/example4',
+    },
+    {
+      src: '../../../../assets/exercicios/yoga.png',
+      label: 'Yoga',
+      link: 'https://www.youtube.com/embed/example5',
+    },
   ];
+
+  showModal = false; // Estado do modal
+  currentVideoLink: string | null = null; // Link do vídeo atual
+
+  // Método para abrir o modal
+  openModal(link: string): void {
+    this.currentVideoLink = link;
+    this.showModal = true;
+  }
+
+  // Método para fechar o modal
+  closeModal(): void {
+    this.showModal = false;
+    this.currentVideoLink = null;
+  }
 }

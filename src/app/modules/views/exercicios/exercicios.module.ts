@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ExerciciosRoutingModule } from './exercicios-routing.module';
 import { ExerciciosComponent } from './exercicios.component';
 import { MatCardModule } from '@angular/material/card';
+import { VideoModalModule } from 'src/app/shared/components/video-modal/video-modal.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     ExerciciosRoutingModule,
     MatCardModule,
+    VideoModalModule
   ]
 })
 export class ExerciciosModule { }

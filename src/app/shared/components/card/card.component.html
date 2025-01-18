@@ -1,12 +1,12 @@
 <mat-card class="container">
   <mat-card-header class="card-content">
-    <img class="card-img" src="{{ cardImg }}" />
+    <img class="card-img" [src]="cardImg" />
     <mat-card-content class="card-text">
       <h1 class="card-title">{{ textTitle }}</h1>
       <p class="text-card">{{ textDescription }}</p>
       <mat-card-actions>
-        <mat-card-footer>
-          <a class="text-footer">Ver Dieta ></a>
+        <mat-card-footer class="card-footer">
+          <a [routerLink]="['/dieta', dietaId]" class="text-footer">{{ linkName }} ></a>
         </mat-card-footer>
       </mat-card-actions>
     </mat-card-content>

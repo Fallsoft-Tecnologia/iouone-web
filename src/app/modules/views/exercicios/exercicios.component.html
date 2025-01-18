@@ -1,6 +1,19 @@
 <main class="container">
   <mat-card *ngFor="let exercise of exercises" class="card-content">
     <img class="card-img" [src]="exercise.src" [alt]="exercise.label" />
-    <button mat-raised-button class="button">{{ exercise.label }}</button>
+    <button
+      mat-raised-button
+      class="button"
+      (click)="openModal(exercise.link)"
+    >
+      {{ exercise.label }}
+    </button>
   </mat-card>
 </main>
+
+<!-- Video Modal -->
+<app-video-modal
+  *ngIf="showModal"
+  [videoLink]="currentVideoLink"
+  (close)="closeModal()"
+></app-video-modal>

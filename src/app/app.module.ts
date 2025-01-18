@@ -16,11 +16,13 @@ import { AdminModule } from './layouts/admin/admin.module';
 import { CardModule } from './shared/components/card/card.module';
 import { SidebarModule } from './core/sidebar/sidebar.module';
 import { HomeModule } from './modules/views/home/home.module';
+import { DietaCompletaModule } from './shared/components/dieta-completa/dieta-completa.module';
+import { VideoModalModule } from './shared/components/video-modal/video-modal.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     AdminModule,
@@ -35,7 +37,9 @@ import { HomeModule } from './modules/views/home/home.module';
     HttpClientModule,
     SidebarModule,
     ViewsModule,
-    HomeModule
+    HomeModule,
+    DietaCompletaModule,
+    VideoModalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

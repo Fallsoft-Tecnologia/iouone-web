@@ -1,0 +1,11 @@
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="modal-content">
+  <button class="close-button" (click)="closeModal()">X</button>
+  <iframe
+    *ngIf="videoLink"
+    [src]="videoLink | safeUrl"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+</div>
