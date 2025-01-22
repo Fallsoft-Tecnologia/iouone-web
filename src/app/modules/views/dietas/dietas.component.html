@@ -1,27 +1,9 @@
-<app-card
-  [textTittle]="textTittle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg"
->
-</app-card>
-
-<app-card
-  [textTittle]="textTittle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg2"
->
-</app-card>
-
-<app-card
-  [textTittle]="textTittle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg3"
->
-</app-card>
-
-<app-card
-  [textTittle]="textTittle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg4"
->
-</app-card>
+<div *ngFor="let dieta of dietas">
+  <app-card
+    [dietaId]="dieta.id"
+    [textTitle]="dieta.titulo"
+    [textDescription]="dieta.descricao"
+    [cardImg]="dieta.imagem"
+  >
+  </app-card>
+</div>

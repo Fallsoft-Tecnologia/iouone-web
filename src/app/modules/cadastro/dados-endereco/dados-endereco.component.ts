@@ -5,6 +5,8 @@ import { CepService } from 'src/app/shared/services/CepService';
 import { catchError, of } from 'rxjs';
 import { Endereco } from 'src/app/shared/models/Endereco';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
+import { FluxoService } from 'src/app/shared/services/FluxoService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dados-endereco',
@@ -15,8 +17,9 @@ export class DadosEnderecoComponent {
 
   dadosForm: FormGroup;
   textButton: string = "Próximo";
-  redireciona: string = "/auth/cadastro/dados-corporal";
+  redireciona: string = "/cadastro/dados-corporal";
   isSubmitting: boolean = false;
+  fluxoId: string = '';
 
   estadosBrasileiros = [
     { nome: 'Acre', sigla: 'AC' },
@@ -51,7 +54,9 @@ export class DadosEnderecoComponent {
   constructor(
     private fb: FormBuilder,
     private cepService: CepService,
-    private cadastroService: CadastroService
+    private fluxoService: FluxoService, // Serviço compartilhado
+    private cadastroService: CadastroService,
+    private router: Router
   ) {
     this.dadosForm = this.fb.group({
       cep: ['', [Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)]],
@@ -60,6 +65,8 @@ export class DadosEnderecoComponent {
       estado: ['', Validators.required],
       pais: ['Brasil', Validators.required]
     });
+
+    this.fluxoId = this.fluxoService.getFluxoId();
   }
 
   onCepInput() {
@@ -141,23 +148,29 @@ export class DadosEnderecoComponent {
 
   onSubmit() {
     this.isSubmitting = true;
-
+  
     if (this.dadosForm.valid) {
       const dadosEndereco: DadosEndereco = {
         cep: this.dadosForm.get('cep')?.value.replace(/-/g, ''),
         endereco: this.dadosForm.get('endereco')?.value,
         cidade: this.dadosForm.get('cidade')?.value,
         estado: this.dadosForm.get('estado')?.value,
-        pais: 'BR'
+        pais: this.dadosForm.get('pais')?.value
       };
-
-      this.cadastroService.cadastrarDadosEndereco(dadosEndereco).subscribe({
+  
+      this.cadastroService.cadastrarDadosEndereco(dadosEndereco, this.fluxoId).subscribe({
         next: (response) => {
-          console.log('Dados de endereço enviados com sucesso:', response);
-          this.isSubmitting = false;
+          if (response.fluxoId) {
+            this.fluxoService.setFluxoId(response.fluxoId);
+          }
+          
+          console.log('Dados enviados com sucesso:', response);
+          this.router.navigate([this.redireciona]);
         },
         error: (error) => {
           console.error('Erro ao enviar dados de endereço:', error);
+        },
+        complete: () => {
           this.isSubmitting = false;
         }
       });

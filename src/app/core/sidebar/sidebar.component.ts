@@ -14,7 +14,6 @@ export class SidebarComponent implements OnInit {
   isMobile$: Observable<boolean>;
 
   constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
-    // Observa quando a tela é menor que 770px
     this.isMobile$ = this.breakpointObserver.observe([`(max-width: 770px)`])
       .pipe(map(result => result.matches));
   }
@@ -50,7 +49,7 @@ export class SidebarComponent implements OnInit {
   }
 
   isActive(link: string): boolean {
-    return this.router.url === link;
+    return this.router.url.startsWith(link);
   }
 
   toggleSidebar(): void {

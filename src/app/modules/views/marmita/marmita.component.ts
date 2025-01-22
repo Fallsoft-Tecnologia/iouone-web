@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./marmita.component.css']
 })
 export class MarmitaComponent {
-  textTittle: string = 'What is lorem';
+  textTitle: string = 'What is lorem';
   textDescription: string =
     ' Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique';
   cardImg: string = '../../../../assets/chas/cha-01.png';

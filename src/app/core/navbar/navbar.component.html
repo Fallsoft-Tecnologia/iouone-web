@@ -7,9 +7,14 @@
       <img src="assets/logo.png" alt="Logo IOU One" class="logo-image">
       <span class="example-spacer"></span>
   
-      <a class="profile-button" aria-label="Perfil">
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu" class="profile-button" aria-label="Perfil">
         <i class="fa-solid fa-circle-user"></i>
-      </a>
+      </button>
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <i class="fa-solid fa-right-from-bracket"></i> Sair
+        </button>
+      </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
   

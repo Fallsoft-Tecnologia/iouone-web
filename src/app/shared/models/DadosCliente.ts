@@ -1,6 +1,6 @@
 export interface DadosDoCliente {
-    nomeCompleto: string;
+    nome: string;
     dataNascimento: string;
     celular: string;
-}
+  }
   

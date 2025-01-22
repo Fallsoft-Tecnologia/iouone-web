@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CadastroLogin } from 'src/app/shared/models/CadastroLogin';
+import { CadastroResponse } from 'src/app/shared/models/CadastroResponse';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
+import { FluxoService } from 'src/app/shared/services/FluxoService';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,10 +14,15 @@ import { CadastroService } from 'src/app/shared/services/CadastroService';
 export class CadastroComponent {
   signupForm: FormGroup;
   textButton: string = "Próximo";
-  redireciona: string = "/auth/cadastro/dados";
+  redireciona: string = "/cadastro/dados";
   isSubmitting: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: CadastroService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private cadastroService: CadastroService,
+    private fluxoService: FluxoService,
+    private router: Router
+  ) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
@@ -26,20 +33,24 @@ export class CadastroComponent {
   onSubmit() {
     if (this.signupForm.valid) {
       this.isSubmitting = true;
-
+  
       const credentials: CadastroLogin = {
         email: this.signupForm.get('email')?.value,
         password: this.signupForm.get('password')?.value,
-        cpf: this.signupForm.get('cpf')?.value
+        cpf: this.signupForm.get('cpf')?.value.replace(/\D/g, '')
       };
-
-      this.authService.cadastroLogin(credentials).subscribe({
-        next: (response) => {
-          console.log('Sucesso:', response);
+  
+      this.cadastroService.cadastroLogin(credentials).subscribe({
+        next: (response: CadastroResponse) => {
+          // Salvar o fluxoId
+          const fluxoId = response.fluxoId;
+          this.fluxoService.setFluxoId(fluxoId);
+          
           this.router.navigate([this.redireciona]);
         },
         error: (error) => {
           console.error('Erro:', error);
+          alert('Erro ao realizar o cadastro. Verifique os dados e tente novamente.');
         },
         complete: () => {
           this.isSubmitting = false;

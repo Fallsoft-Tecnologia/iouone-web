@@ -1,0 +1,27 @@
+<div class="carousel-container">
+    <!-- Botão Anterior -->
+    <button
+      class="nav-button prev-button"
+      (click)="scroll(-1)"
+      aria-label="Scroll Previous"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+  
+    <!-- Área de Cards -->
+    <div class="carousel-wrapper" #carouselWrapper>
+      <div class="carousel-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  
+    <!-- Botão Próximo -->
+    <button
+      class="nav-button next-button"
+      (click)="scroll(1)"
+      aria-label="Scroll Next"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  
