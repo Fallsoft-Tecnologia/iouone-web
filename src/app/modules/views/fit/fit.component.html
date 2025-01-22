@@ -1,160 +1,23 @@
+<app-header [title]="title"></app-header>
+<div class="container-wrapper">
+  <app-fitdance-carousel>
+    <div
+      class="music-card"
+      *ngFor="let video of videos"
+      (click)="openModal(video.link)"
+    >
+      <img class="thumbnail" [src]="video.imageUrl" alt="{{ video.title }}" />
+      <div class="info">
+        <h3 class="title">{{ video.title }}</h3>
+        <p class="subtitle">{{ video.artists }}</p>
+      </div>
+    </div>
+  </app-fitdance-carousel>
+</div>
 
-
-    <div class="header">
-        <h1 class="title">Mais vistos</h1>
-        <a class="show-all">Mostrar tudo</a>
-    </div>
-    
-    <div class="container">
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-    </div>
-    
-    <div class="header">
-        <h1 class="title">Funk</h1>
-        <a class="show-all">Mostrar tudo</a>
-    </div>
-    
-    <div class="container">
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-    </div>
-    
-    <div class="header">
-        <h1 class="title">Axé</h1>
-        <a class="show-all">Mostrar tudo</a>
-    </div>
-    
-    <div class="container">
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header class="card-content">
-                <img class="card-img" src="../../../../assets/fit/fit-dance.png" />
-                <mat-card-content class="card-text">
-                    <h1 class="card-title">Nome da música</h1>
-                    <p class="text-card">
-                        Autor, Autor, Autor, Autor, Autor, Autor, Autor e mais
-                    </p>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
-    </div>
+<!-- Video Modal -->
+<app-video-modal
+  *ngIf="showModal"
+  [videoLink]="currentVideoLink"
+  (close)="closeModal()"
+></app-video-modal>
