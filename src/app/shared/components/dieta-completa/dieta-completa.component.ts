@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Dieta } from '../../models/Dieta';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dieta-completa',
@@ -14,7 +14,13 @@ export class DietaCompletaComponent {
     itens: []
   };
 
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    this.route.data.subscribe(({ dieta }) => {
+      this.dieta = dieta;
+    });
+  }
 
   voltar() {
     this.router.navigate(['/dietas']);

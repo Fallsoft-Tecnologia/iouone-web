@@ -5,14 +5,14 @@ import { CadastroLogin } from '../models/CadastroLogin';
 import { DadosDoCliente } from '../models/DadosCliente';
 import { DadosCorporal } from '../models/DadosCorporal';
 import { DadosEndereco } from '../models/DadosEndereco';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/config';
 import { CadastroResponse } from '../models/CadastroResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CadastroService {
-  private apiUrl = `${environment.apiBaseUrl}/api/v2/pessoas/cadastro`;
+  private apiUrl = `${environment.apiUrl}/v2/pessoas/cadastro`;
 
   constructor(private http: HttpClient) { }
 

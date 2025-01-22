@@ -35,6 +35,10 @@ mat-form-field {
   width: 100%;
 }
 
+::ng-deep .mdc-text-field--outlined {
+  background-color: white;
+}
+
 .form-field {
   position: relative;
   margin-top: 0.7rem;
@@ -103,6 +107,10 @@ mat-form-field {
   display: flex;
   align-items: flex-start;
   font-weight: bold;
+}
+
+::ng-deep .mdc-radio__background {
+  background-color: white;
 }
 
 .enter-button {

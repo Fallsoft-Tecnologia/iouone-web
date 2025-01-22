@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { DietaCompletaComponent } from './dieta-completa.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { DietaCompletaRoutingModule } from './dieta-completa-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +15,8 @@ import { MatDividerModule } from '@angular/material/divider';
   imports: [
     CommonModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    RouterModule,
   ],
   exports: [
     DietaCompletaComponent
