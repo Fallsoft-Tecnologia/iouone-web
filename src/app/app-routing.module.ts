@@ -115,13 +115,6 @@ const routes: Routes = [
             (m) => m.ProjetoModule
           ),
       },
-
-      { path: 'dieta/:id', 
-        loadChildren: () =>
-          import('./shared/components/dieta-completa/dieta-completa.module').then(
-            (m) => m.DietaCompletaModule
-          ),
-        },
     ],
   },
 

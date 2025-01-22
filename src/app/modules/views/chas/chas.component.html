@@ -1,27 +1,8 @@
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg"
->
-</app-card>
-
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg2"
->
-</app-card>
-
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg3"
->
-</app-card>
-
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg4"
->
-</app-card>
+<div *ngFor="let cha of chas">
+  <app-card
+    [textTitle]="cha.titulo"
+    [textDescription]="cha.descricao"
+    [cardImg]="cha.imagem"
+  >
+  </app-card>
+</div>

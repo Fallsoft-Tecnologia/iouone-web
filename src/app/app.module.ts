@@ -18,11 +18,13 @@ import { SidebarModule } from './core/sidebar/sidebar.module';
 import { HomeModule } from './modules/views/home/home.module';
 import { DietaCompletaModule } from './shared/components/dieta-completa/dieta-completa.module';
 import { VideoModalModule } from './shared/components/video-modal/video-modal.module';
+import { FooterComponent } from './core/footer/footer.component';
+import { FooterModule } from './core/footer/footer.module';
+import { AuthModule } from './layouts/auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
   ],
   imports: [
     AdminModule,
@@ -40,6 +42,8 @@ import { VideoModalModule } from './shared/components/video-modal/video-modal.mo
     HomeModule,
     DietaCompletaModule,
     VideoModalModule,
+    FooterModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

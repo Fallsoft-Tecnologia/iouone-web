@@ -1,60 +1,62 @@
 mat-card {
-    background-color: rgba(89, 89, 89, 1);
-    border-radius: 15px;
-    width: 100%; /* Ajusta a largura para ocupar o máximo disponível */
-    max-width: 280px; /* Limita a largura máxima do card */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 auto; /* Garante que os cards fiquem centralizados */
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-  
-  .card-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  
-  .card-title {
-    font-size: 16px;
-    font-weight: 700;
-    padding-top: 1rem;
-    color: var(--Branco);
-    margin: 0;
-  }
-  
-  .text-card {
-    font-size: 12px;
-    font-weight: 400;
-    padding-top: 0.5rem;
-    color: var(--Branco);
-  }
-  
-  .text-footer {
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--Branco);
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  mat-card-actions {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 10px 10px 10px;
-  }
-  
-  @media (max-width: 768px) {
-    mat-card {
-      max-width: 100%; /* Deixa o card ocupar toda a largura disponível em telas pequenas */
-    }
-  }
-  
+  background-color: rgba(89, 89, 89, 1);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 350px; /* Define uma altura fixa para garantir alinhamento */
+  box-sizing: border-box;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Garante que o conteúdo ocupe todo o espaço disponível */
+  padding: 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  padding-top: 1rem;
+  color: var(--Branco);
+  margin: 0;
+}
+
+.text-card {
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: 0.5rem;
+  color: var(--Branco);
+  flex-grow: 1; /* Faz o texto preencher o espaço restante */
+  margin-bottom: 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end; /* Alinha o link à direita */
+  align-items: center; /* Centraliza verticalmente os itens */
+  padding: 10px;
+  margin-top: auto; /* Garante que o link fique na parte inferior */
+  min-height: 50px; /* Define uma altura mínima para alinhar os links */
+}
+
+.text-footer {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--Branco);
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0;
+}

@@ -10,7 +10,7 @@ export class ExerciciosComponent {
     {
       src: '../../../../assets/exercicios/abdomen.png',
       label: 'Abdômen',
-      link: 'https://www.youtube.com/embed/example1',
+      link: 'https://youtube.com/embed/pyXb2sYtN-k',
     },
     {
       src: '../../../../assets/exercicios/core.png',
@@ -47,5 +47,11 @@ export class ExerciciosComponent {
   closeModal(): void {
     this.showModal = false;
     this.currentVideoLink = null;
+  }
+
+  // Método para extrair o ID do vídeo e formatar o link de embed
+  getEmbedUrl(shortUrl: string): string {
+    const videoId = shortUrl.split('/').pop(); // Extrai o ID do vídeo do link
+    return `https://www.youtube.com/embed/${videoId}`; // Formata a URL de embed
   }
 }

@@ -1,17 +1,12 @@
-.container {
-  display: flex;
-  justify-content: center;
-}
-
 .cards-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  max-width: 1240px; /* Limita a largura para acomodar até 4 cards */
+  max-width: 1240px;
   width: 100%;
   padding: 1rem;
-  margin-top: 1rem;
   margin-bottom: 4rem;
+  align-items: stretch; /* Garante que todos os cards da linha tenham a mesma altura */
 }
 
 @media (max-width: 1400px) {
