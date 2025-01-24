@@ -9,4 +9,5 @@ export class TreinoCardComponent {
   @Input() imageSrc!: string;
   @Input() title!: string;
   @Input() description!: string;
+  @Input() treinoId: number = 0;
 }

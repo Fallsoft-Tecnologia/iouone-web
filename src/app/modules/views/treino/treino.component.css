@@ -1,13 +1,11 @@
-.cards-wrapper {
+/* .cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1240px;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   padding: 1rem;
   margin-bottom: 4rem;
   align-items: stretch; /* Garante que todos os cards da linha tenham a mesma altura */
-}
+/* }
 
 @media (max-width: 1400px) {
   .cards-wrapper {
@@ -25,4 +23,12 @@
   .cards-wrapper {
     grid-template-columns: 1fr;
   }
+} */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+

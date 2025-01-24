@@ -1,5 +1,5 @@
 <app-header [title]="title"></app-header>
-<div class="container-wrapper">
+<!-- <div class="container-wrapper">
   <app-fitdance-carousel>
     <div
       class="music-card"
@@ -13,11 +13,33 @@
       </div>
     </div>
   </app-fitdance-carousel>
+</div> -->
+
+<div class="card-content">
+  <div class="music-card" *ngFor="let video of videos" (click)="openModal(video.link)">
+    <img class="thumbnail" [src]="video.imageUrl" alt="{{ video.title }}" />
+    <div class="info">
+      <h3 class="title">{{ video.title }}</h3>
+      <p class="subtitle">{{ video.artists }}</p>
+    </div>
+  </div>
 </div>
 
+<!-- <mat-card>
+  <mat-card-header class="card-content">
+    <img class="card-img" [src]="imageSrc" alt="{{ title }}" />
+    <mat-card-content class="card-text">
+      <h1 class="card-title">{{ title }}</h1>
+      <p class="text-card">
+        {{ description }}
+      </p>
+      <mat-card-actions>
+        <a class="text-footer">Ver Treino</a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card-header>
+</mat-card> -->
+
+
 <!-- Video Modal -->
-<app-video-modal
-  *ngIf="showModal"
-  [videoLink]="currentVideoLink"
-  (close)="closeModal()"
-></app-video-modal>
+<app-video-modal *ngIf="showModal" [videoLink]="currentVideoLink" (close)="closeModal()"></app-video-modal>

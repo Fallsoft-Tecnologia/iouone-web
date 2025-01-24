@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DadosCartao } from 'src/app/shared/models/DadosCartao';
+import { FluxoService } from 'src/app/shared/services/FluxoService';
 import { PagamentoService } from 'src/app/shared/services/PagamentoService';
 
 @Component({
@@ -14,8 +16,15 @@ export class FormularioCartaoComponent {
 
   isDateFocused: boolean = false;
   cardForm: FormGroup;
+  fluxoId: string = '';
+  redireciona: string = "/login";
 
-  constructor(private fb: FormBuilder, private pagamentoService: PagamentoService) {
+  constructor(
+    private fb: FormBuilder, 
+    private pagamentoService: PagamentoService,
+    private fluxoService: FluxoService,
+    private router: Router
+  ) {
     this.cardForm = this.fb.group({
       numeroCartao: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
       dataValidade: ['', Validators.required],
@@ -23,6 +32,8 @@ export class FormularioCartaoComponent {
       nomeCartao: ['', Validators.required],
       formaPagamento: ['', Validators.required]
     });
+
+    this.fluxoId = this.fluxoService.getFluxoId();
   }
 
   formatExpirationDate(event: Event): void {
@@ -41,8 +52,13 @@ export class FormularioCartaoComponent {
     if (this.cardForm.valid) {
       const formData: DadosCartao = this.cardForm.value;
 
-      this.pagamentoService.enviarDadosCartao(formData).subscribe({
+      this.pagamentoService.enviarDadosCartao(formData, this.fluxoId).subscribe({
         next: response => {
+          if (response.fluxoId) {
+            this.fluxoService.setFluxoId(response.fluxoId);
+          }
+          this.router.navigate([this.redireciona]);
+          // this.isSubmitting = false;
           console.log('Pagamento enviado com sucesso:', response);
         },
         error: err => {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CadastroLogin } from 'src/app/shared/models/CadastroLogin';
-import { CadastroResponse } from 'src/app/shared/models/CadastroResponse';
+import { FluxoResponse } from 'src/app/shared/models/FluxoResponse';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
 import { FluxoService } from 'src/app/shared/services/FluxoService';
 
@@ -41,7 +41,7 @@ export class CadastroComponent {
       };
   
       this.cadastroService.cadastroLogin(credentials).subscribe({
-        next: (response: CadastroResponse) => {
+        next: (response: FluxoResponse) => {
           // Salvar o fluxoId
           const fluxoId = response.fluxoId;
           this.fluxoService.setFluxoId(fluxoId);

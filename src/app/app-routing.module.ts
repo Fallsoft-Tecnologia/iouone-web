@@ -6,7 +6,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/modules/login',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
   {
@@ -53,7 +53,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'treino',
+        path: 'treinos',
         loadChildren: () =>
           import('./modules/views/treino/treino.module').then(
             (m) => m.TreinoModule

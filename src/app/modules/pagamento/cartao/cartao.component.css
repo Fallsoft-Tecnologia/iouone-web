@@ -5,6 +5,7 @@
     margin: 0 auto;
     max-width: 440px;
     text-align: left;
+    min-height: 60vh;
 }
 
 .fa-arrow-left{

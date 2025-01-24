@@ -41,6 +41,7 @@ mat-card {
   color: var(--Branco);
   flex-grow: 1; /* Faz o texto preencher o espaço restante */
   margin-bottom: 0;
+  text-align: justify;
 }
 
 mat-card-actions {
