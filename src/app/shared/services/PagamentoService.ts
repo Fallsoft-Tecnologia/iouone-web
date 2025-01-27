@@ -8,14 +8,14 @@ import { FluxoResponse } from '../models/FluxoResponse';
   providedIn: 'root'
 })
 export class PagamentoService {
-  private apiUrl = 'http://pagamento-prd.iouone.com.br/api/v1/';
+  private apiUrl = 'http://localhost:7072/api/v1';
 
   constructor(private http: HttpClient) {}
 
   enviarDadosCartao(dadosCartao: DadosCartao, fluxoId: string): Observable<FluxoResponse> {
       const headers = { 'fluxoId': fluxoId };
     return this.http.post<FluxoResponse>(
-      `${this.apiUrl}/dados/endereco`,
+      `${this.apiUrl}/assinaturas/pagamento/cartao`,
       dadosCartao,
       { headers }
     );
