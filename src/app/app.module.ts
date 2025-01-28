@@ -10,7 +10,7 @@ import { PagamentoModule } from './modules/pagamento/pagamento.module';
 
 import { AuthComponent } from './layouts/auth/auth.component';
 import { EnterButtonModule } from './shared/components/buttons/enter-button/enter-button.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ViewsModule } from './modules/views/views.module';
 import { AdminModule } from './layouts/admin/admin.module';
 import { CardModule } from './shared/components/card/card.module';
@@ -21,6 +21,7 @@ import { VideoModalModule } from './shared/components/video-modal/video-modal.mo
 import { FooterComponent } from './core/footer/footer.component';
 import { FooterModule } from './core/footer/footer.module';
 import { AuthModule } from './layouts/auth/auth.module';
+import { AuthInterceptor } from './core/auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,13 @@ import { AuthModule } from './layouts/auth/auth.module';
     FooterModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { AdminComponent } from './layouts/admin/admin.component';
+import { LoginComponent } from './modules/login/login.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,8 @@ const routes: Routes = [
     redirectTo: '/login',
     pathMatch: 'full',
   },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '/login' },
   {
     path: '',
     component: AuthComponent,
