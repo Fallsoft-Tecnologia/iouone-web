@@ -9,9 +9,16 @@ export class AppComponent implements OnInit {
   title = 'iouone';
 
   ngOnInit(): void {
-    // Limpar o localStorage quando a aba ou navegador for fechado
+    // Adiciona o listener para limpar o localStorage quando a aba for fechada
     window.addEventListener('beforeunload', () => {
-      localStorage.clear();
+      // Checa se a aba está realmente sendo fechada, mas não limpa ao recarregar
+      if (!sessionStorage.getItem('reloading')) {
+        console.log('Aba fechada, limpando localStorage...');
+        localStorage.clear();  // Limpar o localStorage apenas ao fechar a aba/navegador
+      }
     });
+
+    // Marca o recarregamento da página
+    sessionStorage.setItem('reloading', 'true');
   }
 }
