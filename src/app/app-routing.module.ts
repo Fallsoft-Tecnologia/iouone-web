@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { LoginComponent } from './modules/login/login.component';
+import { AuthGuard } from './core/auth/AuthGuard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,6 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: '/login' },
   {
     path: '',
     component: AuthComponent,
@@ -40,6 +40,7 @@ const routes: Routes = [
           import('./modules/views/home/home.module').then(
             (m) => m.HomeModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'nutricionista',
@@ -47,6 +48,7 @@ const routes: Routes = [
           import('./modules/views/nutricionista/nutricionista.module').then(
             (m) => m.NutricionistaModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'dietas',
@@ -54,6 +56,7 @@ const routes: Routes = [
           import('./modules/views/dietas/dietas.module').then(
             (m) => m.DietasModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'treinos',
@@ -61,6 +64,7 @@ const routes: Routes = [
           import('./modules/views/treino/treino.module').then(
             (m) => m.TreinoModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'exercicios',
@@ -68,6 +72,7 @@ const routes: Routes = [
           import('./modules/views/exercicios/exercicios.module').then(
             (m) => m.ExerciciosModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'fitdance',
@@ -75,6 +80,7 @@ const routes: Routes = [
           import('./modules/views/fit/fit.module').then(
             (m) => m.FitModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'chas',
@@ -82,6 +88,7 @@ const routes: Routes = [
           import('./modules/views/chas/chas.module').then(
             (m) => m.ChasModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'cardapio',
@@ -89,6 +96,7 @@ const routes: Routes = [
           import('./modules/views/cardapio/cardapio.module').then(
             (m) => m.CardapioModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'calculadora',
@@ -96,6 +104,7 @@ const routes: Routes = [
           import('./modules/views/calculadora/calculadora.module').then(
             (m) => m.CalculadoraModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'marmita',
@@ -103,6 +112,7 @@ const routes: Routes = [
           import('./modules/views/marmita/marmita.module').then(
             (m) => m.MarmitaModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'detox',
@@ -110,6 +120,7 @@ const routes: Routes = [
           import('./modules/views/detox/detox.module').then(
             (m) => m.DetoxModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
       {
         path: 'projeto',
@@ -117,10 +128,11 @@ const routes: Routes = [
           import('./modules/views/projeto/projeto.module').then(
             (m) => m.ProjetoModule
           ),
+        canActivate: [AuthGuard],  // Protege a rota
       },
     ],
   },
-
+  { path: '**', redirectTo: '/login' },
   
   // {
   //   path: 'cadastro/dados',

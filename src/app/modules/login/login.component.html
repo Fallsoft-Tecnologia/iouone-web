@@ -8,22 +8,31 @@
             </mat-card-header>
         </div>
         <mat-card-content>
-            <mat-form-field appearance="outline" class="full-width-input">
-                <mat-label>E-mail ou telefone</mat-label>
-                <input matInput type="email">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="full-width-input">
-                <mat-label>Senha</mat-label>
-                <input matInput type="password">
-            </mat-form-field>
-            <mat-card-actions class="actions-content">
-                <mat-checkbox class="lembrar-checkbox">Lembrar-me</mat-checkbox>
-                <a mat-button class="forgot-password-button">Esqueceu a senha?</a>
-            </mat-card-actions>
-            <app-enter-button [textButton]="textButton"></app-enter-button>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>E-mail ou telefone</mat-label>
+                    <input matInput type="email" formControlName="email">
+                    <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                        Informe um e-mail válido.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                        A senha é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+                <mat-card-actions class="actions-content">
+                    <mat-checkbox class="lembrar-checkbox">Lembrar-me</mat-checkbox>
+                    <a mat-button class="forgot-password-button">Esqueceu a senha?</a>
+                </mat-card-actions>
+                <app-enter-button [textButton]="textButton" buttonType="submit"></app-enter-button>
+            </form>
         </mat-card-content>
         <mat-card-actions class="register-button">
-            <span>Ainda não é membro? </span><a class="register-button-button" href="/cadastro" mat-button>Cadastre-se</a>
+            <span>Ainda não é membro? </span>
+            <a class="register-button-button" href="/cadastro" mat-button>Cadastre-se</a>
         </mat-card-actions>
     </mat-card>
 </main>
