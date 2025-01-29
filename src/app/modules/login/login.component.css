@@ -76,6 +76,8 @@
 
 .forgot-password-button {
     margin-left: auto;
+    color: var(--Rosa-pink);
+    text-decoration: none;
 }
 
 .mat-mdc-button:not(:disabled) {
