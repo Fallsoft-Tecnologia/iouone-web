@@ -72,7 +72,7 @@ export class DadosDoClienteComponent {
       const dadosCliente = {
         nome: this.dadosForm.get('nomeCompleto')?.value,
         dataNascimento: dataISO, // Enviando a data no formato correto
-        celular: this.dadosForm.get('celular')?.value.replace(/\D/g, '')
+        celular: '55' + this.dadosForm.get('celular')?.value.replace(/\D/g, '')
       };
   
       this.isSubmitting = true;
