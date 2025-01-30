@@ -22,6 +22,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { FooterModule } from './core/footer/footer.module';
 import { AuthModule } from './layouts/auth/auth.module';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
+import { EsqueceuSenhaComponent } from './modules/esqueceu-senha/esqueceu-senha.component';
 
 @NgModule({
   declarations: [

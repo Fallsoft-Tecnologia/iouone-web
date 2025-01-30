@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PlataformaService } from 'src/app/shared/services/PlataformaService';
+import { ContaService } from 'src/app/shared/services/ContaService';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private plataformaService: PlataformaService,
+    private plataformaService: ContaService,
     private router: Router
   ) {
     this.loginForm = this.fb.group({

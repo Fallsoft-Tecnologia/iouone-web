@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class BotaoCartaoComponent {
 
-  textButton: string = 'Cartão de crédito ou débito';
+  textButton: string = 'Cartão de crédito';
   cardLogos: string[] = ['/assets/images/visa.png', '/assets/images/mastercard.png', '/assets/images/amex.png', '/assets/images/elo.png', '/assets/images/hipercard.png'];
   redireciona: string = '/cadastro/pagamento/cartao';
 

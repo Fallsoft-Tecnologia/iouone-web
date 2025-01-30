@@ -28,6 +28,11 @@ const routes: Routes = [
             (m) => m.CadastroRouterModule
           ),
       },
+      {
+        path: 'redefinir-senha',
+        loadChildren: () =>
+          import('./modules/esqueceu-senha/esqueceu-senha.module').then((m) => m.EsqueceuSenhaModule),
+      },
     ],
   },
   {
