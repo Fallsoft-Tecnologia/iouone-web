@@ -1,9 +1,9 @@
 <div *ngFor="let dieta of dietas">
   <app-card
     [dietaId]="dieta.id"
-    [textTitle]="dieta.titulo"
+    [textTitle]="dieta.nome"
     [textDescription]="dieta.descricao"
-    [cardImg]="dieta.imagem"
+    [cardImg]="dieta.foto[0]"
   >
   </app-card>
 </div>

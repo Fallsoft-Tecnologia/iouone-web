@@ -1,5 +1,6 @@
-<app-header [title]="title"></app-header>
-<!-- <div class="container-wrapper">
+<div *ngFor="let tipo of tiposFitDance">
+  <app-header [title]="tipo.tipoFitDance"></app-header>
+  <!-- <div class="container-wrapper">
   <app-fitdance-carousel>
     <div
       class="music-card"
@@ -15,15 +16,17 @@
   </app-fitdance-carousel>
 </div> -->
 
-<div class="card-content">
-  <div class="music-card" *ngFor="let video of videos" (click)="openModal(video.link)">
-    <img class="thumbnail" [src]="video.imageUrl" alt="{{ video.title }}" />
-    <div class="info">
-      <h3 class="title">{{ video.title }}</h3>
-      <p class="subtitle">{{ video.artists }}</p>
+  <div class="card-content">
+    <div class="music-card" *ngFor="let video of fitDancesPorTipo[tipo.id]" (click)="openModal(video.urlFitDance)">
+      <img class="thumbnail" [src]="video.foto" alt="{{ video.nome }}" />
+      <div class="info">
+        <h3 class="title">{{ video.nome }}</h3>
+        <p class="subtitle">{{ video.autor }}</p>
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- <mat-card>
   <mat-card-header class="card-content">

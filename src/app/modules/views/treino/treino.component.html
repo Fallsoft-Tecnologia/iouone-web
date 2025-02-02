@@ -2,9 +2,9 @@
   <div class="cards-wrapper">
     <app-treino-card 
       *ngFor="let treino of treinos"
-      [imageSrc]="treino.imageSrc"
-      [title]="treino.title"
-      [description]="treino.description">
+      [imageSrc]="treino.foto[0]"
+      [title]="treino.nome"
+      [description]="treino.descricao">
     </app-treino-card>
   </div>
 </main>

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Dieta } from '../../models/Dieta';
+import { DietaCompleta } from '../../models/DietaCompleta';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dieta-completa.component.css']
 })
 export class DietaCompletaComponent {
-  @Input() dieta: Dieta = {
+  @Input() dieta: DietaCompleta = {
     titulo: '',
     descricao: '',
     itens: []

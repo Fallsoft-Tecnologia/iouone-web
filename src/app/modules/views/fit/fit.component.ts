@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Fit, TipoFitDance } from 'src/app/shared/models/Fit';
+import { FitService } from 'src/app/shared/services/FitService';
 
 @Component({
   selector: 'app-fit',
@@ -6,34 +8,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./fit.component.css']
 })
 export class FitComponent {
-  title = "Mais Vistos";
+  tiposFitDance: TipoFitDance[] = [];
+  fitDancesPorTipo: { [key: number]: Fit[] } = {};
 
-  videos = [
-    {
-      title: 'Shape of You',
-      artists: 'Ed Sheeran',
-      imageUrl: '/assets/fit/fit-dance.png',
-      link: 'https://www.youtube.com/watch?v=JGwWNGJdvx8'
-    },
-    {
-      title: 'Blinding Lights',
-      artists: 'The Weeknd',
-      imageUrl: '/assets/fit/fit-dance.png',
-      link: 'https://www.youtube.com/watch?v=fHI8X4OXluQ'
-    },
-    {
-      title: 'Levitating',
-      artists: 'Dua Lipa feat. DaBaby',
-      imageUrl: '/assets/fit/fit-dance.png',
-      link: 'https://www.youtube.com/watch?v=TUVcZfQe-Kw'
-    },
-    {
-      title: 'drivers license',
-      artists: 'Olivia Rodrigo',
-      imageUrl: '/assets/fit/fit-dance.png',
-      link: 'https://www.youtube.com/watch?v=ZmDBbnmKpqQ'
-    },
-  ];
+  constructor(
+    private fitService: FitService
+  ) {}
+
+  ngOnInit(): void {
+    this.carregarTipos();
+  }
+
+  carregarTipos(): void {
+    this.fitService.getTipos().subscribe({
+      next: (tipos) => {
+        this.tiposFitDance = tipos;
+        this.carregarFitDances();
+      },
+      error: (err) => console.error('Erro ao carregar tipos de Fit Dance:', err),
+    });
+  }
+
+  carregarFitDances(): void {
+    this.fitService.getFitDance().subscribe({
+      next: (videos) => {
+        this.fitDancesPorTipo = {};
+        this.tiposFitDance.forEach(tipo => {
+          this.fitDancesPorTipo[tipo.id] = videos.filter(video => video.tipoFitDance.id === tipo.id);
+        });
+      },
+      error: (err) => console.error('Erro ao carregar Fit Dance:', err),
+    });
+  }
+
 
   showModal = false;
   currentVideoLink: string | null = null;
@@ -43,7 +50,7 @@ export class FitComponent {
     this.currentVideoLink = `https://www.youtube.com/embed/${videoId}`;
     this.showModal = true;
   }
-  
+
   private extractVideoId(url: string): string {
     const videoIdMatch = url.match(/[?&]v=([^&]+)/);
     return videoIdMatch ? videoIdMatch[1] : '';

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Exercicios } from 'src/app/shared/models/Exercicios';
+import { ExerciciosService } from 'src/app/shared/services/ExerciciosService';
 
 @Component({
   selector: 'app-exercicios',
@@ -6,33 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./exercicios.component.css'],
 })
 export class ExerciciosComponent {
-  exercises = [
-    {
-      src: '../../../../assets/exercicios/abdomen.png',
-      label: 'Abdômen',
-      link: 'https://youtube.com/embed/pyXb2sYtN-k',
-    },
-    {
-      src: '../../../../assets/exercicios/core.png',
-      label: 'Core',
-      link: 'https://www.youtube.com/embed/example2',
-    },
-    {
-      src: '../../../../assets/exercicios/mobilidade.png',
-      label: 'Mobilidade',
-      link: 'https://www.youtube.com/embed/example3',
-    },
-    {
-      src: '../../../../assets/exercicios/costas.png',
-      label: 'Costas',
-      link: 'https://www.youtube.com/embed/example4',
-    },
-    {
-      src: '../../../../assets/exercicios/yoga.png',
-      label: 'Yoga',
-      link: 'https://www.youtube.com/embed/example5',
-    },
-  ];
+  exercicios: Exercicios[] = [];
+
+  constructor(private exerciciosService: ExerciciosService) {}
+
+  ngOnInit(): void {
+    this.carregarExercicios();
+  }
+
+  carregarExercicios(): void {
+    this.exerciciosService.getExercicios().subscribe({
+      next: (data) => (this.exercicios = data),
+      error: (err) => console.error('Erro ao carregar exercícios:', err),
+    });
+  }
 
   showModal = false; // Estado do modal
   currentVideoLink: string | null = null; // Link do vídeo atual
