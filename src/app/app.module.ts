@@ -23,6 +23,7 @@ import { FooterModule } from './core/footer/footer.module';
 import { AuthModule } from './layouts/auth/auth.module';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
 import { EsqueceuSenhaComponent } from './modules/esqueceu-senha/esqueceu-senha.component';
+import { ReceitaCompletaComponent } from './shared/components/receita-completa/receita-completa.component';
 
 @NgModule({
   declarations: [
