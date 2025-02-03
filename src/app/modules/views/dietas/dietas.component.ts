@@ -10,8 +10,6 @@ import { DietasService } from 'src/app/shared/services/DietasService';
 export class DietasComponent implements OnInit{
   paginaAtual: string = 'router-outlet';
   dietas: Topicos[] = [];
-  routerDetail: string = '/dietas';
-  linkName: string = 'Ver dieta';
 
   constructor(private dietasService: DietasService) {}
 
