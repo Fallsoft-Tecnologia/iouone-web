@@ -3,7 +3,7 @@
     [itemId]="dieta.id"
     [textTitle]="dieta.nome"
     [textDescription]="dieta.descricao"
-    [cardImg]="dieta.foto[0]"
+    [cardImg]="getImageUrl(dieta.foto)"
     [routerDetail]="routerDetail"
     [linkName] = "linkName"
   >

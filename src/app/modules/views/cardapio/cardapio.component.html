@@ -1,6 +1,6 @@
 <div *ngFor="let cardapio of cardapios">
   <app-card
-    [dietaId]="cardapio.id"
+    [itemId]="cardapio.id"
     [textTitle]="cardapio.nome"
     [textDescription]="cardapio.descricao"
     [cardImg]="getImageUrl(cardapio.foto)"
