@@ -3,5 +3,5 @@ export interface Marmita {
     nome: string;
     descricao: string;
     modoDePreparo: string;
-    foto: string[];
+    foto: Uint8Array;
 }

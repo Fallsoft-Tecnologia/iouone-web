@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Detox } from '../models/Detox';
+import { Topicos } from '../models/Topicos';
 import { environment } from 'src/config';
-
 @Injectable({
   providedIn: 'root'
 })
-export class DetoxService {
+export class ChasService {
+
   private apiUrl = `${environment.apiUrl}/v2`;
 
-  constructor(private http: HttpClient) { }
+ constructor(private http: HttpClient) { }
     private getHeaders(): HttpHeaders {
       const token = localStorage.getItem('accessToken') || '';
       return new HttpHeaders({
@@ -18,7 +18,7 @@ export class DetoxService {
       });
     }
 
-  getDetox(): Observable<Detox[]> {
-    return this.http.get<Detox[]>(`${this.apiUrl}/detox`,{headers: this.getHeaders()});
+  getChas(): Observable<Topicos[]> {
+    return this.http.get<Topicos[]>(`${this.apiUrl}/chas`,{headers: this.getHeaders()});
   }
 }

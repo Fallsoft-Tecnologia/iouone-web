@@ -43,4 +43,9 @@ export class ExerciciosComponent {
     const videoId = shortUrl.split('/').pop(); // Extrai o ID do vídeo do link
     return `https://www.youtube.com/embed/${videoId}`; // Formata a URL de embed
   }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
 }

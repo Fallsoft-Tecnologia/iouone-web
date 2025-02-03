@@ -11,5 +11,5 @@ export interface Fit {
     contadorVistos: number;
     tipoFitDance: TipoFitDance;
     autor: string;
-    foto: string[];
+    foto: Uint8Array;
 }

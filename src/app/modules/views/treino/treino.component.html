@@ -2,7 +2,7 @@
   <div class="cards-wrapper">
     <app-treino-card 
       *ngFor="let treino of treinos"
-      [imageSrc]="treino.foto[0]"
+      [imageSrc]="getImageUrl(treino.foto)"
       [title]="treino.nome"
       [description]="treino.descricao">
     </app-treino-card>

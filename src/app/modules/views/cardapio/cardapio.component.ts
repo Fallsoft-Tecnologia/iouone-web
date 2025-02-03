@@ -22,4 +22,9 @@ export class CardapioComponent {
       error: (err) => console.error('Erro ao carregar os cardápios:', err),
     });
   }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
 }

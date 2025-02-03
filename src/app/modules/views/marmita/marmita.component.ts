@@ -14,12 +14,19 @@ export class MarmitaComponent {
 
   ngOnInit(): void {
     this.carregarMarmitas();
+    console.log(this.marmitas);
   }
 
   carregarMarmitas(): void {
     this.marmitaService.getMarmitas().subscribe({
-      next: (data) => (this.marmitas = data),
+      next: (data) => {this.marmitas = data;},
       error: (err) => console.error('Erro ao carregar as marmitas:', err),
     });
   }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
+
 }

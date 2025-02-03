@@ -23,4 +23,9 @@ export class DietasComponent implements OnInit{
       error: (err) => console.error('Erro ao carregar dietas:', err),
     });
   }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
 }

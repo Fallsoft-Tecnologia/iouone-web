@@ -3,5 +3,5 @@ export interface Exercicios {
     nome: string;
     urlTreinoCasa: string;
     video: string[];
-    foto: string[];
+    foto: Uint8Array;
 }

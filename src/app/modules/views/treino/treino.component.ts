@@ -22,4 +22,9 @@ export class TreinoComponent implements OnInit{
       error: (err) => console.error('Erro ao carregar treinos:', err),
     });
   }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
 }

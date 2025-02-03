@@ -22,4 +22,12 @@ export class DetoxComponent {
       error: (err) => console.error('Erro ao carregar os detox:', err),
     });
   }
+
+  
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
+
+
 }

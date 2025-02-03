@@ -3,7 +3,7 @@
     [dietaId]="cardapio.id"
     [textTitle]="cardapio.nome"
     [textDescription]="cardapio.descricao"
-    [cardImg]="cardapio.foto[0]"
+    [cardImg]="getImageUrl(cardapio.foto)"
   >
   </app-card>
 </div>

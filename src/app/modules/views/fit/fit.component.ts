@@ -46,19 +46,28 @@ export class FitComponent {
   currentVideoLink: string | null = null;
 
   openModal(videoLink: string): void {
-    const videoId = this.extractVideoId(videoLink);
-    this.currentVideoLink = `https://www.youtube.com/embed/${videoId}`;
+    // const videoId = this.extractVideoId(videoLink);
+    this.currentVideoLink = videoLink;
     this.showModal = true;
   }
 
   private extractVideoId(url: string): string {
     const videoIdMatch = url.match(/[?&]v=([^&]+)/);
+
+    console.log("video id cortado"+videoIdMatch);
+
     return videoIdMatch ? videoIdMatch[1] : '';
+
   }
 
   closeModal(): void {
     this.showModal = false;
     this.currentVideoLink = null;
+  }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
   }
 }
 
