@@ -9,6 +9,8 @@ import { ChasService } from 'src/app/shared/services/ChasService';
 })
 export class ChasComponent implements OnInit{
    chas: Topicos[] = [];
+   routerDetail: string = '/chas';
+   linkName: string = 'Ver chá';
   
     constructor(private chasService: ChasService) {}
   

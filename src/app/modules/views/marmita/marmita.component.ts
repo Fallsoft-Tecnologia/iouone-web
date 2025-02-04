@@ -9,6 +9,8 @@ import { MarmitaService } from 'src/app/shared/services/MarmitaService';
 })
 export class MarmitaComponent {
   marmitas: Marmita[] = [];
+  routerDetail: string = '/marmitas';
+  linkName: string = 'Ver marmita';
 
   constructor(private marmitaService: MarmitaService) {}
 
