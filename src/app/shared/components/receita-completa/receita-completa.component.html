@@ -1,49 +1,28 @@
-<div class="dieta-container">
-    <button class="back-button" (click)="voltar()"><i class="fa-regular fa-arrow-left"></i> Voltar</button>
-    <div class="dieta-header">
-      <h1 class="dieta-titulo">Plano Nutrição Balanceada</h1>
-      <p class="dieta-descricao">
-        Uma solução para quem busca simplicidade e saúde duradoura. Este plano reúne o melhor dos nutrientes essenciais para garantir energia, disposição e bem-estar. Com receitas práticas e adaptáveis ao seu cotidiano, ele se concentra em uma alimentação variada e equilibrada, ajudando a construir hábitos saudáveis que transformam sua relação com a comida.
-      </p>
-      <br>Estimativa de perda de peso: até 4 kg por mês.
+<div class="receita-container">
+    <button class="back-button" (click)="voltar()">
+      <i class="fa-regular fa-arrow-left"></i> Voltar
+    </button>
+    <div class="receita-header">
+      <h1 class="receita-titulo">{{ receita.titulo }}</h1>
+      <p class="receita-descricao">{{ receita.descricao }}</p>
     </div>
-    <div class="dieta-itens">
-      <div class="item">
-        <div class="item-dia">Café da Manhã</div>
-        <div class="item-descricao">
-          Iogurte natural (200g), Granola sem açúcar (30g), Morangos frescos (100g), Café preto sem açúcar (200ml)
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-dia">Lanche da Manhã</div>
-        <div class="item-descricao">
-          Uma banana (120g), Uma colher de sopa de pasta de amendoim natural (15g)
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-dia">Almoço</div>
-        <div class="item-descricao">
-          Peito de frango grelhado (120g), Arroz integral (80g), Feijão carioca cozido (50g), Salada de folhas verdes com azeite e limão (100g)
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-dia">Lanche da Tarde</div>
-        <div class="item-descricao">
-          Mix de castanhas (20g), Uma maçã (130g)
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-dia">Jantar</div>
-        <div class="item-descricao">
-          Filé de peixe grelhado (120g), Purê de batata-doce (100g), Legumes cozidos no vapor (100g)
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-dia">Ceia</div>
-        <div class="item-descricao">
-          Chá de camomila (200ml), Uma fatia de pão integral com queijo branco (30g)
-        </div>
-      </div>
+  
+    <div class="receita-secao">
+      <h2 class="receita-subtitulo">Ingredientes</h2>
+      <ul class="receita-lista">
+        <li *ngFor="let ingrediente of receita.ingredientes" class="receita-item">
+          {{ ingrediente }}
+        </li>
+      </ul>
+    </div>
+  
+    <div class="receita-secao">
+      <h2 class="receita-subtitulo">Modo de Preparo</h2>
+      <ol class="receita-lista">
+        <li *ngFor="let passo of receita.preparo.descricao" class="receita-item">
+          {{ passo }}
+        </li>
+      </ol>
     </div>
   </div>
   

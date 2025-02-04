@@ -8,22 +8,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./receita-completa.component.css']
 })
 export class ReceitaCompletaComponent {
-  @Input() routerBack: string = '';
-  // @Input() receita: ReceitaCompleta = {
-  //   titulo: '',
-  //   descricao: '',
-  //   itens: []
-  // };
+  @Input() receita: ReceitaCompleta = {
+    titulo: '',
+    descricao: '',
+    ingredientes: [],
+    preparo: {
+        descricao: []
+    }
+  };
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
-  // ngOnInit(): void {
-  //   this.route.data.subscribe(({ receita }) => {
-  //     this.receita = receita;
-  //   });
-  // }
+  ngOnInit(): void {
+    this.route.data.subscribe(({ receita }) => {
+      this.receita = receita;
+    });
+  }
 
   voltar() {
-    this.router.navigate([`/${this.routerBack}`]);
+    const urlSegments = this.route.snapshot.url.map(segment => segment.path);
+    if (urlSegments.length > 1) {
+      urlSegments.pop();
+    }
+    const backUrl = `/${urlSegments.join('/')}`;
+    this.router.navigate([backUrl]);
   }
 }

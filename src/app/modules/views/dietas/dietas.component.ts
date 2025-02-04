@@ -8,7 +8,6 @@ import { DietasService } from 'src/app/shared/services/DietasService';
   styleUrls: ['./dietas.component.css'],
 })
 export class DietasComponent implements OnInit{
-  paginaAtual: string = 'router-outlet';
   dietas: Topicos[] = [];
   routerDetail: string = '/dietas';
   linkName: string = 'Ver dieta';

@@ -23,6 +23,11 @@ export class DietaCompletaComponent {
   }
 
   voltar() {
-    this.router.navigate(['/dietas']);
+    const urlSegments = this.route.snapshot.url.map(segment => segment.path);
+    if (urlSegments.length > 1) {
+      urlSegments.pop();
+    }
+    const backUrl = `/${urlSegments.join('/')}`;
+    this.router.navigate([backUrl]);
   }
 }
