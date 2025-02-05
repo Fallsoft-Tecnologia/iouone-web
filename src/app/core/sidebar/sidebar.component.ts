@@ -22,7 +22,7 @@ export class SidebarComponent implements OnInit {
     { title: 'Home', link: '/home', icon: 'fa-solid fa-house' },
     { title: 'Área Nutricionista', link: '/nutricionista', icon: 'fa-solid fa-user-md' },
     { title: 'Dietas atualizadas todo mês', link: '/dietas', icon: 'fa-solid fa-apple-alt' },
-    { title: 'Treino atualizado todo mês', link: '/treino', icon: 'fa-solid fa-dumbbell' },
+    { title: 'Treino atualizado todo mês', link: '/treinos', icon: 'fa-solid fa-dumbbell' },
     { title: 'Exercícios emagreça em casa', link: '/exercicios', icon: 'fa-solid fa-home' },
     { title: 'Fit dance', link: '/fitdance', icon: 'fa-solid fa-music' },
     { title: 'Chás', link: '/chas', icon: 'fa-solid fa-mug-hot' },

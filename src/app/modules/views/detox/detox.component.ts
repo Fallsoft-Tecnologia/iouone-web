@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Detox } from 'src/app/shared/models/Detox';
+import { DetoxService } from 'src/app/shared/services/DetoxService';
 
 @Component({
   selector: 'app-detox',
@@ -6,11 +8,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./detox.component.css']
 })
 export class DetoxComponent {
-  textTitle: string = 'What is lorem';
-  textDescription: string =
-    ' Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique';
-  cardImg: string = '../../../../assets/chas/cha-01.png';
-  cardImg2: string = '../../../../assets/chas/cha-02.png';
-  cardImg3: string = '../../../../assets/chas/cha-03.png';
-  cardImg4: string = '../../../../assets/chas/cha-04.png';
+  detoxList: Detox[] = [];
+  routerDetail: string = '/detox';
+  linkName: string = 'Ver detox';
+
+  constructor(private detoxService: DetoxService) {}
+
+  ngOnInit(): void {
+    this.carregarDetox();
+  }
+
+  carregarDetox(): void {
+    this.detoxService.getDetox().subscribe({
+      next: (data) => (this.detoxList = data),
+      error: (err) => console.error('Erro ao carregar os detox:', err),
+    });
+  }
+
+  
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
+
+
 }

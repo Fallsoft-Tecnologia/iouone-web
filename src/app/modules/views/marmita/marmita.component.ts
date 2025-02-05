@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Marmita } from 'src/app/shared/models/Marmita';
+import { MarmitaService } from 'src/app/shared/services/MarmitaService';
 
 @Component({
   selector: 'app-marmita',
@@ -6,11 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./marmita.component.css']
 })
 export class MarmitaComponent {
-  textTitle: string = 'What is lorem';
-  textDescription: string =
-    ' Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique';
-  cardImg: string = '../../../../assets/chas/cha-01.png';
-  cardImg2: string = '../../../../assets/chas/cha-02.png';
-  cardImg3: string = '../../../../assets/chas/cha-03.png';
-  cardImg4: string = '../../../../assets/chas/cha-04.png';
+  marmitas: Marmita[] = [];
+  routerDetail: string = '/marmitas';
+  linkName: string = 'Ver marmita';
+
+  constructor(private marmitaService: MarmitaService) {}
+
+  ngOnInit(): void {
+    this.carregarMarmitas();
+    console.log(this.marmitas);
+  }
+
+  carregarMarmitas(): void {
+    this.marmitaService.getMarmitas().subscribe({
+      next: (data) => {this.marmitas = data;},
+      error: (err) => console.error('Erro ao carregar as marmitas:', err),
+    });
+  }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
+
 }

@@ -4,6 +4,7 @@ import { MarmitaRoutingModule } from './marmita-routing.module';
 import { MarmitaComponent } from './marmita.component';
 import { MatCardModule } from '@angular/material/card';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { ReceitaCompletaRoutingModule } from 'src/app/shared/components/receita-completa/receita-completa-routing.module';
 
 
 
@@ -15,6 +16,7 @@ import { CardModule } from 'src/app/shared/components/card/card.module';
     CommonModule,
     MarmitaRoutingModule,
     CardModule,
+    ReceitaCompletaRoutingModule
   ]
 })
 export class MarmitaModule { }

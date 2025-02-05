@@ -1,12 +1,12 @@
 <main class="container">
-  <mat-card *ngFor="let exercise of exercises" class="card-content">
-    <img class="card-img" [src]="exercise.src" [alt]="exercise.label" />
+  <mat-card *ngFor="let exercicio of exercicios" class="card-content">
+    <img class="card-img" [src]="getImageUrl(exercicio.foto)" [alt]="exercicio.nome" />
     <button
       mat-raised-button
       class="button"
-      (click)="openModal(exercise.link)"
+      (click)="openModal(exercicio.urlTreinoCasa)"
     >
-      {{ exercise.label }}
+      {{ exercicio.nome }}
     </button>
   </mat-card>
 </main>

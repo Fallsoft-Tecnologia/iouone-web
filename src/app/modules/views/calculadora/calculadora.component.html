@@ -9,70 +9,56 @@
   </div>
 
   <section class="form-section">
-    <form class="signup-form">
+    <form class="signup-form" (ngSubmit)="enviarFormulario()" #form="ngForm">
       <div class="individual-form">
-        <p>
-          Altura:
-          <span class="red-text">*</span>
-        </p>
+        <p>Altura: <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Altura em centímetros</mat-label>
-          <input matInput />
+          <input matInput [(ngModel)]="requestCalculadora.altura" name="altura" required #altura="ngModel"/>
           <div class="suffix-container">
             <span class="divider"></span>
             <span matSuffix>cm</span>
           </div>
         </mat-form-field>
-        <div class="bottom-input"></div>
+        <div *ngIf="altura.invalid && altura.touched" class="error-text">Preencha a altura corretamente.</div>
       </div>
 
       <div class="individual-form">
-        <p>
-          Idade:
-          <span class="red-text">*</span>
-        </p>
+        <p>Idade: <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Idade</mat-label>
-          <input matInput type="number" />
+          <input matInput type="number" [(ngModel)]="requestCalculadora.idade" name="idade" required #idade="ngModel"/>
         </mat-form-field>
-        <div class="bottom-input"></div>
+        <div *ngIf="idade.invalid && idade.touched" class="error-text">Preencha a idade corretamente.</div>
       </div>
 
       <div class="individual-form">
-        <p>
-          Nível de atividade física:
-          <span class="red-text">*</span>
-        </p>
-
+        <p>Nível de atividade física: <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Informe seu nível de atividade física</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="requestCalculadora.nivelAtividadeFisica" name="atividadeFisica" required #atividadeFisica="ngModel">
             <mat-option value="Baixo">Baixo</mat-option>
             <mat-option value="Nenhum">Nenhum</mat-option>
             <mat-option value="Moderado">Moderado</mat-option>
             <mat-option value="Frequente">Frequente</mat-option>
           </mat-select>
         </mat-form-field>
-        <div class="bottom-input"></div>
+        <div *ngIf="atividadeFisica.invalid && atividadeFisica.touched" class="error-text">Escolha um nível de atividade.</div>
       </div>
 
       <div class="individual-form">
-        <p>
-          Seu objetivo
-          <span class="red-text">*</span>
-        </p>
+        <p>Seu objetivo <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Informe seu objetivo</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="requestCalculadora.objetivo" name="objetivo" required #objetivo="ngModel">
             <mat-option value="Emagrecer">Emagrecer</mat-option>
-            <mat-option value="Emagrecer agressivo"
-              >Emagrecer agressivo</mat-option
-            >
+            <mat-option value="Emagrecer agressivo">Emagrecer agressivo</mat-option>
             <mat-option value="Manter">Manter</mat-option>
             <mat-option value="Ganhos secos">Ganhos "secos"</mat-option>
             <mat-option value="Ganhar agressivo">Ganhar agressivo</mat-option>
           </mat-select>
         </mat-form-field>
+        <div *ngIf="objetivo.invalid && objetivo.touched" class="error-text">Escolha um objetivo.</div>
         <div class="bottom-input">
           <p class="bottom-text-input">
             Lembrando que as opções mais saudáveis e sustentáveis são as
@@ -81,60 +67,57 @@
           </p>
         </div>
       </div>
+
+      <div  class="individual-form">
+        <label id="radio-label" class="radio-label">Biotipo:</label>
+        <mat-radio-group [(ngModel)]="requestCalculadora.biotipo" name="biotipo" aria-labelledby="radio-label" class="radio-group">
+          <mat-radio-button value="Ectomorfo">Ectomorfo</mat-radio-button>
+          <mat-radio-button value="Mesomorfo">Mesomorfo</mat-radio-button>
+          <mat-radio-button value="Endomorfo">Endomorfo</mat-radio-button>
+        </mat-radio-group>
+      
+        <app-enter-button [buttonType]="'submit'" class="enter-button" [textButton]="textButton"  [isDisabled]="!form.valid"></app-enter-button>
+      </div>
     </form>
 
-    <form class="signup-form">
+    <form class="signup-form" (ngSubmit)="enviarFormulario()" #form="ngForm">
       <div class="individual-form">
-        <p>
-          Peso:
-          <span class="red-text">*</span>
-        </p>
+        <p>Peso: <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Peso em quilogramas</mat-label>
-          <input matInput />
+          <input matInput [(ngModel)]="requestCalculadora.peso" name="peso" required #peso="ngModel"/>
           <div class="suffix-container">
             <span class="divider"></span>
             <span matSuffix>kg</span>
           </div>
         </mat-form-field>
-        <div class="bottom-input"></div>
+        <div *ngIf="peso.invalid && peso.touched" class="error-text">Preencha o peso corretamente.</div>
       </div>
 
       <div class="individual-form">
-        <p>
-          Taxa metabólica basal:
-          <span class="red-text">*</span>
-        </p>
-
+        <p>Taxa metabólica basal: <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Taxa basal em caloria</mat-label>
-          <input matInput />
+          <input matInput [(ngModel)]="requestCalculadora.taxaMetabolica" name="taxaMetabolicaBasal"  #taxaMetabolica="ngModel"/>
           <div class="suffix-container">
             <span class="divider"></span>
             <span matSuffix>kcal</span>
           </div>
         </mat-form-field>
-        <div class="bottom-input">
-          <p class="bottom-text-input">
-            Estas são as calorias que seu corpo gasta simplesmente para
-            sobreviver, ou seja, se você ficar 24 hrs dormindo.
-          </p>
-        </div>
+        <div *ngIf="taxaMetabolica.invalid && taxaMetabolica.touched" class="error-text">Preencha a taxa metabólica corretamente.</div>
       </div>
 
       <div class="individual-form">
-        <p>
-          TDEE:
-          <span class="red-text">*</span>
-        </p>
+        <p>TDEE: <span class="red-text">*</span></p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>TDEE em caloria</mat-label>
-          <input matInput type="text" />
+          <input matInput [(ngModel)]="requestCalculadora.tdee" type="text" name="tdee"  #tdee="ngModel"/>
           <div class="suffix-container-cm">
             <span class="divider"></span>
             <span matSuffix>kcal</span>
           </div>
         </mat-form-field>
+        <div *ngIf="tdee.invalid && tdee.touched" class="error-text">Preencha o TDEE corretamente.</div>
         <div class="bottom-input">
           <p class="bottom-text-input">
             Estas são as calorias que seu corpo gasta em média para sobreviver e
@@ -144,38 +127,25 @@
         </div>
       </div>
 
-      <div class="individual-form">
+      <!-- <div class="individual-form">
         <p>
           Estado atual:
           <span class="red-text">*</span>
         </p>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Informe seu estado atual</mat-label>
-          <mat-select>
+          <mat-select  name="estadoAtual">
             <mat-option value="Magrela">Magrela</mat-option>
-            <mat-option value="Massa magra considerável"
-              >Massa magra considerável e BF não muito alto</mat-option
-            >
+            <mat-option value="Massa magra considerável">Massa magra considerável e BF não muito alto</mat-option>
             <mat-option value="Falsa Magra">Falsa Magra</mat-option>
-            <mat-option value="Muito acima do peso"
-              >Muito acima do peso</mat-option
-            >
+            <mat-option value="Muito acima do peso">Muito acima do peso</mat-option>
           </mat-select>
         </mat-form-field>
         <div class="bottom-input"></div>
-      </div>
+      </div> -->
+
     </form>
   </section>
 
-  <label id="radio-label" class="radio-label">Biotipo:</label>
-  <mat-radio-group aria-labelledby="radio-label" class="radio-group">
-    <mat-radio-button value="Ectomorfo">Ectomorfo</mat-radio-button>
-    <mat-radio-button value="Mesomorfo">Mesomorfo</mat-radio-button>
-    <mat-radio-button value="Endomorfo">Endomorfo</mat-radio-button>
-  </mat-radio-group>
 
-  <app-enter-button
-    class="enter-button"
-    [textButton]="textButton"
-  ></app-enter-button>
 </main>

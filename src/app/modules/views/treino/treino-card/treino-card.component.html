@@ -7,7 +7,7 @@
           {{ description }}
         </p>
         <mat-card-actions>
-          <a class="text-footer">Ver Treino</a>
+          <a [routerLink]="['/treinos', treinoId]" class="text-footer">Ver Treino</a>
         </mat-card-actions>
       </mat-card-content>
     </mat-card-header>

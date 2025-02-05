@@ -10,6 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-button/enter-button.module';
 import { LoginRoutingModule } from './login-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +28,12 @@ import { LoginRoutingModule } from './login-routing.module';
     MatCheckboxModule,
     EnterButtonModule,
     MatFormFieldModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ]
 })
 export class LoginModule { }
