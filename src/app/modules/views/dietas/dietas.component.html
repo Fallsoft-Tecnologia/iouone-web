@@ -1,9 +1,11 @@
 <div *ngFor="let dieta of dietas">
   <app-card
-    [dietaId]="dieta.id"
-    [textTitle]="dieta.titulo"
+    [itemId]="dieta.id"
+    [textTitle]="dieta.nome"
     [textDescription]="dieta.descricao"
-    [cardImg]="dieta.imagem"
+    [cardImg]="getImageUrl(dieta.foto)"
+    [routerDetail]="routerDetail"
+    [linkName] = "linkName"
   >
   </app-card>
 </div>

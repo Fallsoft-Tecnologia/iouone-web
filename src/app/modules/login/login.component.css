@@ -6,11 +6,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Altura mínima da tela inteira */
+    min-height: 80vh;
+    margin-top: 32px;
+    margin-bottom: 42px;
 }
 
 .card-login-container {
-    max-height: 95vh;
     margin: auto;
     max-width: 500px;
     width: 100%; /* Largura completa */
@@ -54,6 +55,7 @@
 
 .full-width-input {
     width: 100%;
+    margin-bottom: 12px;
 }
 
 .actions-content {
@@ -74,6 +76,8 @@
 
 .forgot-password-button {
     margin-left: auto;
+    color: var(--Rosa-pink);
+    text-decoration: none;
 }
 
 .mat-mdc-button:not(:disabled) {

@@ -1,0 +1,28 @@
+<div class="receita-container">
+    <button class="back-button" (click)="voltar()">
+      <i class="fa-regular fa-arrow-left"></i> Voltar
+    </button>
+    <div class="receita-header">
+      <h1 class="receita-titulo">{{ receita.titulo }}</h1>
+      <p class="receita-descricao">{{ receita.descricao }}</p>
+    </div>
+  
+    <div class="receita-secao">
+      <h2 class="receita-subtitulo">Ingredientes</h2>
+      <ul class="receita-lista">
+        <li *ngFor="let ingrediente of receita.ingredientes" class="receita-item">
+          {{ ingrediente }}
+        </li>
+      </ul>
+    </div>
+  
+    <div class="receita-secao">
+      <h2 class="receita-subtitulo">Modo de Preparo</h2>
+      <ol class="receita-lista">
+        <li *ngFor="let passo of receita.preparo.descricao" class="receita-item">
+          {{ passo }}
+        </li>
+      </ol>
+    </div>
+  </div>
+  

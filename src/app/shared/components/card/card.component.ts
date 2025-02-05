@@ -9,7 +9,7 @@ export class CardComponent {
   @Input() textTitle: string = '';
   @Input() textDescription: string = '';
   @Input() cardImg: string = '';
-  @Input() linkName: string = 'Ver dieta';
-
-  @Input() dietaId: number = 0;
+  @Input() linkName: string = 'Detalhar';
+  @Input() routerDetail: string = '';
+  @Input() itemId: number = 0;
 }

@@ -1,8 +1,10 @@
 <div *ngFor="let cha of chas">
   <app-card
-    [textTitle]="cha.titulo"
+    [textTitle]="cha.nome"
     [textDescription]="cha.descricao"
-    [cardImg]="cha.imagem"
+    [cardImg]="getImageUrl(cha.foto)"
+    [routerDetail]="routerDetail"
+    [linkName] = "linkName"
   >
   </app-card>
 </div>

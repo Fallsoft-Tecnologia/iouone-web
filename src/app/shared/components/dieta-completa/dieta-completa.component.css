@@ -2,7 +2,6 @@
   display: block;
   background-color: var(--Background-feed);
   padding: 2rem;
-  font-family: 'Arial', sans-serif;
   color: var(--Preto);
 }
 
@@ -17,7 +16,7 @@
 }
 
 .back-button {
-  background-color: var(--Botao-azul);
+  background-color: var(--Rosa-pink);
   color: var(--Branco);
   border: none;
   padding: 0.6rem 1.2rem;
@@ -29,7 +28,7 @@
 }
 
 .back-button:hover {
-  background-color: var(--Azul-ativado);
+  background-color: var(--Rosa);
 }
 
 .dieta-header {
@@ -46,6 +45,7 @@
 .dieta-descricao {
   font-size: 1.2rem;
   color: var(--Cinza);
+  text-align: justify;
 }
 
 .dieta-itens {

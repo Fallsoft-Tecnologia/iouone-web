@@ -1,27 +1,11 @@
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg"
->
-</app-card>
-
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg2"
->
-</app-card>
-
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg3"
->
-</app-card>
-
-<app-card
-  [textTitle]="textTitle"
-  [textDescription]="textDescription"
-  [cardImg]="cardImg4"
->
-</app-card>
+<div *ngFor="let marmita of marmitas">
+  <app-card
+    [itemId]="marmita.id"
+    [textTitle]="marmita.nome"
+    [textDescription]="marmita.descricao"
+    [cardImg]="getImageUrl(marmita.foto)"
+    [routerDetail]="routerDetail"
+    [linkName] = "linkName"
+  >
+  </app-card>
+</div>
