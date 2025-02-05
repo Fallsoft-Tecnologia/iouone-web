@@ -8,6 +8,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { CalculadoraComponent } from './calculadora.component';
 import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-button/enter-button.module';
 import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
     MatOptionModule,
     MatRadioModule,
     EnterButtonModule,
+    FormsModule
   ],
 })
 export class CalculadoraModule {}
