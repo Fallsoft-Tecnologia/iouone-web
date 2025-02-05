@@ -1,10 +1,10 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
-import { DietaService } from '../services/DietaService';
+import { DietasService } from '../services/DietasService';
 
 export const dietaResolver = (route: ActivatedRouteSnapshot): Observable<any> => {
-    const dietaService = inject(DietaService);
+    const dietaService = inject(DietasService);
     const dietaId = route.paramMap.get('id');
 
     if (!dietaId) {

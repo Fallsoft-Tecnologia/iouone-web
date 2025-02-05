@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavbarComponent {
   @Output() toggleSidebar = new EventEmitter<void>();
+  constructor(private router: Router){}
 
   logout(): void {
     console.log('Usuário saiu');
-    // Adicione a lógica de logout aqui
-    // Por exemplo, limpar o token de autenticação e redirecionar para a página de login
+      localStorage.clear();
+  
+    this.router.navigate(['/login'])
   }
 }

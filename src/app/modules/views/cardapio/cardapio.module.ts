@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardapioRoutingModule } from './cardapio-routing.module';
 import { CardapioComponent } from './cardapio.component';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { DietaCompletaRoutingModule } from 'src/app/shared/components/dieta-completa/dieta-completa-routing.module';
 
 
 
@@ -13,7 +14,8 @@ import { CardModule } from 'src/app/shared/components/card/card.module';
   imports: [
     CommonModule,
     CardapioRoutingModule,
-    CardModule
+    CardModule,
+    DietaCompletaRoutingModule,
   ]
 })
 export class CardapioModule { }

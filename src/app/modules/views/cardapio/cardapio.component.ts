@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Topicos } from 'src/app/shared/models/Topicos';
+import { CardapioService } from 'src/app/shared/services/CardapioService';
 
 @Component({
   selector: 'app-cardapio',
@@ -6,11 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./cardapio.component.css']
 })
 export class CardapioComponent {
-  textTitle: string = 'What is lorem';
-  textDescription: string =
-    ' Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum quis dolore tempora quibusdam Repudiandae autem error iusto commodi consequatur suscipit ratione beatae sequi rem natus nam vero Impedit earum similique';
-  cardImg: string = '../../../../assets/chas/cha-01.png';
-  cardImg2: string = '../../../../assets/chas/cha-02.png';
-  cardImg3: string = '../../../../assets/chas/cha-03.png';
-  cardImg4: string = '../../../../assets/chas/cha-04.png';
+  cardapios: Topicos[] = [];
+  routerDetail: string = '/cardapios';
+  linkName: string = 'Ver Cardapio';
+
+  constructor(private cardapioService: CardapioService) {}
+
+  ngOnInit(): void {
+    this.carregarCardapios();
+  }
+
+  carregarCardapios(): void {
+    this.cardapioService.getCardapios().subscribe({
+      next: (data) => (this.cardapios = data),
+      error: (err) => console.error('Erro ao carregar os cardápios:', err),
+    });
+  }
+
+  getImageUrl(byteArray: Uint8Array): string {
+    const pathImage = "data:image/webp;base64,";
+    return pathImage + byteArray;
+  }
 }

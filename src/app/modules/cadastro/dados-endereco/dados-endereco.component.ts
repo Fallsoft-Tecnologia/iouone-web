@@ -17,7 +17,7 @@ export class DadosEnderecoComponent {
 
   dadosForm: FormGroup;
   textButton: string = "Próximo";
-  redireciona: string = "/cadastro/dados-corporal";
+  redireciona: string = "/cadastro/corporal";
   isSubmitting: boolean = false;
   fluxoId: string = '';
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; // Importação do Router
-import { CadastroResponse } from 'src/app/shared/models/CadastroResponse';
+import { FluxoResponse } from 'src/app/shared/models/FluxoResponse';
 import { CadastroService } from 'src/app/shared/services/CadastroService';
 import { FluxoService } from 'src/app/shared/services/FluxoService';
 
@@ -64,16 +64,21 @@ export class DadosDoClienteComponent {
 
   onSubmit() {
     if (this.dadosForm.valid) {
+      const dataNascimento = this.dadosForm.get('dataNascimento')?.value;
+  
+      // Convertendo a data para o formato ISO (YYYY-MM-DD)
+      const dataISO = this.formatDateToISO(dataNascimento);
+  
       const dadosCliente = {
         nome: this.dadosForm.get('nomeCompleto')?.value,
-        dataNascimento: this.dadosForm.get('dataNascimento')?.value,
-        celular: this.dadosForm.get('celular')?.value.replace(/\D/g, '')
+        dataNascimento: dataISO, // Enviando a data no formato correto
+        celular: '55' + this.dadosForm.get('celular')?.value.replace(/\D/g, '')
       };
-
+  
       this.isSubmitting = true;
-
+  
       this.cadastroService.cadastrarDadosCliente(dadosCliente, this.fluxoId).subscribe({
-        next: (response: CadastroResponse) => {
+        next: (response: FluxoResponse) => {
           if (response.fluxoId) {
             this.fluxoService.setFluxoId(response.fluxoId); // Armazenando fluxoId
           }
@@ -90,5 +95,11 @@ export class DadosDoClienteComponent {
         }
       });
     }
+  }
+  
+  // Função auxiliar para converter a data de DD/MM/YYYY para YYYY-MM-DD
+  private formatDateToISO(data: string): string {
+    const [dia, mes, ano] = data.split('/');
+    return `${ano}-${mes}-${dia}`;
   }
 }

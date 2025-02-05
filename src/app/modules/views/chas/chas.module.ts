@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ChasRoutingModule } from './chas-routing.module';
 import { ChasComponent } from './chas.component';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { ReceitaCompletaRoutingModule } from 'src/app/shared/components/receita-completa/receita-completa-routing.module';
 
 
 
@@ -14,6 +15,7 @@ import { CardModule } from 'src/app/shared/components/card/card.module';
     CommonModule,
     ChasRoutingModule,
     CardModule,
+    ReceitaCompletaRoutingModule
   ]
 })
 export class ChasModule { }
