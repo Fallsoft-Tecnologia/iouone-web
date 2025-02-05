@@ -9,8 +9,8 @@ import { DetoxService } from 'src/app/shared/services/DetoxService';
 })
 export class DetoxComponent {
   detoxList: Detox[] = [];
-  routerDetail: string = '/sucos';
-  linkName: string = 'Ver suco';
+  routerDetail: string = '/detox';
+  linkName: string = 'Ver detox';
 
   constructor(private detoxService: DetoxService) {}
 
