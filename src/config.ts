@@ -5,6 +5,7 @@ var prd = 'prd';
 var env = prd;
 
 let apiUrl: string = '';
+let apiPagUrl: string = '';
 
 if (env === dev) {
     apiUrl = 'http://localhost:7071/api';
@@ -12,9 +13,11 @@ if (env === dev) {
     apiUrl = 'http://gateway-hml.iouone.com.br/api';
 }else if(env === prd){
     apiUrl = 'http://plataforma-prd.iouone.com.br/api';
+    apiPagUrl = 'http://pagamento-prd.iouone.com.br/api';
 }
 
 export const environment = {
     production: false,
-    apiUrl: apiUrl
+    apiUrl: apiUrl,
+    apiPagUrl: apiPagUrl
 };
