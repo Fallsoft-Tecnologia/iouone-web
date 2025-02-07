@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
   isMobile$: Observable<boolean>;
 
-  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
+  constructor(private router: Router, private breakpointObserver: BreakpointObserver, private cdr: ChangeDetectorRef) {
     this.isMobile$ = this.breakpointObserver.observe([`(max-width: 770px)`])
       .pipe(map(result => result.matches));
   }
@@ -34,10 +34,10 @@ export class SidebarComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // Inscreve-se nas mudanças do tamanho da tela e ajusta o modo do sidenav
     this.isMobile$.subscribe(isMobile => {
       this.sidenav.mode = isMobile ? 'over' : 'side';
-      this.sidenav.opened = !isMobile; // Fecha o sidenav em telas menores
+      this.sidenav.opened = !isMobile;
+      this.cdr.detectChanges(); // Força a atualização da view
     });
   }
 
