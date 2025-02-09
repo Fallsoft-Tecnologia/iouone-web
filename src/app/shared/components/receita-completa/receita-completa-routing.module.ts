@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { dietaResolver } from '../../resolver/dieta.resolver';
 import { ReceitaCompletaComponent } from './receita-completa.component';
 import { receitaCompletaResolver } from '../../resolver/receita-completa.resolver';
 
 const routes: Routes = [
   {
-    path: ':id',
+    path: ':tipo/:id',
     component: ReceitaCompletaComponent,
     resolve: {
         receita: receitaCompletaResolver,
