@@ -6,7 +6,8 @@ import { ReceitaCompletaService } from '../services/ReceitaCompletaService';
 export const receitaCompletaResolver = (route: ActivatedRouteSnapshot): Observable<any> => {
     const receitaCompletaService = inject(ReceitaCompletaService);
     const id = route.paramMap.get('id') ?? '';
-    const tipo = route.paramMap.get('tipo') ?? '';
+
+    const tipo = route.parent?.url[0]?.path ?? '';
 
     return receitaCompletaService.getReceita(tipo, id).pipe(
         catchError((error) => {

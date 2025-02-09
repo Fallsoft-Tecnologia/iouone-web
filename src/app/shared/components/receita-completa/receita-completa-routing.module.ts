@@ -5,7 +5,7 @@ import { receitaCompletaResolver } from '../../resolver/receita-completa.resolve
 
 const routes: Routes = [
   {
-    path: ':tipo/:id',
+    path: ':id',
     component: ReceitaCompletaComponent,
     resolve: {
         receita: receitaCompletaResolver,
