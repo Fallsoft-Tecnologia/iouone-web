@@ -8,7 +8,7 @@ export const receitaCompletaResolver = (route: ActivatedRouteSnapshot): Observab
     const id = route.paramMap.get('id') ?? '';
     
     if (!id) {
-        console.error('ID da dieta não foi fornecido na rota.');
+        console.error('ID da receita não foi fornecido na rota.');
         return of(null);
     }
 
