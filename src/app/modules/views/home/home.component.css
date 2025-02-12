@@ -1,4 +1,4 @@
-/* .feed-container {
+.feed-container {
     max-width: 600px;
     margin: 12px auto;
     padding: 20px;
@@ -78,13 +78,13 @@
   
   button[mat-icon-button]:hover {
     color: var(--Azul-ativado);
-  } */
+  }
 
-  main {
+  /* main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+  } */
   
   
