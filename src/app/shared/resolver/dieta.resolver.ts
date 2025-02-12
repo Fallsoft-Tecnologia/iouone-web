@@ -3,19 +3,24 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { DietasService } from '../services/DietasService';
 
-export const dietaResolver = (route: ActivatedRouteSnapshot): Observable<any> => {
+;export const dietaResolver = (route: ActivatedRouteSnapshot): Observable<any> => {
+    console.log('🚀 Resolver chamado com snapshot:', route);
+    
     const dietaService = inject(DietasService);
-    const dietaId = route.paramMap.get('id');
+    const id = route.paramMap.get('id') ?? '';
 
-    if (!dietaId) {
-        console.error('ID da dieta não foi fornecido na rota.');
-        return of(null); // Retorna um Observable vazio caso o ID seja nulo
+    if (!id) {
+        console.error('❌ ID da dieta não foi fornecido na rota.');
+        return of(null);
     }
 
-    return dietaService.getDietaById(dietaId).pipe(
+    const tipo = route.parent?.url[0]?.path ?? '';
+    console.log('🔍 Tipo:', tipo, '| ID:', id);
+
+    return dietaService.getDietasById(tipo, id).pipe(
         catchError((error) => {
-            console.error('Erro ao buscar a dieta:', error);
-            return of(null); // Retorna um Observable vazio em caso de erro
+            console.error('❌ Erro ao buscar a dieta:', error);
+            return of(null);
         })
     );
 };

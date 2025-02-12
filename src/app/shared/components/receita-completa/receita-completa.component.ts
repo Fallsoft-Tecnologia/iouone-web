@@ -30,7 +30,8 @@ export class ReceitaCompletaComponent {
     if (urlSegments.length > 1) {
       urlSegments.pop();
     }
-    const backUrl = `/${urlSegments.join('/')}`;
+    const backUrl = `/${this.route.snapshot.parent?.url[0]?.path ?? ''}`;
+    console.log(backUrl)
     this.router.navigate([backUrl]);
   }
 }

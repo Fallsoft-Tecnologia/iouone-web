@@ -22,8 +22,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { FooterModule } from './core/footer/footer.module';
 import { AuthModule } from './layouts/auth/auth.module';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
-import { EsqueceuSenhaComponent } from './modules/esqueceu-senha/esqueceu-senha.component';
-import { ReceitaCompletaComponent } from './shared/components/receita-completa/receita-completa.component';
+import { ReceitaCompletaModule } from './shared/components/receita-completa/receita-completa.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +46,8 @@ import { ReceitaCompletaComponent } from './shared/components/receita-completa/r
     VideoModalModule,
     FooterModule,
     AuthModule,
+    ReceitaCompletaModule,
+    DietaCompletaModule
   ],
   providers: [
     {

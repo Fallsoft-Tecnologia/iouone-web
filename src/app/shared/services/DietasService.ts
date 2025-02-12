@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { DietaCompleta } from '../models/DietaCompleta';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { Topicos } from '../models/Topicos';
 import { environment } from 'src/config';
+import { DietaCompleta } from '../models/DietaCompleta';
 
 @Injectable({
     providedIn: 'root',
@@ -21,15 +21,19 @@ export class DietasService {
     }
   
     // Método para buscar dieta por ID com o token no cabeçalho
-    getDietaById(id: string | null): Observable<any> {
-      if (!id) {
-        return throwError(() => new Error('Invalid Dieta ID'));
-      }
-  
-      return this.http.get(`${this.apiUrl}/dietas-atualizadas/${id}`, {
-        headers: this.getHeaders()
-      });
-    }
+    getDietasById(tipo: string, id: string): Observable<DietaCompleta> {
+         const params = new HttpParams()
+         .set('id', id)    
+         .set('tipo', tipo);
+             
+ 
+         return this.http.get<DietaCompleta>(`${this.apiUrl}/plano-diario/dados`, 
+             {
+                 params, 
+                 headers: this.getHeaders() 
+             });
+     }
+ 
 
     getDietas(): Observable<Topicos[]> {
       return this.http.get<Topicos[]>(`${this.apiUrl}/dietas-atualizadas`, {
