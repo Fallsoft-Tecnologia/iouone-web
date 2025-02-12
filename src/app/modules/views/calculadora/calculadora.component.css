@@ -8,11 +8,9 @@
 
 .form-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 6rem;
 }
-
-
 
 .red-text {
   color: red;
@@ -25,12 +23,15 @@
 
 .signup-form {
   margin-top: 1rem;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .individual-form {
   margin-top: 2rem;
+  flex: 1 1 calc(50% - 1rem); /* Cada input ocupa 50% da largura, com um gap de 2rem */
 }
 
 mat-form-field {
@@ -49,10 +50,9 @@ mat-form-field {
 
 .form-field input {
   padding-right: 40px;
-  /* Ajuste conforme necessário para espaço do sufixo */
 }
 
-.suffix-container {
+.suffix-container, .suffix-container-cm {
   display: flex;
   align-items: center;
   position: absolute;
@@ -62,41 +62,23 @@ mat-form-field {
   padding-left: 8px;
   border-left: 1px solid #ccc;
   height: 100%;
-  font-family: inherit; /* Mantém a mesma fonte do input */
-  font-size: inherit; /* Mantém o mesmo tamanho de fonte do input */
-  color: rgba(0, 0, 0, 0.5); /* Mantém a mesma cor do input */
-}
-.suffix-container-cm {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-left: 8px;
-  border-left: 1px solid #ccc;
-  height: 100%;
-  font-family: inherit; /* Mantém a mesma fonte do input */
-  font-size: inherit; /* Mantém o mesmo tamanho de fonte do input */
+  font-family: inherit;
+  font-size: inherit;
   color: rgba(0, 0, 0, 0.5);
-  /* Mantém a mesma cor do input */
 }
 
-.suffix-container span {
-  margin-left: 4px; /* Ajusta o espaço entre a linha e o texto 'kg' */
-}
-.suffix-container-cm span {
-  margin-left: 2px; /* Ajusta o espaço entre a linha e o texto 'kg' */
+.suffix-container span, .suffix-container-cm span {
+  margin-left: 4px;
 }
 
 .bottom-text-input {
-  margin-top: 0.5em;
+  margin-top: 0px;
   font-size: 11px;
   font-weight: bold;
 }
 
 .bottom-input {
-  max-height: 1rem; /* Mantém os inputs alinhados horizontalmente */
+  max-height: 1rem;
 }
 
 .radio-label {
@@ -147,6 +129,12 @@ mat-form-field {
   }
 }
 
+@media (max-width: 720px) {
+  .individual-form {
+    flex: 1 1 100%; /* Cada input ocupa 100% da largura */
+  }
+}
+
 @media (max-width: 550px) {
   .form-section {
     flex-direction: column;
@@ -174,6 +162,6 @@ mat-form-field {
   }
 
   .error-text {
-    margin-top: -10px; /* Adiciona um espaço entre o campo de input e a mensagem de erro */
+    margin-top: -10px;
   }
 }
