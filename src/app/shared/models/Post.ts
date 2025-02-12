@@ -4,6 +4,6 @@ export interface Post {
     id: number;
     nomePessoa: string;
     mensagem: string;
-    comments: Comment[];
+    comentariov2DTO: Comment[];
     newCommentContent: string;
 }
