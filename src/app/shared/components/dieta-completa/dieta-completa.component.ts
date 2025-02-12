@@ -11,14 +11,15 @@ export class DietaCompletaComponent {
   @Input() dieta: DietaCompleta = {
     titulo: '',
     descricao: '',
-    itens: []
+    itens: [{ refeicao: '', descricao: '' }]
   };
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(({ dieta }) => {
-      this.dieta = dieta;
+    this.route.data.subscribe(({ dietas }) => {
+      this.dieta = dietas;
+      console.log(dietas);
     });
   }
 
@@ -27,7 +28,8 @@ export class DietaCompletaComponent {
     if (urlSegments.length > 1) {
       urlSegments.pop();
     }
-    const backUrl = `/${urlSegments.join('/')}`;
+    const backUrl = `/${this.route.snapshot.parent?.url[0]?.path ?? ''}`;
+    console.log(backUrl)
     this.router.navigate([backUrl]);
   }
 }
