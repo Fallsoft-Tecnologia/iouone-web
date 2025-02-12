@@ -1,66 +1,59 @@
 /* Geral */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--Background-feed);
-    color: var(--Preto);
-  }
-  
-  .treino-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: var(--Branco);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Cabeçalho do treino */
-  .treino-header h1 {
-    font-size: 28px;
-    color: var(--Rosa-pink);
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .treino-header p {
-    font-size: 16px;
-    color: var(--Cinza);
-    margin-bottom: 20px;
-    line-height: 1.6;
-    text-align: justify;
-  }
+  margin: 0;
+  padding: 0;
+  background-color: var(--Background-feed);
+  color: var(--Preto);
+  font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.treino-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--Branco);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho */
+.treino-header h1 {
+  font-size: 28px;
+  color: var(--Rosa-pink);
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 .treino-objetivo {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--Rosa);
-  }
-  
-  /* Detalhes do treino */
-  .treino-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .detail-item {
-    background-color: var(--Rosa-claro);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .detail-item strong {
-    display: block;
-    font-size: 14px;
-    color: var(--Rosa);
-    margin-bottom: 5px;
-  }
-  
-  .detail-item span {
-    font-size: 16px;
-    color: var(--Preto);
-  }
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--Rosa);
+  text-align: center;
+}
+
+/* Seções */
+.treino-secao {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--Rosa-claro);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.treino-secao h2 {
+  font-size: 20px;
+  color: var(--Rosa);
+  text-align: center;
+}
+
+.treino-secao ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.treino-secao li {
+  font-size: 16px;
+  padding: 8px 0;
+  text-align: center;
+}

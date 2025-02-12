@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dieta-completa.component.css']
 })
 export class DietaCompletaComponent {
-  @Input() dieta: DietaCompleta = {
+  dieta: DietaCompleta = {
     titulo: '',
     descricao: '',
     itens: []

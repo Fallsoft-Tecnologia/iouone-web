@@ -1,5 +1,6 @@
 <div *ngFor="let cha of chas">
   <app-card
+    [itemId]="cha.id"
     [textTitle]="cha.nome"
     [textDescription]="cha.descricao"
     [cardImg]="getImageUrl(cha.foto)"
