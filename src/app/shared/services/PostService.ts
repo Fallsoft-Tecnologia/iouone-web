@@ -25,14 +25,9 @@ export class PostService {
         return this.http.post<any>(this.apiUrl, { mensagem },{ headers: this.getHeaders() });
     }
 
-    getComments(mensagemId: number, page: number = 0, size: number = 10): Observable<any> {
-        return this.http.get<any>(`${this.apiUrl}/comentarios/${mensagemId}?page=${page}&size=${size}`, {headers: this.getHeaders()});
-    }
-
     createComment(mensagemId: number, mensagemComentario: string): Observable<any> {
-        return this.http.post<any>(`${this.apiUrl}/${mensagemId}/comentarios`, {
-            idComentarioPai: 0,
-            mensagemComentario,
+        return this.http.post<any>(`${this.apiUrl}/${mensagemId}/comentarios`,{ idComentarioPai: null,
+            mensagemComentario}, {
             headers: this.getHeaders()
         });
     }
