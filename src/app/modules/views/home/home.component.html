@@ -25,7 +25,7 @@
       </div>
   
       <!-- Adicionar um comentário -->
-      <div class="add-comment">
+      <div class="add-comment" *ngIf="posts.length > 0">
         <mat-form-field appearance="outline" class="comment-input">
           <input matInput placeholder="Comente algo..." [(ngModel)]="post.newCommentContent" /> <!-- Vinculando ao novo campo -->
         </mat-form-field>
