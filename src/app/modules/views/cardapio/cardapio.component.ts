@@ -9,7 +9,7 @@ import { CardapioService } from 'src/app/shared/services/CardapioService';
 })
 export class CardapioComponent {
   cardapios: Topicos[] = [];
-  routerDetail: string = '/cardapios';
+  routerDetail: string = '/cardapio';
   linkName: string = 'Ver Cardapio';
 
   constructor(private cardapioService: CardapioService) {}
