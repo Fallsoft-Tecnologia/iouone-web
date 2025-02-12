@@ -46,7 +46,8 @@ import { ReceitaCompletaModule } from './shared/components/receita-completa/rece
     VideoModalModule,
     FooterModule,
     AuthModule,
-    ReceitaCompletaModule
+    ReceitaCompletaModule,
+    DietaCompletaModule
   ],
   providers: [
     {
