@@ -1,5 +1,5 @@
 export interface Comment {
     id: number;
-    user: string;
-    content: string;
+    nomeCliente: string;
+    mensagemComentario: string;
 }
