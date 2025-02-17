@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { map, Observable } from 'rxjs';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements AfterViewInit {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
   isMobile$: Observable<boolean>;
 
@@ -33,11 +33,11 @@ export class SidebarComponent implements OnInit {
     { title: 'Projeto 30 dias', link: '/projeto', icon: 'fa-solid fa-calendar-day' },
   ];
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.isMobile$.subscribe(isMobile => {
       this.sidenav.mode = isMobile ? 'over' : 'side';
-      this.sidenav.opened = !isMobile;
-      this.cdr.detectChanges(); // Força a atualização da view
+      this.sidenav.opened = false; // Inicia sempre fechado
+      this.cdr.detectChanges();
     });
   }
 
