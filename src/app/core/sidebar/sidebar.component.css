@@ -61,3 +61,9 @@ mat-sidenav-content {
     z-index: 1000; /* Para garantir que fique acima do conteúdo */
   }
 }
+
+@media (max-width: 310px) {
+  mat-sidenav {
+    width: 100vw !important;
+  }
+}

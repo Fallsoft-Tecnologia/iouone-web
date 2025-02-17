@@ -128,9 +128,6 @@ mat-form-field {
     margin-top: 4rem;
   }
   
-  .individual-form {
-    flex: 1 1 100%; /* Cada input ocupa 100% da largura */
-  }
 }
 
 @media (max-width: 550px) {
