@@ -19,6 +19,8 @@ export class FormularioCartaoComponent {
   fluxoId: string = '';
   redireciona: string = "/login";
 
+  isLoading: boolean = false;
+
   constructor(
     private fb: FormBuilder, 
     private pagamentoService: PagamentoService,
@@ -49,11 +51,13 @@ export class FormularioCartaoComponent {
   }
 
   onSubmit(): void {
+    this.isLoading = true;
     if (this.cardForm.valid) {
       const formData: DadosCartao = this.cardForm.value;
 
       this.pagamentoService.enviarDadosCartao(formData, this.fluxoId).subscribe({
         next: response => {
+          this.isLoading = false;
           if (response.fluxoId) {
             this.fluxoService.setFluxoId(response.fluxoId);
           }
@@ -62,6 +66,7 @@ export class FormularioCartaoComponent {
           console.log('Pagamento enviado com sucesso:', response);
         },
         error: err => {
+          this.isLoading = false;
           console.error('Erro ao enviar o pagamento:', err);
         }
       });

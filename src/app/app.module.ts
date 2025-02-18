@@ -23,10 +23,16 @@ import { FooterModule } from './core/footer/footer.module';
 import { AuthModule } from './layouts/auth/auth.module';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
 import { ReceitaCompletaModule } from './shared/components/receita-completa/receita-completa.module';
+import { LoadingService } from './shared/services/LoadingService';
+import { LoadingInterceptor } from './loading/loading-inteceptor.compont';
+import { LoadingSpinnerComponent } from './loading/loading-spinner.component';
+import { LoadingModalModule } from './loading-modal/loading-modal.module';
+import { LoadingModalComponent } from './loading-modal/loading-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
+    
   ],
   imports: [
     AdminModule,
@@ -47,12 +53,22 @@ import { ReceitaCompletaModule } from './shared/components/receita-completa/rece
     FooterModule,
     AuthModule,
     ReceitaCompletaModule,
-    DietaCompletaModule
+    DietaCompletaModule,
+    LoadingModalModule
+    
+  ],exports: [
+    LoadingModalComponent
   ],
   providers: [
+    LoadingService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
       multi: true
     }
   ],
