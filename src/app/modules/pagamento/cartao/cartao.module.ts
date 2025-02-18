@@ -10,6 +10,7 @@ import { EnterButtonModule } from 'src/app/shared/components/buttons/enter-butto
 import { FormularioCartaoComponent } from './formulario-cartao/formulario-cartao.component';
 import { InfosPagamentoCartaoComponent } from './formulario-cartao/infos-pagamento-cartao/infos-pagamento-cartao.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingModalModule } from 'src/app/loading-modal/loading-modal.module';
 
 
 
@@ -27,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EnterButtonModule,
     MatButtonModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoadingModalModule
   ]
 })
 export class CartaoModule { }
