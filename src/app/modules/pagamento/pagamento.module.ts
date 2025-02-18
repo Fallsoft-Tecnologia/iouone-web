@@ -5,6 +5,7 @@ import { PagamentoRoutingModule } from './pagamento-routing.module';
 import { PixModule } from './pix/pix.module';
 import { MeioPagamentoModule } from './meio-pagamento/meio-pagamento.module';
 import { NavbarCadastroModule } from 'src/app/core/navbar-cadastro/navbar-cadastro.module';
+import { LoadingModalModule } from 'src/app/loading-modal/loading-modal.module';
 
 
 
@@ -16,7 +17,8 @@ import { NavbarCadastroModule } from 'src/app/core/navbar-cadastro/navbar-cadast
     CartaoModule,
     PixModule,
     MeioPagamentoModule,
-    PagamentoRoutingModule
+    PagamentoRoutingModule,
+    LoadingModalModule
   ]
 })
 export class PagamentoModule { }
