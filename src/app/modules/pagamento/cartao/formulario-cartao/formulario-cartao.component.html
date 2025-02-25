@@ -5,7 +5,7 @@
 <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="card-form">
     <mat-form-field class="form-field" appearance="outline">
         <mat-label>Número do cartão</mat-label>
-        <input matInput placeholder="Número do cartão" formControlName="numeroCartao">
+        <input matInput placeholder="Número do cartão" formControlName="numeroCartao" pattern="\d*" (input)="onCardNumberInput($event)" maxlength="16">
         <span matSuffix><i class="fa-solid fa-credit-card form-icon"></i></span>
         <mat-error *ngIf="cardForm.get('numeroCartao')?.invalid && (cardForm.get('numeroCartao')?.touched || cardForm.get('numeroCartao')?.dirty)">
             Número do cartão é obrigatório.
@@ -30,7 +30,7 @@
 
         <mat-form-field class="form-field-half" appearance="outline">
             <mat-label>CVV</mat-label>
-            <input matInput formControlName="cvv" placeholder="CVV" type="text">
+            <input matInput formControlName="cvv" placeholder="CVV" type="text" pattern="\d*" (input)="onCvvInput($event)" maxlength="3">
             <span matSuffix><i class="fa-solid fa-circle-question form-icon"></i></span>
             <mat-error *ngIf="cardForm.get('cvv')?.invalid && (cardForm.get('cvv')?.touched || cardForm.get('cvv')?.dirty)">
                 CVV é obrigatório.

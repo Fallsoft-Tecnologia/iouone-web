@@ -28,9 +28,9 @@ export class FormularioCartaoComponent {
     private router: Router
   ) {
     this.cardForm = this.fb.group({
-      numeroCartao: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
+      numeroCartao: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern('^[0-9]*$')]],
       dataValidade: ['', Validators.required],
-      cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
+      cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[0-9]*$')]],
       nomeCartao: ['', Validators.required],
       formaPagamento: ['', Validators.required]
     });
@@ -54,6 +54,8 @@ export class FormularioCartaoComponent {
     this.isLoading = true;
     if (this.cardForm.valid) {
       const formData: DadosCartao = this.cardForm.value;
+      formData.numeroCartao = formData.numeroCartao.trim();
+      formData.cvv = formData.cvv.trim();
 
       this.pagamentoService.enviarDadosCartao(formData, this.fluxoId).subscribe({
         next: response => {
@@ -62,7 +64,6 @@ export class FormularioCartaoComponent {
             this.fluxoService.setFluxoId(response.fluxoId);
           }
           this.router.navigate([this.redireciona]);
-          // this.isSubmitting = false;
           console.log('Pagamento enviado com sucesso:', response);
         },
         error: err => {
@@ -71,5 +72,17 @@ export class FormularioCartaoComponent {
         }
       });
     }
+  }
+
+  onCardNumberInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const cleanedValue = input.value.replace(/\D/g, '');
+    this.cardForm.get('numeroCartao')?.setValue(cleanedValue, { emitEvent: false });
+  }
+  
+  onCvvInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const cleanedValue = input.value.replace(/\D/g, '');
+    this.cardForm.get('cvv')?.setValue(cleanedValue, { emitEvent: false });
   }
 }
