@@ -6,8 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./treino-card.component.css']
 })
 export class TreinoCardComponent {
-  @Input() imageSrc!: string;
-  @Input() title!: string;
-  @Input() description!: string;
-  @Input() treinoId: number = 0;
+  @Input() textTitle: string = '';
+  @Input() textDescription: string = '';
+  @Input() cardImg: string = '';
+  @Input() linkName: string = 'Detalhar';
+  @Input() routerDetail: string = '';
+  @Input() itemId: number = 0;
 }

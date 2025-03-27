@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Treino } from 'src/app/shared/models/Treino';
 import { TreinoService } from 'src/app/shared/services/TreinoService';
 
@@ -10,50 +10,31 @@ import { TreinoService } from 'src/app/shared/services/TreinoService';
 })
 export class TreinoCompletoComponent {
 
-  treino: Treino = {
-    titulo: 'Treino para Emagrecimento Acelerado',
-    objetivo: 'Reduzir o percentual de gordura corporal rapidamente, melhorando a condição cardiovascular.',
-    aquecimento: {
-        tempo: 10,
-        exercicios: ['2 minutos de polichinelos', '3 minutos de corda', '5 minutos de corrida leve'],
-    },
-    treinoPrincipal: {
-        tempo: 30,
-        exercicios: [
-            { nome: 'Burpees', duracao: 40 },
-            { nome: 'Agachamento com salto', duracao: 40 },
-            { nome: 'Mountain climbers', duracao: 40 },
-            { nome: 'Flexão de braços no joelho', duracao: 40 },
-            { nome: 'Corrida estacionária de alta intensidade', duracao: 40 },
-        ],
-    },
-    finalizacao: {
-        tempo: 5,
-        exercicios: ['Prancha abdominal (3 x 45 segundos)', 'Abdominal bicicleta (3 x 30 repetições)'],
-    },
-}; // Variável para armazenar os dados do treino
+  @Input() treino: Treino = {
+    titulo: '',
+    descricao: '',
+    itens: [{ tipoTreino: '', treinoCompleto: [] }]
+  }; // Variável para armazenar os dados do treino
   isLoading = true; // Indicador de carregamento
   errorMessage: string | null = null; // Mensagem de erro, caso ocorra
 
-  constructor(
-    private route: ActivatedRoute,
-    private treinoService: TreinoService
-  ) {}
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    const id = String(this.route.snapshot.paramMap.get('id')); // Obtém o ID da URL
-    if (id) {
-      this.treinoService.getTreinoById(id).subscribe({
-        next: (data) => {
-          this.treino = data;
-          this.isLoading = false;
-        },
-        error: (error) => {
-          this.errorMessage = 'Erro ao carregar o treino. Tente novamente.';
-          this.isLoading = false;
-        },
-      });
+    this.route.data.subscribe(({ treinos }) => {
+      this.treino = treinos;
+      console.log(treinos);
+    });
+  }
+
+  voltar() {
+    const urlSegments = this.route.snapshot.url.map(segment => segment.path);
+    if (urlSegments.length > 1) {
+      urlSegments.pop();
     }
+    const backUrl = `/${this.route.snapshot.parent?.url[0]?.path ?? ''}`;
+    console.log(backUrl)
+    this.router.navigate([backUrl]);
   }
 
 }

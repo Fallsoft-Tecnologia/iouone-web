@@ -1,47 +1,30 @@
-<div *ngIf="isLoading" class="loading">
+<!-- <div *ngIf="isLoading" class="loading">
   <p>Carregando treino...</p>
 </div>
 
 <div *ngIf="errorMessage" class="error">
   <p>{{ errorMessage }}</p>
-</div>
+</div> -->
 
 <div class="treino-container">
+    <button class="back-button" (click)="voltar()">
+        <i class="fa-regular fa-arrow-left"></i> Voltar
+      </button>
   <!-- Cabeçalho -->
   <div class="treino-header">
       <h1>{{ treino.titulo }}</h1>
       <p class="treino-objetivo">
-          <strong>Objetivo:</strong> {{ treino.objetivo }}
+          {{ treino.descricao}}
       </p>
   </div>
 
   <!-- Estrutura do Treino -->
-  <div class="treino-estrutura">
+  <div class="treino-estrutura" >
       <!-- Aquecimento -->
-      <div class="treino-secao">
-          <h2>Aquecimento ({{ treino.aquecimento.tempo }} minutos)</h2>
+      <div *ngFor="let item of treino.itens" class="treino-secao">
+          <h2>{{item.tipoTreino}}</h2>
           <ul>
-              <li *ngFor="let exercicio of treino.aquecimento.exercicios">
-                  {{ exercicio }}
-              </li>
-          </ul>
-      </div>
-
-      <!-- Treino Principal -->
-      <div class="treino-secao">
-          <h2>Treino Principal ({{ treino.treinoPrincipal.tempo }} minutos)</h2>
-          <ul>
-              <li *ngFor="let exercicio of treino.treinoPrincipal.exercicios">
-                  {{ exercicio.nome }} - {{ exercicio.duracao }} segundos
-              </li>
-          </ul>
-      </div>
-
-      <!-- Finalização -->
-      <div class="treino-secao">
-          <h2>Finalização ({{ treino.finalizacao.tempo }} minutos)</h2>
-          <ul>
-              <li *ngFor="let exercicio of treino.finalizacao.exercicios">
+              <li *ngFor="let exercicio of item.treinoCompleto">
                   {{ exercicio }}
               </li>
           </ul>

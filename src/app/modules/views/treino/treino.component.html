@@ -1,18 +1,21 @@
-<!-- <main class="container">
+<main class="container">
   <div class="cards-wrapper">
     <app-treino-card 
       *ngFor="let treino of treinos"
-      [imageSrc]="getImageUrl(treino.foto)"
-      [title]="treino.nome"
-      [description]="treino.descricao">
+      [itemId]="treino.id"
+      [cardImg]="getImageUrl(treino.foto)"
+      [textTitle]="treino.nome"
+      [textDescription]="treino.descricao"
+      [routerDetail]="routerDetail"
+      [linkName] = "linkName">
     </app-treino-card>
   </div>
-</main> -->
+</main>
 
-<main>
+<!-- <main>
   <img
     class="img-em-breve"
     src="../../../../assets/em-breve.png"
     alt="Marca d'agua em breve"
   />
-</main>
+</main> -->
