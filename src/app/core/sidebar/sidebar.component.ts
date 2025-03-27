@@ -36,7 +36,7 @@ export class SidebarComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.isMobile$.subscribe(isMobile => {
       this.sidenav.mode = isMobile ? 'over' : 'side';
-      this.sidenav.opened = false; // Inicia sempre fechado
+      this.sidenav.opened = true; // Inicia sempre aberto
       this.cdr.detectChanges();
     });
   }

@@ -10,6 +10,9 @@ import { TreinoService } from 'src/app/shared/services/TreinoService';
 export class TreinoComponent implements OnInit{
   treinos: Topicos[] = [];
 
+  routerDetail: string = '/treinos';
+  linkName: string = 'Ver treino';
+
   constructor(private treinoService: TreinoService) {}
 
   ngOnInit(): void {

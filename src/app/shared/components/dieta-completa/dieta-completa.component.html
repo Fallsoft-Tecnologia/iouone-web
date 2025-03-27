@@ -1,19 +1,17 @@
 <div class="dieta-container">
-  <button class="back-button" (click)="voltar()"><i class="fa-regular fa-arrow-left"></i> Voltar</button>
+  <button class="back-button" (click)="voltar()">
+    <i class="fa-regular fa-arrow-left"></i> Voltar
+  </button>
+
   <div class="dieta-header">
     <h1 class="dieta-titulo">{{dieta.titulo}}</h1>
-    <p class="dieta-descricao">
-      {{dieta.descricao}}
-    </p>
+    <p class="dieta-descricao">{{dieta.descricao}}</p>
   </div>
+
   <div class="dieta-itens">
     <div *ngFor="let item of dieta.itens" class="item">
       <div class="item-dia">{{item.refeicao}}</div>
-      <div class="item-descricao">
-        {{item.descricao}}
-      </div>
+      <div class="item-descricao">{{item.descricao}}</div>
     </div>
-
-
   </div>
 </div>
