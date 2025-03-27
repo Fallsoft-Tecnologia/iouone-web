@@ -106,3 +106,52 @@
     margin-left: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .dieta-container {
+    padding: 1rem;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .dieta-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .dieta-titulo {
+    font-size: 1.4rem;
+  }
+
+  .dieta-descricao {
+    font-size: 1rem;
+  }
+
+  .dieta-itens {
+    gap: 1rem;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    text-align: center;
+  }
+
+  .item-dia {
+    width: 100%;
+    max-block-size: fit-content;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .item-descricao {
+    margin-left: 0;
+    font-size: 0.95rem;
+  }
+}
+

@@ -8,7 +8,7 @@ const routes: Routes = [
     path: ':id',
     component: TreinoCompletoComponent,
     resolve: {
-        dietas: treinoResolver,
+      treinos: treinoResolver,
       },
   }
 ];
