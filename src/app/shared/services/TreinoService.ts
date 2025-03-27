@@ -25,11 +25,8 @@ export class TreinoService {
     }
 
     getTreinoById(id: string | null): Observable<Treino> {
-        if (!id) {
-            // Trate o caso de ID inválido
-            return throwError(() => new Error('Invalid Treino ID'));
-        }
+
         // Requisição normal
-        return this.http.get<Treino>(`/treinos-atualizado/${id}`,{ headers: this.getHeaders()});
+        return this.http.get<Treino>(`${this.apiUrl}/treino-completo/especifico/${id}`,{ headers: this.getHeaders()});
     }
 }

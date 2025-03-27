@@ -26,10 +26,9 @@ body {
 }
 
 .treino-objetivo {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--Rosa);
-  text-align: center;
+  font-size: 1.2rem;
+  color: var(--Cinza);
+  text-align: justify;
 }
 
 /* Seções */
@@ -57,3 +56,20 @@ body {
   padding: 8px 0;
   text-align: center;
 }
+
+.back-button {
+  background-color: var(--Rosa-pink);
+  color: var(--Branco);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  background-color: var(--Rosa);
+}
+
